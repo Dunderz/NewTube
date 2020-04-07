@@ -1,6 +1,12 @@
 {
   "name": "NewTube",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "bundle.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
@@ -14,12 +20,20 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "webpack --mode=development --watch",
-    "postinstall": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch"
   },
-  "engines": {
-    "node": "8.10.0",
-    "npm": "6.10.3"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DunderProto/NewTube.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DunderProto/NewTube/issues"
+  },
+  "homepage": "https://github.com/DunderProto/NewTube#readme"
 }

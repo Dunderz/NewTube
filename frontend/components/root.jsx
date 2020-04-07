@@ -1,7 +1,16 @@
+  
 import React from 'react';
 
-export default ({ store }) => {
-    return (
-        <h1>HEY WHAT'S GOOD</h1>
-    );
-};
+class Root extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <p>hello</p>
+        );
+    }
+}
+
+export default Root;
