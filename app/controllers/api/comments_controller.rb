@@ -1,3 +1,3 @@
-class Api::SessionsController < ApplicationController
-
+class Api::CommentsController < ApplicationController
+    
 end
