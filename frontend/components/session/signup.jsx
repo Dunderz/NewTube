@@ -13,15 +13,18 @@ class Signup extends React.Component {
     }
 
     handleInput(type) {
-        return () => {
-            this.setState({ [type]: e.target.value });
+        return (e) => {
+            this.setState({ [type]: e.currentTarget.value });
         };
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewUser(this.state)
-            .then(() => this.props.history.push('/'))
+            .then((res) => {
+                
+                this.props.history.push('/')
+            })
     }
 
     render () {
