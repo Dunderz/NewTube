@@ -23,6 +23,10 @@
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {},
+  "engines": {
+    "node": "8.10.0",
+    "npm": "6.10.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode=development --watch",
