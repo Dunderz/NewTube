@@ -24,22 +24,30 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Log In!</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username:
-                        <input type="text"
-                               value={this.state.username}
-                               onChange={this.handleInput('username')}/>
-                    </label>
-                    <label>Password:
-                        <input type="password"
-                               value={this.state.password}
-                               onChange={this.handleInput('password')}/>
-                    </label>
-                    <button type="submit">Log In!</button>
-                    <Link className="btn" to="/signup">Sign Up</Link>
-                </form>
+            <div className="session-form">
+                <div>
+                    <form className="form-sign-up" onSubmit={this.handleSubmit}>
+                        <Link to="/"><img src={ window.newtube } id='signin-logo'/></Link>
+                        <h2 className="sign-in-title">Sign In</h2>
+                        <p className="sign-in-subtitle">to continue to NewTube</p>
+                        <label className="input-username">
+                            <input type="text"
+                                value={this.state.username}
+                                onChange={this.handleInput('username')}
+                                placeholder="Username or Email"/>
+                        </label>
+                        <label className="input-password">
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.handleInput('password')}
+                                placeholder="Password"/>
+                        </label>
+                        <div className="form-buttons">
+                            <Link className="sign-up-link" to="/signup">Create account</Link>
+                            <button className="log-in-btn" type="submit">Next</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

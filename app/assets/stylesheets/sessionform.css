@@ -1,17 +1,93 @@
 .session-form {
     display: block;
+    
 }
 
 .form-sign-up {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 8px;
     border: 1px solid #dadce0;
-    margin: 100px auto;
+    margin: 145px auto;
     min-height: 0;
     width: 450px;
-    height: 600px;
+    height: 500px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    box-shadow: 1px 1px rgb(216, 215, 215);
 }
 
+#signup-logo {
+    margin-top: 60px;
+    width: 80px;
+    height: 20px;
+}
+
+#signin-logo {
+    margin-top: 60px;
+    width: 80px;
+    height: 20px;
+}
+
+.sign-in-title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.sign-in-subtitle {
+    font-size: 16px;
+}
+
+.input-username input {
+    margin-top: 30px;
+    width: 332px;
+    height: 50px;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    padding-left: 18px;
+}
+
+.input-password input {
+    margin-top: 30px;
+    width: 332px;
+    height: 50px;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    padding-left: 18px;
+}
+
+.form-sign-up input:focus{
+    outline: none;
+    box-shadow: 0 0 0 2px blue;
+  }
+
+input::placeholder {
+    color: #858688;
+    font-size: 16px;
+}
+
+.form-buttons {
+    display: flex;
+    margin-top: 116px;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.log-in-btn {
+    width: 90px;
+    height: 36px;
+    background-color: #1A73E8;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.sign-up-link {
+    text-decoration: none;
+    color: #1A73E8;
+    font-size: 14px;
+}

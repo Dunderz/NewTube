@@ -27,8 +27,9 @@ class Signup extends React.Component {
     render () {
         return (
             <div className="session-form">
-                <div>
+                <div className="form-container">
                     <form className="form-sign-up">
+                        <img src={ window.newtube } id='signup-logo'/>
                         <h2>Sign Up</h2>
                         <label>Username: 
                             <input 
