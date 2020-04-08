@@ -9,14 +9,17 @@ export default ({ currentUser, logout }) => {
             </div>
         ) : ( 
         <div>
-            <Link className="btn" to="/signup">Sign Up</Link>
-            <Link className="btn" to="/login">Log in</Link>
+            <Link className="btn" to="/login">SIGN IN</Link>
         </div>
     );
 
     return (
         <header className="nav-bar">
             <h1 className="logo">NEWTUBE</h1>
+            <form>
+                <input type="text" placeholder="Search"/>
+                <button type="submit">Search</button>
+            </form>
             <div>
                 {display}
             </div>
