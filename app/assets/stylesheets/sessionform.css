@@ -12,7 +12,7 @@
     margin: 145px auto;
     min-height: 0;
     width: 450px;
-    height: 500px;
+    height: 600px;
     font-size: 14px;
     line-height: 1.6;
     box-shadow: 1px 1px rgb(216, 215, 215);
@@ -37,6 +37,15 @@
 
 .sign-in-subtitle {
     font-size: 16px;
+}
+
+.input-email input{
+    margin-top: 30px;
+    width: 332px;
+    height: 50px;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    padding-left: 18px;
 }
 
 .input-username input {
@@ -90,4 +99,5 @@ input::placeholder {
     text-decoration: none;
     color: #1A73E8;
     font-size: 14px;
+    padding-top: 10px;
 }
