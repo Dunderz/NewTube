@@ -18,6 +18,21 @@
     box-shadow: 1px 1px rgb(216, 215, 215);
 }
 
+.form-sign-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    margin: 145px auto;
+    min-height: 0;
+    width: 450px;
+    height: 550px;
+    font-size: 14px;
+    line-height: 1.6;
+    box-shadow: 1px 1px rgb(216, 215, 215);
+}
+
 #signup-logo {
     margin-top: 60px;
     width: 80px;
@@ -78,7 +93,7 @@ input::placeholder {
 
 .form-buttons {
     display: flex;
-    margin-top: 66px;
+    margin-top: 30px;
     width: 350px;
     justify-content: space-between;
 }
@@ -103,7 +118,7 @@ input::placeholder {
 }
 
 .demo-login-form {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 350px;
 }
 
@@ -113,4 +128,19 @@ input::placeholder {
 
 .demo-login-button:hover {
     cursor: pointer;
+}
+
+.errors-signin {
+    margin-top: 15px;
+    color: red;
+}
+
+.errors-container {
+    margin-top: 14px;
+    width: 350px;
+    list-style: circle;
+}
+
+.signup-errors {
+    color: red;
 }

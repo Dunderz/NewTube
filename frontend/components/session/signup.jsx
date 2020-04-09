@@ -13,6 +13,10 @@ class Signup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.eraseErrors();
+    }
+
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.currentTarget.value });
@@ -26,6 +30,7 @@ class Signup extends React.Component {
     }
 
     render () {
+        const errors = this.props.errors[0].map((error, i) => <li key={i}>{error}</li>)
         return (
             <div className="session-form">
                 <div className="form-container">
@@ -57,6 +62,11 @@ class Signup extends React.Component {
                                 placeholder="Password"
                                 />
                         </label>
+                        <div className="errors-container">
+                            <ul className="signup-errors">
+                                {errors}
+                            </ul>
+                        </div>
                         <div className="form-buttons">
                             <Link className="sign-up-link" to="/login">Sign in instead</Link>
                             <button className="log-in-btn" onClick={this.handleSubmit}>Sign Up</button>

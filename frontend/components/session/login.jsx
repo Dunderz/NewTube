@@ -15,14 +15,23 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.eraseErrors();
+    }
+
     handleInput(field) {
         return e => this.setState({ [field]: e.target.value });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state)
+        const user = Object.assign({}, this.state);
+        this.props.login(user)
             .then(() => this.props.history.push('/'));
+        this.setState({
+            username: '',
+            password: ''
+        });
     }
     
     demoLogin(e) {
@@ -31,11 +40,29 @@ class Login extends React.Component {
             .then(() => this.props.history.push('/'));
     }
 
+    // renderErrors() {
+    //     this.setState({ errors: this.props.errors.map((error, i) => (
+    //         <li key={`error-${i}`}>
+    //           {error}
+    //         </li>
+    //     ))});
+    //     return(
+    //         <ul className="errors-signin">
+    //             {this.state.errors}
+    //         </ul>
+    //     );
+    // }
+
     render() {
+        const errors = this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+        ));
         return (
             <div className="session-form">
                 <div>
-                    <form className="form-sign-up" onSubmit={this.handleSubmit}>
+                    <form className="form-sign-in" onSubmit={this.handleSubmit}>
                         <Link to="/"><img src={ window.newtube } id='signin-logo'/></Link>
                         <h2 className="sign-in-title">Sign In</h2>
                         <p className="sign-in-subtitle">to continue to NewTube</p>
@@ -51,6 +78,11 @@ class Login extends React.Component {
                                 onChange={this.handleInput('password')}
                                 placeholder="Password"/>
                         </label>
+                        <div className="errors-signin">
+                            <ul>
+                                {errors}
+                            </ul>
+                        </div>
                         <div className="demo-login-form">
                             <p>Don't want to sign up? Use demo mode instead!</p>
                             <div className="demo-login-button" onClick={this.demoLogin}>
