@@ -22,6 +22,10 @@ class Login extends React.Component {
             .then(() => this.props.history.push('/'));
     }
 
+    demoLogin(e) {
+        
+    }
+
     render() {
         return (
             <div className="session-form">
