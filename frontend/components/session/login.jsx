@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const demo_user = {username: 'username', password: 'password'};
+const demo_user = {username: 'demo', password: 'password'};
 
 class Login extends React.Component {
     constructor(props) {
