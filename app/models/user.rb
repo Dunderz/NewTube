@@ -15,6 +15,7 @@ class User < ApplicationRecord
     validates :password_digest, :session_token, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     validates :email, presence: true, uniqueness: true
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
 
     has_many :comments,
         foreign_key: :video_id,

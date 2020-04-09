@@ -78,7 +78,7 @@ input::placeholder {
 
 .form-buttons {
     display: flex;
-    margin-top: 116px;
+    margin-top: 66px;
     width: 350px;
     justify-content: space-between;
 }
@@ -100,4 +100,17 @@ input::placeholder {
     color: #1A73E8;
     font-size: 14px;
     padding-top: 10px;
+}
+
+.demo-login-form {
+    margin-top: 30px;
+    width: 350px;
+}
+
+.demo-login-button {
+    color: #1a73e8;
+}
+
+.demo-login-button:hover {
+    cursor: pointer;
 }

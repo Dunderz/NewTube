@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const demo_user = {username: 'username', password: 'password'};
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -9,6 +11,7 @@ class Login extends React.Component {
             password: ''
         };
 
+        this.demoLogin = this.demoLogin.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -21,9 +24,11 @@ class Login extends React.Component {
         this.props.login(this.state)
             .then(() => this.props.history.push('/'));
     }
-
+    
     demoLogin(e) {
-        
+        e.preventDefault();
+        this.props.login(demo_user)
+            .then(() => this.props.history.push('/'));
     }
 
     render() {
@@ -46,6 +51,12 @@ class Login extends React.Component {
                                 onChange={this.handleInput('password')}
                                 placeholder="Password"/>
                         </label>
+                        <div className="demo-login-form">
+                            <p>Don't want to sign up? Use demo mode instead!</p>
+                            <div className="demo-login-button" onClick={this.demoLogin}>
+                                Demo Login
+                            </div>
+                        </div>
                         <div className="form-buttons">
                             <Link className="sign-up-link" to="/signup">Create account</Link>
                             <button className="log-in-btn" type="submit">Next</button>
