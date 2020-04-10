@@ -8,9 +8,10 @@ export default ({ currentUser, logout }) => {
                 <button onClick={logout}>Log Out</button>
             </div>
         ) : ( 
-        <div>
-            <Link className="btn" to="/login">SIGN IN</Link>
-        </div>
+        
+            <Link className="nav-sign-in-link" to="/login">
+                <div className="nav-sign-in">SIGN IN</div>
+            </Link>
     );
 
     return (
@@ -21,11 +22,11 @@ export default ({ currentUser, logout }) => {
                 </div>
                 <img id='new-tube-logo' src={ window.newtube } />
             </div>
-            <form>
-                <input className="search-bar" type="text" placeholder="Search"/>
+            <form className="search-bar">
+                <input type="text" placeholder="Search"/>
                 <button className="search-button" type="submit">Search</button>
             </form>
-            <div>
+            <div className="top-right">
                 {display}
             </div>
         </header>

@@ -35,7 +35,7 @@ class Signup extends React.Component {
             <div className="session-form">
                 <div className="form-container">
                     <form className="form-sign-up">
-                        <img src={ window.newtube } id='signup-logo'/>
+                        <Link to="/"><img src={ window.newtube } id='signin-logo'/></Link>
                         <h2 className="sign-in-title">Create your NewTube account</h2>
                         <p className="sign-in-subtitle">to continue to NewTube</p>
                         <label className="input-username">
