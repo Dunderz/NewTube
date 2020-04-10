@@ -25,6 +25,7 @@ export default ({ currentUser, logout }) => {
 
     return (
         <header className="nav-bar">
+            a
             <div className="top-left">
                 <div className="hamburger-container">
                     <img id='hamburger-logo' src={ window.hamburger } />
