@@ -15792,3 +15792,156 @@ FOREIGN KEY ("blob_id")
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
   [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  [1m[36mVideo Load (3.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVideo Exists (5.1ms)[0m  [1m[34mSELECT  1 AS one FROM "videos" WHERE "videos"."title" = $1 LIMIT $2[0m  [["title", "this is a video"], ["LIMIT", 1]]
+  [1m[36mVideo Create (1.0ms)[0m  [1m[32mINSERT INTO "videos" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "this is a video"], ["author_id", 3], ["created_at", "2020-04-10 19:30:54.816034"], ["updated_at", "2020-04-10 19:30:54.816034"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+[36m  S3 Storage (630.7ms) [0m[32mUploaded file to key: 94jobpxTMst2eW5qrtQdduYB (checksum: cHFkUAeeuklFM2/xUe5P5g==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (6.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "94jobpxTMst2eW5qrtQdduYB"], ["filename", "intling.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 220702], ["checksum", "cHFkUAeeuklFM2/xUe5P5g=="], ["created_at", "2020-04-10 19:35:45.315636"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (2.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 4], ["blob_id", 1], ["created_at", "2020-04-10 19:35:45.390436"]]
+  [1m[36mVideo Update (0.7ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-04-10 19:35:45.395689"], ["id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: fe52a582-60e4-4119-b227-26b6dc7a8d0b) to Async(default) with arguments: #<GlobalID:0x00007f8f0c53d160 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b] Performing ActiveStorage::AnalyzeJob (Job ID: fe52a582-60e4-4119-b227-26b6dc7a8d0b) from Async(default) with arguments: #<GlobalID:0x00007fffe62417e0 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b] [36m  S3 Storage (390.8ms) [0m[34mDownloaded file from key: 94jobpxTMst2eW5qrtQdduYB[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b]   [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b]   [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fe52a582-60e4-4119-b227-26b6dc7a8d0b] Performed ActiveStorage::AnalyzeJob (Job ID: fe52a582-60e4-4119-b227-26b6dc7a8d0b) from Async(default) in 510.42ms
+Started GET "/" for ::1 at 2020-04-10 16:25:06 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2803.4ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 3120ms (Views: 3111.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2020-04-10 16:25:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/posts"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-10 16:27:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (18.7ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 641ms (Views: 626.7ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-10 16:27:15 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (6.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (196.4ms)
+Completed 200 OK in 274ms (Views: 171.4ms | ActiveRecord: 51.6ms)
+
+
+  [1m[36mVideo Load (2.0ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  S3 Storage (462.4ms) [0m[32mUploaded file to key: asPDq8ZTezA8S2Er6zt5xybm (checksum: cHFkUAeeuklFM2/xUe5P5g==)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "asPDq8ZTezA8S2Er6zt5xybm"], ["filename", "intling.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 220702], ["checksum", "cHFkUAeeuklFM2/xUe5P5g=="], ["created_at", "2020-04-10 20:29:51.966817"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 4], ["blob_id", 2], ["created_at", "2020-04-10 20:29:52.026678"]]
+  [1m[36mVideo Update (0.9ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-04-10 20:29:52.045534"], ["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 11d75e72-1a57-45c6-b99a-8678facca2b8) to Async(default) with arguments: #<GlobalID:0x00007fffe32a97d0 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/2>>
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: dce01c5b-60ad-43a7-8d80-750e9703c020) to Async(default) with arguments: #<GlobalID:0x00007fffe1a24c78 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (6.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8] Performing ActiveStorage::AnalyzeJob (Job ID: 11d75e72-1a57-45c6-b99a-8678facca2b8) from Async(default) with arguments: #<GlobalID:0x00007fffe0bb1650 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8] [36m  S3 Storage (325.7ms) [0m[34mDownloaded file from key: asPDq8ZTezA8S2Er6zt5xybm[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8]   [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [11d75e72-1a57-45c6-b99a-8678facca2b8] Performed ActiveStorage::AnalyzeJob (Job ID: 11d75e72-1a57-45c6-b99a-8678facca2b8) from Async(default) in 394.94ms
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020] Performing ActiveStorage::PurgeJob (Job ID: dce01c5b-60ad-43a7-8d80-750e9703c020) from Async(default) with arguments: #<GlobalID:0x00007fffe345ce60 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020]   [1m[36mActiveStorage::Attachment Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020]   [1m[36mActiveStorage::Blob Destroy (1.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020]   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020] [36m  S3 Storage (40.3ms) [0m[31mDeleted file from key: 94jobpxTMst2eW5qrtQdduYB[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020] [36m  S3 Storage (45.0ms) [0m[31mDeleted files by key prefix: variants/94jobpxTMst2eW5qrtQdduYB/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [dce01c5b-60ad-43a7-8d80-750e9703c020] Performed ActiveStorage::PurgeJob (Job ID: dce01c5b-60ad-43a7-8d80-750e9703c020) from Async(default) in 147.98ms
+Started GET "/" for ::1 at 2020-04-10 16:31:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 699ms (Views: 693.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-10 16:31:52 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (134.2ms)
+Completed 200 OK in 189ms (Views: 144.6ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2994ee0e4e1f67d9c9ed6ed6894c312bbfabd271/intling.png" for ::1 at 2020-04-10 16:31:53 -0400
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2994ee0e4e1f67d9c9ed6ed6894c312bbfabd271", "filename"=>"intling"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (7.0ms) [0m[34mGenerated URL for file at key: asPDq8ZTezA8S2Er6zt5xybm (https://newtube-dev.s3.amazonaws.com/asPDq8ZTezA8S2Er6zt5xybm?response-content-disposition=inline%3B%20filename%3D%22intling.png%22%3B%20filename%2A%3DUTF-8%27%27intling.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200410%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200410T203153Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7a895ba8b0460cd92a5d784b1a92a7ccb46d93875038c934a03ed4b3d885deca)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/asPDq8ZTezA8S2Er6zt5xybm?response-content-disposition=inline%3B%20filename%3D%22intling.png%22%3B%20filename%2A%3DUTF-8%27%27intling.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200410%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200410T203153Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7a895ba8b0460cd92a5d784b1a92a7ccb46d93875038c934a03ed4b3d885deca
+Completed 302 Found in 23ms (ActiveRecord: 0.5ms)
+
+
