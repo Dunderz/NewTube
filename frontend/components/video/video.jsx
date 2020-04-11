@@ -28,7 +28,7 @@ class Video extends React.Component {
                 return (
                   <li key={video.id}>
                     <h2>{video.title}</h2>
-                    <img src={video.videoUrl}/>
+                    <video src={video.videoUrl} controls/>
                   </li>
                 );
               })}
