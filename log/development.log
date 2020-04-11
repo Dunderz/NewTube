@@ -16893,3 +16893,257 @@ Completed 302 Found in 160ms (ActiveRecord: 1.4ms)
 [ActiveJob] [ActiveStorage::AnalyzeJob] [dd93b056-92dd-41a6-b60e-6caf72709727]   ↳ db/seeds.rb:14
 [ActiveJob] [ActiveStorage::AnalyzeJob] [dd93b056-92dd-41a6-b60e-6caf72709727] Performed ActiveStorage::AnalyzeJob (Job ID: dd93b056-92dd-41a6-b60e-6caf72709727) from Inline(default) in 184.43ms
 [ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: dd93b056-92dd-41a6-b60e-6caf72709727) to Inline(default) with arguments: #<GlobalID:0x00007fffddb29140 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/7>>
+Started GET "/" for ::1 at 2020-04-11 13:50:04 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1797.5ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 1919ms (Views: 1906.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-11 13:50:07 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (8.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (149.0ms)
+Completed 200 OK in 214ms (Views: 141.4ms | ActiveRecord: 37.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--094b71296ba1cc735a5e211a96448a30b8b92712/omardance.mp4" for ::1 at 2020-04-11 13:50:07 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--094b71296ba1cc735a5e211a96448a30b8b92712", "filename"=>"omardance"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (9.2ms) [0m[34mGenerated URL for file at key: aWcqmmApgBxgQCLAr1w2ad4i (https://newtube-dev.s3.amazonaws.com/aWcqmmApgBxgQCLAr1w2ad4i?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200411T175007Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=476dbe9b1ca38e1222dd14ea12809c2d096563db08ec274526afd5b601a61c31)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/aWcqmmApgBxgQCLAr1w2ad4i?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200411T175007Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=476dbe9b1ca38e1222dd14ea12809c2d096563db08ec274526afd5b601a61c31
+Completed 302 Found in 49ms (ActiveRecord: 0.8ms)
+
+
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mVideo Load (2.8ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mVideo Destroy (0.6ms)[0m  [1m[31mDELETE FROM "videos" WHERE "videos"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f] Performing ActiveStorage::PurgeJob (Job ID: 2a3dc1e9-1047-480e-ba2b-23b9e312194f) from Inline(default) with arguments: #<GlobalID:0x00007fffeac5a4d0 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 7]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f] [36m  S3 Storage (210.0ms) [0m[31mDeleted file from key: aWcqmmApgBxgQCLAr1w2ad4i[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2a3dc1e9-1047-480e-ba2b-23b9e312194f] Performed ActiveStorage::PurgeJob (Job ID: 2a3dc1e9-1047-480e-ba2b-23b9e312194f) from Inline(default) in 322.66ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 2a3dc1e9-1047-480e-ba2b-23b9e312194f) to Inline(default) with arguments: #<GlobalID:0x00007fffebf08208 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/7>>
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 61]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demo"], ["email", "demo@gmail.com"], ["password_digest", "$2a$12$ylJcwX9SIdra8zUq/zPiJ.91IzjNPpPnF14YHKkTRHVB0xtZNfE32"], ["session_token", "ZdT555Xi4DRwrhx44xG-8A"], ["created_at", "2020-04-11 20:01:21.969195"], ["updated_at", "2020-04-11 20:01:21.969195"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVideo Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "videos" WHERE "videos"."title" = $1 LIMIT $2[0m  [["title", "look at omar"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mVideo Create (0.5ms)[0m  [1m[32mINSERT INTO "videos" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "look at omar"], ["author_id", 1], ["created_at", "2020-04-11 20:01:21.974149"], ["updated_at", "2020-04-11 20:01:21.974149"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+[36m  S3 Storage (611.4ms) [0m[32mUploaded file to key: LXRGDiMSMjMagDUBZzz4gGMk (checksum: HE7Lmp5raVHUhgcRPgy7lQ==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "LXRGDiMSMjMagDUBZzz4gGMk"], ["filename", "omardance.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 666120], ["checksum", "HE7Lmp5raVHUhgcRPgy7lQ=="], ["created_at", "2020-04-11 20:01:22.686052"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 11], ["blob_id", 8], ["created_at", "2020-04-11 20:01:22.691978"]]
+  ↳ db/seeds.rb:15
+  [1m[36mVideo Update (0.8ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-04-11 20:01:22.694660"], ["id", 11]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:15
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260] Performing ActiveStorage::AnalyzeJob (Job ID: e21fb537-654a-455f-b59b-4f3da3fea260) from Inline(default) with arguments: #<GlobalID:0x00007fffed5090e8 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260] [36m  S3 Storage (221.2ms) [0m[34mDownloaded file from key: LXRGDiMSMjMagDUBZzz4gGMk[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260]   ↳ db/seeds.rb:15
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260]   ↳ db/seeds.rb:15
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260]   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260]   ↳ db/seeds.rb:15
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e21fb537-654a-455f-b59b-4f3da3fea260] Performed ActiveStorage::AnalyzeJob (Job ID: e21fb537-654a-455f-b59b-4f3da3fea260) from Inline(default) in 232.41ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e21fb537-654a-455f-b59b-4f3da3fea260) to Inline(default) with arguments: #<GlobalID:0x00007fffebc22e58 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/8>>
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mVideo Load (2.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mVideo Destroy (0.7ms)[0m  [1m[31mDELETE FROM "videos" WHERE "videos"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Attachment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a] Performing ActiveStorage::PurgeJob (Job ID: 0f19df73-e033-48c2-9452-c7f94250041a) from Inline(default) with arguments: #<GlobalID:0x00007ffff6145958 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 8]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a]   ↳ db/seeds.rb:10
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a] [36m  S3 Storage (173.0ms) [0m[31mDeleted file from key: LXRGDiMSMjMagDUBZzz4gGMk[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0f19df73-e033-48c2-9452-c7f94250041a] Performed ActiveStorage::PurgeJob (Job ID: 0f19df73-e033-48c2-9452-c7f94250041a) from Inline(default) in 203.15ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 0f19df73-e033-48c2-9452-c7f94250041a) to Inline(default) with arguments: #<GlobalID:0x00007ffff76acfa8 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/8>>
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 62]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demo"], ["email", "demo@gmail.com"], ["password_digest", "$2a$12$Y38SZS4RzzOYuMj92vdNFukeWEjiOB2eVRnLhvfv/6lQBd6XW1EX."], ["session_token", "CL4iQEs4d5DN2jUOmzJIeg"], ["created_at", "2020-04-11 20:09:06.851621"], ["updated_at", "2020-04-11 20:09:06.851621"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVideo Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "videos" WHERE "videos"."title" = $1 LIMIT $2[0m  [["title", "look at omar"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mVideo Create (0.5ms)[0m  [1m[32mINSERT INTO "videos" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "look at omar"], ["author_id", 1], ["created_at", "2020-04-11 20:09:06.855963"], ["updated_at", "2020-04-11 20:09:06.855963"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+Started GET "/" for ::1 at 2020-04-11 16:10:21 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2106.5ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 2451ms (Views: 2412.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-11 16:10:24 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (7.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (88.7ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 27.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/videos/index.json.jbuilder:3:in `block in _app_views_api_videos_index_json_jbuilder___466122904125090480_70032114475580'
+  app/views/api/videos/index.json.jbuilder:1:in `_app_views_api_videos_index_json_jbuilder___466122904125090480_70032114475580'
+  app/controllers/api/videos_controller.rb:4:in `index'
+
+Started POST "/api/session" for ::1 at 2020-04-11 16:10:27 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 63], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 63], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8qwmXmP6ZbT6rVZgK7-uhQ"], ["updated_at", "2020-04-11 20:10:28.017570"], ["id", 63]]
+  ↳ app/models/user.rb:47
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:47
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (11.0ms)
+Completed 200 OK in 292ms (Views: 27.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-11 16:10:28 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (2.0ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (20.4ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/videos/index.json.jbuilder:3:in `block in _app_views_api_videos_index_json_jbuilder___466122904125090480_70032112861340'
+  app/views/api/videos/index.json.jbuilder:1:in `_app_views_api_videos_index_json_jbuilder___466122904125090480_70032112861340'
+  app/controllers/api/videos_controller.rb:4:in `index'
+
