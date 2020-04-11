@@ -23,16 +23,18 @@ class Video extends React.Component {
 
     render() {
         return (
-            <ul>
+            <section className="video-section">
               {this.state.videos.map(video => {
                 return (
-                  <li key={video.id}>
-                    <h2>{video.title}</h2>
-                    <video src={video.videoUrl} controls/>
-                  </li>
+                  <div className="video-container">
+                    <div className="video-index" key={video.id}>
+                      <video src={video.videoUrl} controls/>
+                      <h2>{video.title}</h2>
+                    </div>
+                  </div>
                 );
               })}
-            </ul>
+            </section>
           );
     }
 }

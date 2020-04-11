@@ -1,0 +1,18 @@
+.video-index {
+    overflow: hidden;
+}
+
+.video-index video {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    min-height: 160px;
+    outline: none;
+    background: none;
+    overflow: hidden;
+}
+
+.video-container {
+    margin: 0 16px 40px 0;
+    width: calc(100% / 4.25);
+}
