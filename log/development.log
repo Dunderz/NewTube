@@ -17147,3 +17147,105 @@ Module::DelegationError - to_model delegated to attachment, but attachment is ni
   app/views/api/videos/index.json.jbuilder:1:in `_app_views_api_videos_index_json_jbuilder___466122904125090480_70032112861340'
   app/controllers/api/videos_controller.rb:4:in `index'
 
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mVideo Load (3.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mVideo Destroy (0.6ms)[0m  [1m[31mDELETE FROM "videos" WHERE "videos"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 63]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demo"], ["email", "demo@gmail.com"], ["password_digest", "$2a$12$Kd.NxgYaoMOskkXMChIxJ.a7dbQI8PMPD5PKIIMaewMyc3gLmRwZG"], ["session_token", "qa930s6Tyn703p2Vkiw-jQ"], ["created_at", "2020-04-11 20:18:43.807183"], ["updated_at", "2020-04-11 20:18:43.807183"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVideo Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "videos" WHERE "videos"."title" = $1 LIMIT $2[0m  [["title", "look at omar"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mVideo Create (0.4ms)[0m  [1m[32mINSERT INTO "videos" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "look at omar"], ["author_id", 1], ["created_at", "2020-04-11 20:18:43.812156"], ["updated_at", "2020-04-11 20:18:43.812156"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+[36m  S3 Storage (725.0ms) [0m[32mUploaded file to key: XtBrv1cPV1SbrRyNmXMdDaiN (checksum: HE7Lmp5raVHUhgcRPgy7lQ==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mActiveStorage::Blob Create (3.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "XtBrv1cPV1SbrRyNmXMdDaiN"], ["filename", "omardance.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 666120], ["checksum", "HE7Lmp5raVHUhgcRPgy7lQ=="], ["created_at", "2020-04-11 20:18:44.932011"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mActiveStorage::Attachment Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 13], ["blob_id", 9], ["created_at", "2020-04-11 20:18:44.971144"]]
+  ↳ db/seeds.rb:16
+  [1m[36mVideo Update (0.5ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-04-11 20:18:44.974180"], ["id", 13]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4] Performing ActiveStorage::AnalyzeJob (Job ID: af51c24a-ef84-4267-bac7-08f23039def4) from Inline(default) with arguments: #<GlobalID:0x00007ffff1b58e18 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4] [36m  S3 Storage (224.2ms) [0m[34mDownloaded file from key: XtBrv1cPV1SbrRyNmXMdDaiN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4]   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af51c24a-ef84-4267-bac7-08f23039def4] Performed ActiveStorage::AnalyzeJob (Job ID: af51c24a-ef84-4267-bac7-08f23039def4) from Inline(default) in 241.82ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: af51c24a-ef84-4267-bac7-08f23039def4) to Inline(default) with arguments: #<GlobalID:0x00007ffff218a1d8 @uri=#<URI::GID gid://new-tube/ActiveStorage::Blob/9>>
+Started GET "/" for ::1 at 2020-04-11 16:18:55 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2080.9ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8qwmXmP6ZbT6rVZgK7-uhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 2208ms (Views: 2198.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-11 16:18:58 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (3.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (117.2ms)
+Completed 200 OK in 152ms (Views: 110.2ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17c291260bac861175139ae9b2fd0edfd68b185c/omardance.mp4" for ::1 at 2020-04-11 16:18:58 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17c291260bac861175139ae9b2fd0edfd68b185c", "filename"=>"omardance"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (6.7ms) [0m[34mGenerated URL for file at key: XtBrv1cPV1SbrRyNmXMdDaiN (https://newtube-dev.s3.amazonaws.com/XtBrv1cPV1SbrRyNmXMdDaiN?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200411T201858Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b57c7d297d1510c10ba1b8f12adb2469619b047bb978367d4b9fecb568c452e9)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/XtBrv1cPV1SbrRyNmXMdDaiN?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200411T201858Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b57c7d297d1510c10ba1b8f12adb2469619b047bb978367d4b9fecb568c452e9
+Completed 302 Found in 30ms (ActiveRecord: 0.4ms)
+
+
