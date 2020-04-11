@@ -11,4 +11,4 @@ User.destroy_all
 
 demo = User.create!(username:"demo", email:"demo@gmail.com", password:"password")
 v = Video.create!(title: "look at omar", author_id: 1)
-v.attach(io: open("https://newtube-dev.s3.amazonaws.com/6WCKWMGAznALUFxi8cWvw2in"), filename: "omardance.mp4")
+v.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/6WCKWMGAznALUFxi8cWvw2in"), filename: "omardance.mp4")
