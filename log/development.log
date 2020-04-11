@@ -16469,3 +16469,37 @@ Processing by Api::VideosController#index as JSON
 Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/" for ::1 at 2020-04-11 12:18:54 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6122.8ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 6256ms (Views: 6243.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-11 12:19:01 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (10.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (243.4ms)
+Completed 200 OK in 319ms (Views: 265.1ms | ActiveRecord: 37.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29bddad284c2f9aa5710a4654734d62079ff5840/omardance.mp4" for ::1 at 2020-04-11 12:19:01 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29bddad284c2f9aa5710a4654734d62079ff5840", "filename"=>"omardance"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (11.4ms) [0m[34mGenerated URL for file at key: CY1fuZQGhti2FZrZDgJ4z8fa (https://newtube-dev.s3.amazonaws.com/CY1fuZQGhti2FZrZDgJ4z8fa?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200411T161901Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d328ec2743aef8e19bdaaad5a8376d86fc839112be6b24fbe20a485db479f10f)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/CY1fuZQGhti2FZrZDgJ4z8fa?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200411T161901Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d328ec2743aef8e19bdaaad5a8376d86fc839112be6b24fbe20a485db479f10f
+Completed 302 Found in 191ms (ActiveRecord: 0.9ms)
+
+
