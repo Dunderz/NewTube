@@ -9,13 +9,15 @@ class MainContent extends React.Component {
 
     render() {
         return (
-            <>  
-                <div className="left-nav-component">
-                    <LeftNav />
-                </div>
-                <div className="video-component">
-                    <VideoComponent />
-                </div>
+            <>
+                <div className="main-content">
+                    <div className="left-nav-component">
+                        <LeftNav />
+                    </div>
+                    <div className="video-component">
+                        <VideoComponent />
+                    </div>
+                </div>  
             </>
         );
     }
