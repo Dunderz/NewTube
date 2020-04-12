@@ -3,6 +3,10 @@
 .video-section {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 20px;
+    min-width: 450px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .video-container {

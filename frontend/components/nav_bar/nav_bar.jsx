@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { faUserCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ProfileMenu from './profile_menu';
+import ProfileMenu from '../profile_menu/profile_menu';
 
 export default ({ currentUser, logout }) => {
     const display = currentUser ? (
