@@ -1,6 +1,6 @@
 import React from 'react';
-import NavBarContainer from './nav_bar/nav_bar_container';
-import VideoComponent  from './video/video';
+import NavBarContainer from '../nav_bar/nav_bar_container';
+import MainContent from '../main_content/main_content';
 
 
 class Home extends React.Component {
@@ -12,7 +12,7 @@ class Home extends React.Component {
         return (
             <div className="home">
                 <NavBarContainer />
-                <VideoComponent />
+                <MainContent />
             </div>
         );
     }

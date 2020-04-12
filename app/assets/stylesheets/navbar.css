@@ -8,6 +8,7 @@
     position: fixed;
     width: 100%;
     height: 58px;
+    opacity: 0.8;
 }
 
 #new-tube-logo {

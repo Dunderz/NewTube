@@ -24,7 +24,7 @@ export default ({ currentUser, logout }) => {
     );
 
     return (
-        <header className="nav-bar">
+        <div className="nav-bar">
             <div className="top-left">
                 <div className="hamburger-container">
                     <img id='hamburger-logo' src={ window.hamburger } />
@@ -45,6 +45,6 @@ export default ({ currentUser, logout }) => {
                 </div>
                 {display}
             </div>
-        </header>
+        </div>
     )
 }
