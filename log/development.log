@@ -28866,3 +28866,973 @@ Processing by Api::VideosController#index as JSON
 Completed 200 OK in 164ms (Views: 152.2ms | ActiveRecord: 10.6ms)
 
 
+Started GET "/" for ::1 at 2020-04-12 15:01:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 134ms (Views: 102.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:01:44 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (3.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (26.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (132.2ms)
+Completed 200 OK in 190ms (Views: 151.7ms | ActiveRecord: 37.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324/omardance.mp4" for ::1 at 2020-04-12 15:01:44 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5/michaelscottKillmyself.mp4" for ::1 at 2020-04-12 15:01:44 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2/dantecrazyfrog.mp4" for ::1 at 2020-04-12 15:01:44 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394/whatsWrongWithYou.mp4" for ::1 at 2020-04-12 15:01:44 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a/rengarlaugh.mp4" for ::1 at 2020-04-12 15:01:44 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324", "filename"=>"omardance"}
+  [1m[36mActiveStorage::Blob Load (56.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.3ms) [0m[34mGenerated URL for file at key: wwqdMCBzVwHeMA6jKVTSZAWC (https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ee5829c015840204dcb779c3e4bf9a2c9d7b91364945f7fa9a4110edafeb5a8c)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ee5829c015840204dcb779c3e4bf9a2c9d7b91364945f7fa9a4110edafeb5a8c
+Completed 302 Found in 273ms (ActiveRecord: 56.5ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2", "filename"=>"dantecrazyfrog"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a", "filename"=>"rengarlaugh"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394", "filename"=>"whatsWrongWithYou"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5", "filename"=>"michaelscottKillmyself"}
+  [1m[36mActiveStorage::Blob Load (22.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (5.0ms) [0m[34mGenerated URL for file at key: pojx2bjADcdnWcvm41eDXKcz (https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c78ee71350533402238d7abea0f999e0700e83944de0a7b05ea704591371611f)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c78ee71350533402238d7abea0f999e0700e83944de0a7b05ea704591371611f
+Completed 302 Found in 92ms (ActiveRecord: 23.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (5.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (15.1ms) [0m[34mGenerated URL for file at key: PDmPwvmTKjMj9qmeJiqkta2J (https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6e7e047fd1e3912cd25ef92d82a76f308a54c7c030094439a1bc9802eaaee01f)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6e7e047fd1e3912cd25ef92d82a76f308a54c7c030094439a1bc9802eaaee01f
+  [1m[36mActiveStorage::Blob Load (5.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (5.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (5.1ms) [0m[34mGenerated URL for file at key: CUJD1nXrCWjBhH9kwL3eCPX1 (https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7cdcd1d991a1235eae254b230e7303641fbf8710e365145f91007a1b25c50006)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7cdcd1d991a1235eae254b230e7303641fbf8710e365145f91007a1b25c50006
+Completed 302 Found in 94ms (ActiveRecord: 6.2ms)
+
+
+[36m  S3 Storage (5.6ms) [0m[34mGenerated URL for file at key: 8KhXjnBiXTTKUyKjhkgWcYxv (https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=896b723fdad5829eb144302fb77783a0372905688bf77c5b478ec3fa7c0cc315)[0m
+Completed 302 Found in 104ms (ActiveRecord: 7.7ms)
+
+
+Redirected to https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=896b723fdad5829eb144302fb77783a0372905688bf77c5b478ec3fa7c0cc315
+Completed 302 Found in 110ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec/gachiclap.mp4" for ::1 at 2020-04-12 15:01:45 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec", "filename"=>"gachiclap"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (5.0ms) [0m[34mGenerated URL for file at key: FM6ZrrBwMTUUR6gUkRNUHp1r (https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d584efbb6fdbf66e1366355523608e20aa3fa41b903979ed64f3e54d21fed158)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190145Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d584efbb6fdbf66e1366355523608e20aa3fa41b903979ed64f3e54d21fed158
+Completed 302 Found in 27ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f/starmanmariokart.mp4" for ::1 at 2020-04-12 15:01:46 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f", "filename"=>"starmanmariokart"}
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: DgWHADg15T1JpgJNnu6vYHai (https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190146Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7627e92c969fb5ef41d016f2f233ce0a2c90019ef26e15806f9309bde5b331be)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190146Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7627e92c969fb5ef41d016f2f233ce0a2c90019ef26e15806f9309bde5b331be
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:01:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 134ms (Views: 125.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:01:57 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (12.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (15.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (27.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (209.1ms)
+Completed 200 OK in 319ms (Views: 252.6ms | ActiveRecord: 64.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324/omardance.mp4" for ::1 at 2020-04-12 15:01:57 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2/dantecrazyfrog.mp4" for ::1 at 2020-04-12 15:01:57 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5/michaelscottKillmyself.mp4" for ::1 at 2020-04-12 15:01:57 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394/whatsWrongWithYou.mp4" for ::1 at 2020-04-12 15:01:57 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec/gachiclap.mp4" for ::1 at 2020-04-12 15:01:57 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2", "filename"=>"dantecrazyfrog"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394", "filename"=>"whatsWrongWithYou"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324", "filename"=>"omardance"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5", "filename"=>"michaelscottKillmyself"}
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (30.6ms) [0m[34mGenerated URL for file at key: CUJD1nXrCWjBhH9kwL3eCPX1 (https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=959287f608fcf4b66aa070e6f8172742318c958b64db871e851ff8e373ee92c6)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=959287f608fcf4b66aa070e6f8172742318c958b64db871e851ff8e373ee92c6
+Completed 302 Found in 56ms (ActiveRecord: 1.7ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP4
+  [1m[36mActiveStorage::Blob Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.3ms) [0m[34mGenerated URL for file at key: wwqdMCBzVwHeMA6jKVTSZAWC (https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5862c6e7a7c13521e40de0fc3a24d19ed8bf9ed40968323875576d684dcf8d41)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5862c6e7a7c13521e40de0fc3a24d19ed8bf9ed40968323875576d684dcf8d41
+Completed 302 Found in 71ms (ActiveRecord: 3.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (5.1ms) [0m[34mGenerated URL for file at key: 8KhXjnBiXTTKUyKjhkgWcYxv (https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=90ee3ca2eef869a26c94f272aaffbf163cbcc2aa58a45c0339f02cf1234f2e47)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=90ee3ca2eef869a26c94f272aaffbf163cbcc2aa58a45c0339f02cf1234f2e47
+Completed 302 Found in 101ms (ActiveRecord: 0.9ms)
+
+
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec", "filename"=>"gachiclap"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.8ms) [0m[34mGenerated URL for file at key: pojx2bjADcdnWcvm41eDXKcz (https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b372efbec5b719ca7e2908c457304538dabb6f4b36005056947fdd3113355263)[0m
+  [1m[36mActiveStorage::Blob Load (4.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+Redirected to https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b372efbec5b719ca7e2908c457304538dabb6f4b36005056947fdd3113355263
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 156ms (ActiveRecord: 1.1ms)
+
+
+[36m  S3 Storage (2.7ms) [0m[34mGenerated URL for file at key: FM6ZrrBwMTUUR6gUkRNUHp1r (https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ce014b2cf73abcfb376bde89d6d595b5a033be59761d022a87c5ad127f3bfa6b)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ce014b2cf73abcfb376bde89d6d595b5a033be59761d022a87c5ad127f3bfa6b
+Completed 302 Found in 36ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a/rengarlaugh.mp4" for ::1 at 2020-04-12 15:01:57 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a", "filename"=>"rengarlaugh"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.3ms) [0m[34mGenerated URL for file at key: PDmPwvmTKjMj9qmeJiqkta2J (https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b79faa3b6de47e1e039abd0af6e9a696fd7de3bfa99bd1d1a4f9d99fdace7de7)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190157Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b79faa3b6de47e1e039abd0af6e9a696fd7de3bfa99bd1d1a4f9d99fdace7de7
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f/starmanmariokart.mp4" for ::1 at 2020-04-12 15:01:58 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f", "filename"=>"starmanmariokart"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.7ms) [0m[34mGenerated URL for file at key: DgWHADg15T1JpgJNnu6vYHai (https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190158Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c4472cb2c92ddefdabb6a11aeea59296f430b29ab5fcc09a2eff8ea6c014ff79)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190158Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c4472cb2c92ddefdabb6a11aeea59296f430b29ab5fcc09a2eff8ea6c014ff79
+Completed 302 Found in 19ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 211ms (Views: 205.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:06 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.7ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (105.2ms)
+Completed 200 OK in 194ms (Views: 182.5ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 127ms (Views: 119.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:14 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (8.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (270.2ms)
+Completed 200 OK in 390ms (Views: 359.0ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 191ms (Views: 186.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:22 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (7.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (5.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (169.1ms)
+Completed 200 OK in 252ms (Views: 229.9ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 119ms (Views: 112.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:28 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (1.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (5.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (182.2ms)
+Completed 200 OK in 272ms (Views: 251.0ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 220ms (Views: 212.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:35 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (4.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (171.8ms)
+Completed 200 OK in 236ms (Views: 219.4ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 132ms (Views: 122.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:42 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (2.0ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (95.4ms)
+Completed 200 OK in 292ms (Views: 273.5ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:02:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 125ms (Views: 118.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:02:46 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (68.0ms)
+Completed 200 OK in 93ms (Views: 83.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:04:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 145ms (Views: 136.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:04:27 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.9ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (5.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (36.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (208.6ms)
+Completed 200 OK in 261ms (Views: 209.8ms | ActiveRecord: 50.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:04:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 147ms (Views: 123.6ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:04:59 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (12.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (4.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (5.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (5.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (5.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (277.6ms)
+Completed 200 OK in 381ms (Views: 328.3ms | ActiveRecord: 51.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:05:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 109ms (Views: 105.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:05:58 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (1.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (138.6ms)
+Completed 200 OK in 227ms (Views: 210.8ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:06:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 121ms (Views: 114.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:06:12 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (1.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (12.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (112.8ms)
+Completed 200 OK in 173ms (Views: 144.6ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:08:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (19.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 197ms (Views: 160.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:08:42 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (1.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (6.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (199.1ms)
+Completed 200 OK in 311ms (Views: 282.1ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324/omardance.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324", "filename"=>"omardance"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a/rengarlaugh.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5/michaelscottKillmyself.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec/gachiclap.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2/dantecrazyfrog.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5", "filename"=>"michaelscottKillmyself"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec", "filename"=>"gachiclap"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2", "filename"=>"dantecrazyfrog"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a", "filename"=>"rengarlaugh"}
+  [1m[36mActiveStorage::Blob Load (4.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (9.4ms) [0m[34mGenerated URL for file at key: wwqdMCBzVwHeMA6jKVTSZAWC (https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2979533ebc4492321622e6d4399c57cb9f4190f38ac3506d9ea43916cd1b73cc)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2979533ebc4492321622e6d4399c57cb9f4190f38ac3506d9ea43916cd1b73cc
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (8.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.4ms) [0m[34mGenerated URL for file at key: pojx2bjADcdnWcvm41eDXKcz (https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=39753fcb6448851f1a6d99422f586b8dc9e49879ad7beb6eaba1fd15ec3de01e)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=39753fcb6448851f1a6d99422f586b8dc9e49879ad7beb6eaba1fd15ec3de01e
+Completed 302 Found in 218ms (ActiveRecord: 42.5ms)
+
+
+[36m  S3 Storage (11.4ms) [0m[34mGenerated URL for file at key: 8KhXjnBiXTTKUyKjhkgWcYxv (https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9a3e04967c60200eecbb39b0ad5d9d17b9f2267c0b1caeef3d83cbef8992766f)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9a3e04967c60200eecbb39b0ad5d9d17b9f2267c0b1caeef3d83cbef8992766f
+Completed 302 Found in 258ms (ActiveRecord: 26.6ms)
+
+
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+Completed 302 Found in 264ms (ActiveRecord: 47.9ms)
+
+
+[36m  S3 Storage (6.6ms) [0m[34mGenerated URL for file at key: FM6ZrrBwMTUUR6gUkRNUHp1r (https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=46b28884c5589d99bcd805dd48854f6e416f883bce5625be875621896c582291)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=46b28884c5589d99bcd805dd48854f6e416f883bce5625be875621896c582291
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.1ms) [0m[34mGenerated URL for file at key: PDmPwvmTKjMj9qmeJiqkta2J (https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9ac202e6b0733f067239f4258727c10d2bb4f81044b313199b930148705a8cfc)[0m
+Completed 302 Found in 288ms (ActiveRecord: 91.9ms)
+
+
+Redirected to https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9ac202e6b0733f067239f4258727c10d2bb4f81044b313199b930148705a8cfc
+Completed 302 Found in 245ms (ActiveRecord: 89.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394/whatsWrongWithYou.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f/starmanmariokart.mp4" for ::1 at 2020-04-12 15:08:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394", "filename"=>"whatsWrongWithYou"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f", "filename"=>"starmanmariokart"}
+  [1m[36mActiveStorage::Blob Load (4.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.3ms) [0m[34mGenerated URL for file at key: CUJD1nXrCWjBhH9kwL3eCPX1 (https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4f34affcd516c8f365a3fa041eff99bd396d25b1d7092f31eb5c379eedd7735e)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4f34affcd516c8f365a3fa041eff99bd396d25b1d7092f31eb5c379eedd7735e
+Completed 302 Found in 158ms (ActiveRecord: 4.3ms)
+
+
+  [1m[36mActiveStorage::Blob Load (49.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (16.3ms) [0m[34mGenerated URL for file at key: DgWHADg15T1JpgJNnu6vYHai (https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=21742744334b600cdf5c55fd36ffde60cb509ed8f0d278c30f3f86a16c153fdf)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190843Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=21742744334b600cdf5c55fd36ffde60cb509ed8f0d278c30f3f86a16c153fdf
+Completed 302 Found in 180ms (ActiveRecord: 49.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-12 15:08:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.6ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYaHPPIzbHowBTtYjfpBsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 175ms (Views: 165.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/videos" for ::1 at 2020-04-12 15:08:53 -0400
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (18.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (5.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 42], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 43], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (5.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 47], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 48], ["record_type", "Video"], ["name", "video"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:3
+  Rendered api/videos/index.json.jbuilder (191.9ms)
+Completed 200 OK in 236ms (Views: 189.9ms | ActiveRecord: 45.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324/omardance.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2/dantecrazyfrog.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--88f663edb0bf13df06d73395f72a930fc589b5b2", "filename"=>"dantecrazyfrog"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3138e4f56846d84da9a98cce222d0658cba34324", "filename"=>"omardance"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a/rengarlaugh.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5/michaelscottKillmyself.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394/whatsWrongWithYou.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::BlobsController#show as MP4
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (8.6ms) [0m[34mGenerated URL for file at key: wwqdMCBzVwHeMA6jKVTSZAWC (https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7e36d3a2972854ddc666c8e0fb06dea393f966a889f9f7839c0576f05332035d)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/wwqdMCBzVwHeMA6jKVTSZAWC?response-content-disposition=attachment%3B%20filename%3D%22omardance.mp4%22%3B%20filename%2A%3DUTF-8%27%27omardance.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7e36d3a2972854ddc666c8e0fb06dea393f966a889f9f7839c0576f05332035d
+Completed 302 Found in 38ms (ActiveRecord: 2.5ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b561a799daa31078c995a0cd5674fde4d9ccbcc5", "filename"=>"michaelscottKillmyself"}
+[36m  S3 Storage (2.7ms) [0m[34mGenerated URL for file at key: pojx2bjADcdnWcvm41eDXKcz (https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0bdc54ca7667a1506e3ad8ad8fe3e20818e44accf02877f5373da3163aac10d0)[0m
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e06b2f6d267318266f1335c4def8bb5adb8ed394", "filename"=>"whatsWrongWithYou"}
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f4551016efffd4e15427ceff70c3065bc4b3f8a", "filename"=>"rengarlaugh"}
+Redirected to https://newtube-dev.s3.amazonaws.com/pojx2bjADcdnWcvm41eDXKcz?response-content-disposition=attachment%3B%20filename%3D%22dantecrazyfrog.mp4%22%3B%20filename%2A%3DUTF-8%27%27dantecrazyfrog.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0bdc54ca7667a1506e3ad8ad8fe3e20818e44accf02877f5373da3163aac10d0
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (6.8ms) [0m[34mGenerated URL for file at key: 8KhXjnBiXTTKUyKjhkgWcYxv (https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=04c5b2d8cd56ed194bb0d6b7bc1641ecd38632e67bb062d9f27de1c79c30cbd3)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/8KhXjnBiXTTKUyKjhkgWcYxv?response-content-disposition=attachment%3B%20filename%3D%22michaelscottKillmyself.mp4%22%3B%20filename%2A%3DUTF-8%27%27michaelscottKillmyself.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=04c5b2d8cd56ed194bb0d6b7bc1641ecd38632e67bb062d9f27de1c79c30cbd3
+Completed 302 Found in 52ms (ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveStorage::Blob Load (9.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+Completed 302 Found in 72ms (ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (8.3ms) [0m[34mGenerated URL for file at key: PDmPwvmTKjMj9qmeJiqkta2J (https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e66b78e13ec44abbc4fc4fd7ebaba57fab8f0d42bfc1a1ea6ab77c2c2d97a3f5)[0m
+[36m  S3 Storage (2.4ms) [0m[34mGenerated URL for file at key: CUJD1nXrCWjBhH9kwL3eCPX1 (https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=89f5609bf2f8a762a2983bf69c12d35733e4f1bd93f338c4912124aab55a6dbf)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/PDmPwvmTKjMj9qmeJiqkta2J?response-content-disposition=attachment%3B%20filename%3D%22rengarlaugh.mp4%22%3B%20filename%2A%3DUTF-8%27%27rengarlaugh.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e66b78e13ec44abbc4fc4fd7ebaba57fab8f0d42bfc1a1ea6ab77c2c2d97a3f5
+Redirected to https://newtube-dev.s3.amazonaws.com/CUJD1nXrCWjBhH9kwL3eCPX1?response-content-disposition=attachment%3B%20filename%3D%22whatsWrongWithYou.mp4%22%3B%20filename%2A%3DUTF-8%27%27whatsWrongWithYou.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=89f5609bf2f8a762a2983bf69c12d35733e4f1bd93f338c4912124aab55a6dbf
+Completed 302 Found in 72ms (ActiveRecord: 9.1ms)
+
+
+Completed 302 Found in 77ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec/gachiclap.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb780a664079e268cf7ee5a413c3348bff15eeec", "filename"=>"gachiclap"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.9ms) [0m[34mGenerated URL for file at key: FM6ZrrBwMTUUR6gUkRNUHp1r (https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=95bcbfb37a81dd1997647ff792cddc9ad508afc6e10b15370bda920305005a2b)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/FM6ZrrBwMTUUR6gUkRNUHp1r?response-content-disposition=attachment%3B%20filename%3D%22gachiclap.mp4%22%3B%20filename%2A%3DUTF-8%27%27gachiclap.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190853Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=95bcbfb37a81dd1997647ff792cddc9ad508afc6e10b15370bda920305005a2b
+Completed 302 Found in 36ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f/starmanmariokart.mp4" for ::1 at 2020-04-12 15:08:53 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--22eefddeba09beb6272457491005097789768b3f", "filename"=>"starmanmariokart"}
+  [1m[36mActiveStorage::Blob Load (3.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ /home/dunderproto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.4ms) [0m[34mGenerated URL for file at key: DgWHADg15T1JpgJNnu6vYHai (https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190854Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=27a145391e6c45d448410f1a2934974fbe1c53ce9d58388298102ee10a7b24e9)[0m
+Redirected to https://newtube-dev.s3.amazonaws.com/DgWHADg15T1JpgJNnu6vYHai?response-content-disposition=attachment%3B%20filename%3D%22starmanmariokart.mp4%22%3B%20filename%2A%3DUTF-8%27%27starmanmariokart.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4ZQGRJPVTS2PZV6Q%2F20200412%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200412T190854Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=27a145391e6c45d448410f1a2934974fbe1c53ce9d58388298102ee10a7b24e9
+Completed 302 Found in 18ms (ActiveRecord: 3.3ms)
+
+

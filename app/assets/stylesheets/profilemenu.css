@@ -1,14 +1,15 @@
 .dropdown-show {
     display: block;
-    position: fixed;
-    right: 75px;
-    top: 8px;
-    z-index: 40;
-    height: 300px;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.98);
+    position: absolute;
+    right: 0px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-top: none;
+    top: 45px;
+    z-index: 99;
+    height: 500px;
+    width: 300px;
+    background-color: white;
+    
 }
 
 .dropdown-hidden {
