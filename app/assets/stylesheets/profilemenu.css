@@ -6,15 +6,11 @@
     border-top: none;
     top: 45px;
     z-index: 99;
-    height: 500px;
     width: 300px;
     background-color: white;
     
 }
 
-.dropdown-hidden {
-    display: none;
-}
 
 .profile-menu-icon {
     color: white;
@@ -24,6 +20,7 @@
     font-size: 24px;
     text-align: center;
     border-radius: 20px;
+    font-weight: 300;
 }
 
 .profile-letter {
@@ -33,3 +30,84 @@
 .profile-menu-icon:hover {
     cursor: pointer;
 }
+
+.dropdown-user-info {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 120px;
+}
+
+.dropdown-credentials {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.dropdown-username {
+    font-weight: 550;
+    font-size: 16px;
+}
+
+.dropdown-email {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.dropdown-google-account {
+    margin-top: 12px;
+    font-size: 14px;
+    color: blue;
+}
+
+.dropdown-google-account:hover {
+    cursor: pointer;
+}
+
+.dropdown-hidden {
+    display: none;
+}
+
+
+.user-icon {
+    font-size: 40px;
+    margin: 20px;
+}
+
+.dropdown-channel {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.dropdown-channel:hover {
+    cursor: pointer;
+    background-color: rgba(119, 119, 119, 0.1);
+}
+
+.dropdown-logout {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.dropdown-logout:hover {
+    cursor: pointer;
+    background-color: rgba(119, 119, 119, 0.1);
+}
+
+.dropdown-github { 
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.dropdown-github:hover {
+    cursor: pointer;
+    background-color: rgba(119, 119, 119, 0.1);
+}
+
+.dropdown-icon {
+    font-size: 24px;
+    margin: 10px;
+}
+
