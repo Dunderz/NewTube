@@ -26,7 +26,7 @@ class Video extends React.Component {
             <section className="video-section">
               {this.state.videos.map(video => {
                 return (
-                    <div className="video-container">                    
+                    <div key={video.id} className="video-container">                    
                       <div className="video-index" key={video.id}>
                         <video src={video.videoUrl} controls/>
                       </div>

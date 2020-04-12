@@ -7,24 +7,32 @@ class ProfileMenu extends React.Component {
         super(props);
 
         this.state = {
-            show: false
+            active: false
         }
+
+        this.toggleActive = this.toggleActive.bind(this);
     }
 
-    handleClick(e) {
-        this.setState({ show: !this.state.show });
+    toggleActive(e) {
+        this.setState({ active: !this.state.active });
     }
 
     render() {
-        let dropdown = (
-            <div>OH SHIT</div>
-        );
+        let isActive;
+        if (this.state.active) {
+            isActive = 'dropdown-show';
+        } else {
+            isActive = 'dropdown-hidden';
+        }
         return (
-            <>
-                <FontAwesomeIcon icon={faUserCircle} />
-                {dropdown}
-                <button onClick={this.props.logout}>Logout</button>
-            </>
+            <div className="profile-menu">
+                <div className="profile-menu-icon" onClick={this.toggleActive}>
+                    <p className="profile-letter">{this.props.currentUser.username[0].toUpperCase()}</p>
+                </div>
+                <div className={isActive}>
+                    <button onClick={this.props.logout}>Logout</button>
+                </div>
+            </div>
         )
     }
 }

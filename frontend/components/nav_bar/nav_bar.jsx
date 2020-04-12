@@ -7,8 +7,7 @@ import ProfileMenu from '../profile_menu/profile_menu';
 export default ({ currentUser, logout }) => {
     const display = currentUser ? (
             <div>
-                <p>Hello, { currentUser.username }</p>
-                <ProfileMenu logout={logout}/>
+                <ProfileMenu currentUser={currentUser} logout={logout}/>
             </div>
         ) : ( 
         
