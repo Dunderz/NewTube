@@ -4,10 +4,10 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 20px;
-    min-width: 450px;
+    min-width: 850px;
     max-width: 1300px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9
 }
 
 .video-container {
@@ -36,7 +36,6 @@
 
 .video-info {
     padding-top: 10px;
-    padding-bottom: 430px;
     font-size: 18px;
     text-align: center;
 }

@@ -107,7 +107,14 @@
     width: 120px;
     height: 40px;
     color: blue;
+    outline: none !important;
 }   
+
+.nav-sign-in-container:active {
+    transition: 0.25s;
+    background-color: #e9e6e6;
+    outline: none !important;
+}
 
 .sign-in-icon {
     margin-right: 8px;
@@ -120,4 +127,5 @@
 
 .nav-sign-in-link {
     text-decoration: none;
+    outline: none !important;
 }

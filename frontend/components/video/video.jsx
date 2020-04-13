@@ -28,7 +28,7 @@ class Video extends React.Component {
                 return (
                     <div key={video.id} className="video-container">                    
                       <div className="video-index" key={video.id}>
-                        <video src={video.videoUrl} controls/>
+                        <video src={video.videoUrl} controls={false}/>
                       </div>
                       <div className="video-info">
                         <h2>{video.title}</h2>
