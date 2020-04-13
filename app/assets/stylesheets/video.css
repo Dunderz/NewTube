@@ -4,10 +4,15 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 20px;
-    min-width: 850px;
+    min-width: 1000px;
     max-width: 1300px;
     margin: 0 auto;
     background-color: #f9f9f9
+}
+
+.video-link {
+    text-decoration: none;
+    color: black;
 }
 
 .video-container {
@@ -16,6 +21,10 @@
     width: 300px;
     height: 190px;
     margin-right: 25px;
+}
+
+.video-container:hover {
+    cursor: pointer;
 }
 
 .video-index {
