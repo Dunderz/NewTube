@@ -88,6 +88,15 @@
     border: 1px solid red !important;
 }
 
+.border-error:focus {
+    box-shadow: 0 0 0 0 red !important;
+}
+
+.form-sign-in > label input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px blue;
+}
+
 .input-username input {
     margin-top: 30px;
     width: 332px;
@@ -110,6 +119,7 @@
     outline: none;
     box-shadow: 0 0 0 2px blue;
   }
+
 
 input::placeholder {
     color: #858688;

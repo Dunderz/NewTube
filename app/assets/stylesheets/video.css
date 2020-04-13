@@ -7,10 +7,12 @@
     min-width: 450px;
     max-width: 1300px;
     margin: 0 auto;
+    background-color: #f9f9f9;
 }
 
 .video-container {
-    margin-top: 70px;
+    margin-top: 40px;
+    margin-bottom: 70px;
     width: 300px;
     height: 190px;
     margin-right: 25px;
@@ -33,7 +35,8 @@
 }
 
 .video-info {
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 430px;
     font-size: 18px;
     text-align: center;
 }
