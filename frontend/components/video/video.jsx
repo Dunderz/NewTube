@@ -4,28 +4,30 @@ import { Link } from 'react-router-dom';
 class Video extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            videos: []
-        }
-        this.fetchPosts = this.fetchPosts.bind(this);
+        
     }
 
-    fetchPosts() {
-        $.ajax({
-            url: "/api/videos"
-        }).then(videos => {
-            this.setState({ videos });
-        });
-    }
+    // fetchPosts() {
+    //     $.ajax({
+    //         url: "/api/videos"
+    //     }).then(videos => {
+    //         this.setState({ videos });
+    //     });
+    // }
 
     componentDidMount() {
-        this.fetchPosts();
+        this.props.requestVideos();
     }
 
     render() {
+        if (this.props.videos === undefined) {
+          return (
+            <></>
+          )
+        }
         return (
             <section className="video-section">
-              {this.state.videos.map(video => {
+              {this.props.videos.map(video => {
                 return (
                     <Link className="video-link" to={`/videos/${video.id}`}>
                       <div key={video.id} className="video-container">                    

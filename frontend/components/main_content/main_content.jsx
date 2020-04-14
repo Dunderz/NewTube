@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoComponent  from '../video/video';
+import VideoComponent  from '../video/video_container';
 import LeftNav from '../left_nav/left_nav';
 
 class MainContent extends React.Component {
