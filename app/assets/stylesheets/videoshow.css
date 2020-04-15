@@ -3,17 +3,26 @@
     top: 58px;
     min-width: 800px;
     display: flex;
-    background-color: #fafafa;
+    height: 100vh;
 }
 
 .videoshow-left-box {
     height: 100%;
-    width: 60%;
-    max-width: 1100px;
+    width: 75%;
     min-width: 600px;
     margin-left: 25px;
     margin-top: 25px;
     margin-right: 25px;
+}
+
+.videoshow-info {
+    padding-top: 20px;
+    padding-bottom: 8px; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.videoshow-title {
+    font-size: 18px;
 }
 
 .videoshow-player {
@@ -21,11 +30,94 @@
     background-color:black;
 }
 
+.videoshow-views-likes-options {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.videoshow-views {
+    font-size: 14px;
+    color: #606060;
+    display: flex;
+    align-items: center;
+}
+
+.videoshow-views-dot {
+    display: block;
+    height: 3px;
+    width: 3px;
+    background-color: #606060;
+    margin: 5px;
+    border-radius: 100%;
+}
+
+.videoshow-date {
+    font-size: 14px;
+    color: #606060;
+}
+
 #video {
     width: 100%;
 }
 
 .videoshow-right-box {
-    background-color: blue;
-    width: 30%
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    margin-top: 25px;
+    height: 100%;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.videoshow-up-next-container {
+    font-size: 16px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.videoshow-up-next-container p {
+    margin-bottom: 16px;
+}
+
+.videoshow-up-next-video {
+    margin-bottom: 12px;
+}
+
+.videoshow-link {
+    outline: none !important;
+}
+
+.videoshow-index {
+    width: 170px;
+    height: 95px;
+    margin-right: 10px;
+}
+
+.videoshow-index video {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    background: none;
+    overflow: hidden;
+}
+
+.videoshow-link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.videoshow-rec-info {
+    display: flex;
+    line-height: 1.2;
+    max-width: 190px;
+    font-weight: 500;
+}
+
+.videoshow-recommended {
+    display: flex;
+    flex-direction: column;
 }
