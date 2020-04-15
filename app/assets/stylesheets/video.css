@@ -4,23 +4,26 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 20px;
-    min-width: 1300px;
-    max-width: 1300px;
+    min-width: 1400px;
+    max-width: 1400px;
     margin: 0 auto;
     background-color: #f9f9f9
 }
 
 .video-link {
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: black;
+    width: 280px;
+    height: 250px;
 }
 
 .video-container {
     margin-top: 40px;
-    margin-bottom: 70px;
-    width: 300px;
-    height: 180px;
-    margin-right: 25px;
+    
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .video-container:hover {
@@ -43,9 +46,35 @@
     overflow: hidden;
 }
 
+.video-index-user-icon {
+    font-size: 28px;
+    margin-right: 8px;
+}
+
 .video-info {
-    padding-top: 10px;
-    font-size: 18px;
-    text-align: center;
+}
+
+.video-info-top-row {
+    margin-top: 15px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.video-index-title {
+    margin-top: 5px;
+}
+
+.video-index-uploader {
+    margin-top: 10px;
+    font-weight: 400;
+    color: #606060;
+}
+
+.video-index-views-date-container {
+    margin-top: 4px;
+    display: flex;
+    color: #606060;
+    font-weight: 400;
 }
 
