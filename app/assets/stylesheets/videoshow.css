@@ -32,6 +32,7 @@
 
 .videoshow-views-likes-options {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 40px;
 }
@@ -39,6 +40,11 @@
 .videoshow-views {
     font-size: 14px;
     color: #606060;
+    display: flex;
+    align-items: center;
+}
+
+.videoshow-likes-options {
     display: flex;
     align-items: center;
 }
@@ -57,8 +63,117 @@
     color: #606060;
 }
 
+/* repeating code, must refactor later */
+.video-option-icons {
+    padding: 8px;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.videoshow-thumbs-up {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    width: 59px;
+    height: 36px;
+}
+
+.videoshow-thumbs-down {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    width: 59px;
+    height: 36px;
+}
+
+.videoshow-share {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    width: 80px;
+    height: 36px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.videoshow-save {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    width: 76px;
+    height: 36px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.videoshow-more-options {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    width: 36px;
+    height: 36px;
+}
+
 #video {
     width: 100%;
+}
+
+.videoshow-description {
+    padding-top: 16px;
+}
+
+.description-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.description-user-container {
+    display: flex;
+    align-items: center;
+}
+
+.description-user-icon {
+    font-size: 48px;
+    margin-right: 16px;
+}
+
+.description-username {
+    font-size: 14px;
+    height: 16px;
+    color: #030303;
+    font-weight: 500;
+}
+
+.description-sub-count {
+    font-size: 13px;
+    height: 18px;
+    color: #606060;
+}
+
+.subscribe {
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    width: 105px;
+    height: 36px;
+    background-color: red;
+    text-align: center;
+}
+
+.subscribe h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    margin: 0 auto;
 }
 
 .videoshow-right-box {
@@ -112,9 +227,34 @@
 
 .videoshow-rec-info {
     display: flex;
+    flex-direction: column;
     line-height: 1.2;
     max-width: 190px;
     font-weight: 500;
+}
+
+.uploader-name {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #606060;
+    font-weight: 400;
+}
+
+.videoshow-rec-vid-stats {
+    margin-top: 4px;
+    display: flex;
+    font-weight: 400;
+}
+
+.videoshow-rec-views {
+    display: flex;
+    color: #606060;
+    font-size: 13px;
+}
+
+.videoshow-rec-timeago {
+    color: #606060;
+    font-size: 13px;
 }
 
 .videoshow-recommended {
