@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
     const store = configureStore(preloadedState);
-    console.log("yo");
     // test
     window.getState = store.getState();
     // test

@@ -28,7 +28,7 @@ export default ({ currentUser, logout }) => {
                 <div className="hamburger-container">
                     <img id='hamburger-logo' src={ window.hamburger } />
                 </div>
-                <img id='new-tube-logo' src={ window.newtube } />
+                <Link className="new-tube-top-left-logo" to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>
             </div>
             <div className="center">
                 <div className="search-bar">

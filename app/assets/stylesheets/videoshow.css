@@ -1,0 +1,31 @@
+.videoshow-container {
+    position: relative;
+    top: 58px;
+    min-width: 800px;
+    display: flex;
+    background-color: #fafafa;
+}
+
+.videoshow-left-box {
+    height: 100%;
+    width: 60%;
+    max-width: 1100px;
+    min-width: 600px;
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+.videoshow-player {
+    display: flex;
+    background-color:black;
+}
+
+#video {
+    width: 100%;
+}
+
+.videoshow-right-box {
+    background-color: blue;
+    width: 30%
+}

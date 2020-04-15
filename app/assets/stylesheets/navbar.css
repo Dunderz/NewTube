@@ -11,6 +11,10 @@
     z-index: 90;
 }
 
+.new-tube-top-left-logo {
+    outline: none !important;
+}
+
 #new-tube-logo {
     width: 84px;
     height: 24px;

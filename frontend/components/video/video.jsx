@@ -29,16 +29,18 @@ class Video extends React.Component {
             <section className="video-section">
               {this.props.videos.map(video => {
                 return (
-                    <Link className="video-link" to={`/videos/${video.id}`}>
-                      <div key={video.id} className="video-container">                    
-                        <div className="video-index" key={video.id}>
-                          <video src={video.videoUrl} controls={false}/>
-                        </div>
-                        <div className="video-info">
-                          <h2>{video.title}</h2>
-                        </div>
+                    
+                      <div className="video-container"> 
+                        <Link key={video.id} className="video-link" to={`/videos/${video.id}`}>                  
+                          <div className="video-index">
+                            <video src={video.videoUrl} controls={false}/>
+                          </div>
+                          <div className="video-info">
+                            <h2>{video.title}</h2>
+                          </div>
+                        </Link> 
                       </div>
-                    </Link>
+                    
                 );
               })}
             </section>
