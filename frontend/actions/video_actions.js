@@ -1,6 +1,7 @@
 import { 
     fetchVideo,
-    fetchVideos
+    fetchVideos,
+    createVideo
  } from '../util/video';
 
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
@@ -21,3 +22,6 @@ export const requestVideo = id => dispatch => fetchVideo(id)
 
 export const requestVideos = () => dispatch => fetchVideos()
     .then(videos => dispatch(receiveVideos(videos)))
+
+export const uploadVideo = formData => dispatch => createVideo(formData)
+    .then(video => dispatch(receiveVideo(video)))

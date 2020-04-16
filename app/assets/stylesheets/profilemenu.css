@@ -96,7 +96,19 @@
 }
 
 .dropdown-github { 
+    display: block;
+    text-decoration: none;
+    outline: none !important;
+    color: black;
+}
+
+.dropdown-github:active {
+    color: black;
+}
+
+.dropdown-github-contents {
     display: flex;
+    flex-direction: row;
     align-items: center;
     font-size: 14px;
 }
