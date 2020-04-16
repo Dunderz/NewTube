@@ -7,14 +7,9 @@ import ProfileMenu from '../profile_menu/profile_menu';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.handleFile = this.handleFile.bind(this);
         this.state = {
             someFile: null
         }
-    }
-
-    handleFile(e) {
-        this.setState({ someFile: e.currentTarget.files[0] })
     }
 
     handleSubmit(e) {
@@ -59,11 +54,6 @@ class NavBar extends React.Component {
                             <FontAwesomeIcon icon={faSearch} />
                         </button>
                     </form>
-                </div>
-
-                <div className="upload">
-                    <input type="file"
-                        onChange={this.handleFile}/>
                 </div>
 
                 <div className="top-right">

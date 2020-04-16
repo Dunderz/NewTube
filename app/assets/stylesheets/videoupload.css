@@ -1,0 +1,82 @@
+.video-upload-modal {
+    width: 960px;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    min-height: 480px;
+}
+
+.video-upload-top-row {
+    display: flex;
+    padding-left: 24px;
+    padding-right: 16px;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    height: 65px;
+}
+
+.video-upload-bottom-row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 75%;
+}
+
+.video-upload-bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.video-upload-icon-container {
+    height: 140px;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.video-upload-icon {
+    margin: 0 auto;
+    font-size: 50px;
+    color: #a8a8a8;
+}
+
+.video-upload-direction {
+    margin-top: 23px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.video-upload-info {
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.video-upload-button {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    height: 38px;
+    width: 115px;
+    background-color: #065fd4;
+    border-radius: 3px;
+}
+
+.video-upload-button:hover {
+    cursor: pointer;
+}
+
+.video-upload-button h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    margin: 0 auto;
+}
