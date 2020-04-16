@@ -1,8 +1,6 @@
-
-
-.video-section {
+.video-index-recommended-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-left: 20px;
     min-width: 1400px;
     max-width: 1400px;
@@ -10,17 +8,37 @@
     background-color: #f9f9f9
 }
 
+.video-index-videos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.video-section {
+    
+}
+
+.video-recommended h2 {
+    margin-top: 30px;
+    margin-left: 4px;
+    font-weight: 500;
+    font-size: 20px
+}
 .video-link {
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: black;
-    width: 280px;
+    width: 310px;
     height: 250px;
 }
 
+.video-index-videos {
+    margin-top: 20px;
+}
+
 .video-container {
-    margin-top: 40px;
+    margin-bottom: 40px;
     
     margin-right: 5px;
     margin-left: 5px;

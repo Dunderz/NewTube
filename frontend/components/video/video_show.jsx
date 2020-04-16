@@ -31,7 +31,13 @@ class VideoShow extends React.Component {
         }
 
         const { video } = this.props;
-        const upNextVideo = this.props.videos.shift();
+        let upNextVideo;
+
+        if (video.id === this.props.videos[0].id) {
+            upNextVideo = this.props.videos.pop();
+        } else {
+            upNextVideo = this.props.videos.shift();
+        }
 
         return (
             
