@@ -1,7 +1,6 @@
-# README
+# NewTube
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Newtube! This project is an attempted pixel perfect clone of Youtube. You can see the live version [here.](https://new-tube-1.herokuapp.com/#/)
 
 Things you may want to cover:
 
