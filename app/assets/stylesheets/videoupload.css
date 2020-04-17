@@ -19,6 +19,7 @@
 }
 
 .video-upload-bottom-row-container {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
