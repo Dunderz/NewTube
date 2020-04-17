@@ -3,6 +3,10 @@
     
 }
 
+.session-newtube-logo {
+    outline: none !important;
+}
+
 .form-sign-up {
     display: flex;
     flex-direction: column;

@@ -7,15 +7,6 @@ import ProfileMenu from '../profile_menu/profile_menu';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            someFile: null
-        }
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('videos[title]')
     }
     
        
@@ -57,7 +48,7 @@ class NavBar extends React.Component {
                 </div>
 
                 <div className="top-right">
-                    <div onClick={() => this.props.openModal('upload')} className="upload-icon-container">
+                    <div onClick={() => currentUser ? this.props.openModal('upload') : this.props.history.push('/login')} className="upload-icon-container">
                         <img src={ window.videoPlus } id='upload-icon'/>
                     </div>
                     {display}

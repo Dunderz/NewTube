@@ -60,23 +60,63 @@
     color: rgba(0, 0, 0, 0.55);
 }
 
-.video-upload-button {
+input[type="file"] {
+    display: none;
+}
+
+.video-upload-file {
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
     height: 38px;
     width: 115px;
     background-color: #065fd4;
     border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.video-upload-button:hover {
+.video-upload-file:hover {
     cursor: pointer;
 }
 
-.video-upload-button h2 {
+.video-upload-file h2 {
     font-size: 14px;
     font-weight: 500;
     color: white;
     margin: 0 auto;
 }
+
+.video-upload-title {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid rgb(172, 170, 170);
+    border-radius: 5px;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.video-upload-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 200px;
+}
+
+.video-upload-button {
+    margin-top: 20px;
+    height: 38px;
+    width: 115px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background-color: rgb(3, 189, 3);
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+}
+
+

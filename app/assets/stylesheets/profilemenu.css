@@ -95,11 +95,19 @@
     background-color: rgba(119, 119, 119, 0.1);
 }
 
-.dropdown-github { 
+.dropdown-github-link {
     display: block;
     text-decoration: none;
     outline: none !important;
+}
+
+.dropdown-github { 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    outline: none !important;
     color: black;
+    font-size: 14px;
 }
 
 .dropdown-github:active {
@@ -121,5 +129,9 @@
 .dropdown-icon {
     font-size: 24px;
     margin: 10px;
+}
+
+.dropdown-logout .dropdown-icon {
+    font-size: 20px;
 }
 

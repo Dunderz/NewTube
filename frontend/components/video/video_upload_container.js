@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { uploadVideo } from '../../actions/video_actions';
 import { closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 import VideoUpload from './video_upload';
 
 const mapStateToProps = state => ({
@@ -12,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoUpload);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoUpload));

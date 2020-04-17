@@ -12,13 +12,13 @@ class Api::VideosController < ApplicationController
     def create
         @video = Video.new(video_params)
         if @video.save
-            render :index
+            render :show
         else
             render json: video.errors.full_messages, status: 401
         end
     end
 
     def video_params
-        params.require(:video).permit(:title)
+        params.require(:video).permit(:title, :video, :author_id)
     end
 end

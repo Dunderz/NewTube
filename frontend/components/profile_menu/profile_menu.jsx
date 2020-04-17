@@ -12,12 +12,29 @@ class ProfileMenu extends React.Component {
         this.state = {
             active: false
         }
+
+        this.container = React.createRef();
         this.handleClick = this.handleClick.bind(this);
         this.toggleActive = this.toggleActive.bind(this);
+        this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    }
+
+    // fix //
+    componentDidMount() {
+        document.addEventListener('click', this.handleOutsideClick);
+    }
+
+    handleOutsideClick(e) {
+        const current = this.container.current;
+        // console.log(current);
+        const outside = current ? current.contains(e.target) ? false : true : false;
+        if (outside === true) {
+            this.setState({ active: false });
+        } 
     }
 
     handleClick(e) {
-        window.location.assign("https://github.com/DunderProto/NewTube");
+        window.location.assign("", "blank");
     }
 
     toggleActive(e) {
@@ -32,7 +49,7 @@ class ProfileMenu extends React.Component {
             isActive = 'dropdown-hidden';
         }
         return (
-            <div className="profile-menu">
+            <div className="profile-menu" ref={this.container}>
                 <div className="profile-menu-icon" onClick={this.toggleActive}>
                     <p className="profile-letter">{this.props.currentUser.username[0].toUpperCase()}</p>
                 </div>
@@ -59,12 +76,14 @@ class ProfileMenu extends React.Component {
                         </div>
                         <div>Your Channel</div>
                     </div>
-                    <div onClick={this.handleClick} className="dropdown-github">
-                        <div className="dropdown-icon">
-                            <FontAwesomeIcon icon={faGithubSquare} />
+                    <a href="https://github.com/DunderProto/NewTube" className="dropdown-github-link" target="_blank">
+                        <div className="dropdown-github">
+                            <div className="dropdown-icon">
+                                <FontAwesomeIcon icon={faGithubSquare} />
+                            </div>
+                            <div>Github</div>
                         </div>
-                        <div>Github</div>
-                    </div>
+                    </a>
                     <div onClick={this.props.logout} className="dropdown-logout">
                         <div className="dropdown-icon">
                             <FontAwesomeIcon icon={faSignOutAlt} />

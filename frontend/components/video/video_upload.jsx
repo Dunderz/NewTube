@@ -5,6 +5,41 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
 class VideoUpload extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            title: '',
+            videoFile: null
+        }
+
+        this.handleFile = this.handleFile.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
+    }
+
+    handleInput(e) {
+        this.setState({ title: e.currentTarget.value })
+    }
+
+    handleFile(e) {
+        this.setState({
+            videoFile: e.currentTarget.files[0]
+        })
+    }
+
+    handleFileFind() {
+        document.getElementById('file').click();
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('video[title]', this.state.title);
+        formData.append('video[video]', this.state.videoFile);
+        formData.append('video[author_id]', this.props.currentUser.id);
+        this.props.uploadVideo(formData).then((video) => {
+            this.props.history.push(`/videos/${video.video.id}`);
+            this.props.closeModal();
+        });
     }
 
     render() {
@@ -24,9 +59,14 @@ class VideoUpload extends React.Component {
                         <div className="video-upload-info">
                             <p>Your video will be private until you publish it</p>
                         </div>
-                        <div className="video-upload-button">
-                            <h2>SELECT FILE</h2>
-                        </div>
+                        <form onSubmit={this.handleSubmit} className="video-upload-form">
+                            <div className="video-upload-file" onClick={this.handleFileFind}>
+                                <h2>SELECT FILE</h2>
+                                <input type="file" id="file" onChange={this.handleFile} />
+                            </div>
+                            <input placeholder="Please enter a title." maxlength="42" type="text" onChange={this.handleInput} className="video-upload-title" />
+                            <button className="video-upload-button">UPLOAD</button>
+                        </form>
                     </div>
                 </div>
             </div>

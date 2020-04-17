@@ -111,7 +111,7 @@ class Login extends React.Component {
             <div className="session-form">
                 <div>
                     <form className="form-sign-in" onSubmit={this.handleSubmit}>
-                        <Link to="/"><img src={ window.newtube } id='signin-logo'/></Link>
+                        <Link className="session-newtube-logo" to="/"><img src={ window.newtube } id='signin-logo'/></Link>
                         <h2 className="sign-in-title">Sign In</h2>
                         <p className="sign-in-subtitle">to continue to NewTube</p>
                         <label className={`input-username`}>

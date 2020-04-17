@@ -137,8 +137,8 @@ class VideoShow extends React.Component {
                         {this.props.videos.map(video => {
                             if (video.id !== this.props.video.id) {
                                 return (
-                                    <div className="videoshow-up-next-video"> 
-                                        <Link key={video.id} className="videoshow-link" to={`/videos/${video.id}`}>                  
+                                    <div key={video.id} className="videoshow-up-next-video"> 
+                                        <Link className="videoshow-link" to={`/videos/${video.id}`}>                  
                                             <div className="videoshow-index">
                                                 <video src={video.videoUrl} controls={false}/>
                                             </div>
