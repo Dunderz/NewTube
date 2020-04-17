@@ -16,16 +16,14 @@ v2 = Video.create!(title: "when u have 9 strikes and its 8:59", author_id: 1)
 v3 = Video.create!(title: "ta after they tell you to look at the docs", author_id: 2)
 v4 = Video.create!(title: "learning redux", author_id: 2)
 v5 = Video.create!(title: "when u only get to phase 2", author_id: 2)
-v6 = Video.create!(title: "aniki aniki aniki", author_id: 3)
-v7 = Video.create!(title: "ouch...", author_id: 3)
+
 # v.video.attach(io: File.open("/mnt/c/Users/Isaac\ Nam/Desktop/newtubevids/omardance.mp4"), filename: "omardance.mp4")
 v1.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/tmntpractice.mp4"), filename: "tmntpractice.mp4")
 v2.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/dantecrazyfrog.mp4"), filename: "dantecrazyfrog.mp4")
 v3.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/rengarlaugh.mp4"), filename: "rengarlaugh.mp4")
 v4.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/michaelscottKillmyself.mp4"), filename: "michaelscottKillmyself.mp4")
 v5.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/whatsWrongWithYou.mp4"), filename: "whatsWrongWithYou.mp4")
-v6.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/gachiclap.mp4"), filename: "gachiclap.mp4")
-v7.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/whatsgoingon_.mp4"), filename: "whatsgoingon.mp4")
+
 
 
 
