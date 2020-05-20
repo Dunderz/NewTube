@@ -100,9 +100,9 @@ class VideoShow extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="subscribe hover">
+                            {/* <div className="subscribe hover">
                                 <h2>SUBSCRIBE</h2>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

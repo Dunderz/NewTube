@@ -113,10 +113,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px blue solid;
+    border: 1px #065fd4 solid;
+    border-radius: 3px;
     width: 120px;
     height: 40px;
-    color: blue;
+    color: #065fd4;
     outline: none !important;
 }   
 
@@ -124,6 +125,10 @@
     transition: 0.25s;
     background-color: #e9e6e6;
     outline: none !important;
+}
+
+.nav-sign-in-container:not( :active ) {
+    transition: 0.25s;
 }
 
 .sign-in-icon {
