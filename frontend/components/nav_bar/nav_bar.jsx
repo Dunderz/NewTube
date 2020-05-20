@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { faUserCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProfileMenu from '../profile_menu/profile_menu';
+import Search from '../search/search';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -39,12 +40,7 @@ class NavBar extends React.Component {
                     <Link className="new-tube-top-left-logo" to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>
                 </div>
                 <div className="center">
-                    <form className="search-bar">
-                        <input type="text" placeholder="Search"/>
-                        <button type="submit" className="search-button" type="submit">
-                            <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                    </form>
+                    <Search />
                 </div>
 
                 <div className="top-right">
