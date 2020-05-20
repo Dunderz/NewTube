@@ -18,6 +18,11 @@ class Api::VideosController < ApplicationController
         end
     end
 
+    def search
+        @videos = Video.where('lower(title) LIKE lower(?)', "%#{params[:result]}%".slice(0, 10))
+        render :index
+    end
+
     def video_params
         params.require(:video).permit(:title, :video, :author_id)
     end
