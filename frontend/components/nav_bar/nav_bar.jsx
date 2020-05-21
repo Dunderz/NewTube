@@ -12,7 +12,6 @@ class NavBar extends React.Component {
     
        
     render() {
-        console.log(this.state);
         const { currentUser, logout } = this.props;
 
         const display = currentUser ? (

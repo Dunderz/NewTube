@@ -95,8 +95,8 @@ class ProfileMenu extends React.Component {
                         <div>Sign Out</div>
                     </div>
                 </div>
-                {console.log(this.props.currentUser)}
-                {console.log("oh god")}
+                {/* {console.log(this.props.currentUser)}
+                {console.log("oh god")} */}
             </div>
         )
     }

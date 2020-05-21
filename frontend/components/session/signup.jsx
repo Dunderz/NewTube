@@ -105,7 +105,6 @@ class Signup extends React.Component {
     }
 
     render () {
-        console.log(this.props.errors)
         let firstNameError = this.firstNameError() ? 'border-error' : '';
         let firstNameShow;
         if (firstNameError.length > 0) {

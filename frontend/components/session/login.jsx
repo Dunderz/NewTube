@@ -49,7 +49,6 @@ class Login extends React.Component {
     renderErrors() {
         let errors = [];
         if (this.props.errors.includes("Invalid username or password.")) {
-            console.log("OH MY GOD");
             if (this.state.username.length === 0) {
                 errors.push('Enter an email or username');
             } 
