@@ -71,7 +71,7 @@ class VideoShow extends React.Component {
                                     <h2>0</h2>
                                 </div>
 
-                                <div className="videoshow-share hover">
+                                {/* <div className="videoshow-share hover">
                                     <FontAwesomeIcon className="video-option-icons" icon={faShare}/>
                                     <h2>SHARE</h2>
                                 </div>
@@ -83,7 +83,7 @@ class VideoShow extends React.Component {
 
                                 <div className="videoshow-more-options hover">
                                     <FontAwesomeIcon className="video-option-icons" icon={faEllipsisH}/>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -42,6 +42,7 @@ class ProfileMenu extends React.Component {
     }
 
     render() {
+        
         let isActive;
         if (this.state.active) {
             isActive = 'dropdown-show';
@@ -59,15 +60,18 @@ class ProfileMenu extends React.Component {
                             <FontAwesomeIcon icon={faUserCircle} />
                         </div>
                         <div className="dropdown-credentials">
+                            <div className="dropdown-fullname">
+                                {/* implement later */}
+                            </div>
                             <div className="dropdown-username">
                                 {this.props.currentUser.username}
                             </div>
                             <div className="dropdown-email">
                                 {this.props.currentUser.email}
                             </div>
-                            <div className="dropdown-google-account">
+                            {/* <div className="dropdown-google-account">
                                 <p>Manage your Google Account</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="dropdown-channel">
@@ -91,6 +95,8 @@ class ProfileMenu extends React.Component {
                         <div>Sign Out</div>
                     </div>
                 </div>
+                {console.log(this.props.currentUser)}
+                {console.log("oh god")}
             </div>
         )
     }

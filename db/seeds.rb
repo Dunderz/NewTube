@@ -10,7 +10,7 @@ require "open-uri"
 Video.destroy_all
 User.destroy_all
 
-demo = User.create!(username:"demo", email:"demo@gmail.com", password:"password")
+demo = User.create!(first_name: "Demo", last_name: "User", username:"demo", email:"demo@gmail.com", password:"password")
 v1 = Video.create!(title: "my 4 brain cells trying to debug", author_id: 1)
 v2 = Video.create!(title: "when u have 9 strikes and its 8:59", author_id: 1)
 v3 = Video.create!(title: "ta after they tell you to look at the docs", author_id: 2)

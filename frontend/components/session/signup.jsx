@@ -7,6 +7,8 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            first_name: '',
+            last_name: '',
             username: '',
             email: '',
             password: '',
@@ -37,6 +39,14 @@ class Signup extends React.Component {
 
     renderErrors() {
         let errors = [];
+        if (this.props.errors[0].includes("First name can't be blank")) {
+            errors.push('Enter first name');
+        }
+
+        if (this.props.errors[0].includes("Last name can't be blank")) {
+            errors.push('Enter last name');
+        }
+
         if (this.props.errors[0].includes("Username can't be blank")) {
             errors.push("Username can't be blank");
         } else if (this.props.errors[0].includes("Username has already been taken")) {
@@ -54,6 +64,18 @@ class Signup extends React.Component {
         }
         
         return errors;
+    }
+
+    firstNameError() {
+        if (this.state.errors.includes("Enter first name")) {
+            return "Enter first name";
+        }
+    }
+
+    lastNameError() {
+        if (this.state.errors.includes("Enter last name")) {
+            return "Enter last name";
+        }
     }
 
     usernameError() {
@@ -79,6 +101,32 @@ class Signup extends React.Component {
     }
 
     render () {
+        console.log(this.props.errors)
+        let firstNameError = this.firstNameError() ? 'border-error' : '';
+        let firstNameShow;
+        if (firstNameError.length > 0) {
+            firstNameShow = (
+                <div className={`error-container`}>
+                    <div className="error-icon">
+                        <FontAwesomeIcon icon={faExclamationCircle} />
+                    </div>
+                    <p className="error">{this.firstNameError()}</p>
+                </div>
+            );
+        }
+
+        let lastNameError = this.lastNameError() ? 'border-error' : '';
+        let lastNameShow;
+        if (lastNameError.length > 0) {
+            lastNameShow = (
+                <div className={`error-container`}>
+                    <div className="error-icon">
+                        <FontAwesomeIcon icon={faExclamationCircle} />
+                    </div>
+                    <p className="error">{this.lastNameError()}</p>
+                </div>
+            );
+        }
 
         let usernameError = this.usernameError() ? 'border-error' : '';
         let usernameShow;
@@ -125,6 +173,26 @@ class Signup extends React.Component {
                         <Link className="session-newtube-logo" to="/"><img src={ window.newtube } id='signin-logo'/></Link>
                         <h2 className="sign-in-title">Create your NewTube account</h2>
                         <p className="sign-in-subtitle">to continue to NewTube</p>
+                        <div className="fullname-container">
+                            <label className="input-first-name">
+                                <input 
+                                    className={`${firstNameError}`}
+                                    type="text"
+                                    onChange={this.handleInput('first_name')}
+                                    value={this.state.first_name}
+                                    placeholder="First Name"/>
+                                {firstNameShow}
+                            </label>
+                            <label className="input-last-name">
+                                <input 
+                                    className={`${lastNameError}`}
+                                    type="text"
+                                    onChange={this.handleInput('last_name')}
+                                    value={this.state.last_name}
+                                    placeholder="Last Name"/>
+                                {lastNameShow}
+                            </label>
+                        </div>
                         <label className="input-username">
                             <input 
                                 className={`${usernameError}`}

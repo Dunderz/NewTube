@@ -40,7 +40,10 @@ class Login extends React.Component {
     demoLogin(e) {
         e.preventDefault();
         this.props.login(demo_user)
-            .then(() => this.props.history.push('/'));
+            .then(() => {
+                this.props.history.push('/')
+            });
+            
     }
 
     renderErrors() {

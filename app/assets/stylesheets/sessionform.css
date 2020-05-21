@@ -16,7 +16,7 @@
     margin: 145px auto;
     min-height: 0;
     width: 450px;
-    height: 600px;
+    height: 700px;
     font-size: 14px;
     line-height: 1.6;
     box-shadow: 1px 1px rgb(216, 215, 215);
@@ -99,6 +99,30 @@
 .form-sign-in > label input:focus {
     outline: none;
     box-shadow: 0 0 0 2px blue;
+}
+
+.fullname-container {
+    width: 352px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-first-name input {
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    padding-left: 18px;
+}
+
+.input-last-name input {
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    padding-left: 18px;
 }
 
 .input-username input {

@@ -34,7 +34,7 @@
 .dropdown-user-info {
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    height: 120px;
+    height: 80px;
 }
 
 .dropdown-credentials {
