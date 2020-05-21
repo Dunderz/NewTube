@@ -57,6 +57,8 @@ class Signup extends React.Component {
             errors.push("Email can't be blank");
         } else if (this.props.errors[0].includes("Email is invalid")) {
             errors.push("Email is invalid");
+        } else if (this.props.errors[0].includes("Email has already been taken")) {
+            errors.push("Email has already been taken");
         }
 
         if (this.props.errors[0].includes("Password is too short (minimum is 6 characters)")) {
@@ -91,6 +93,8 @@ class Signup extends React.Component {
             return "Email can't be blank";
         } else if (this.state.errors.includes("Email is invalid")) {
             return "Email is invalid";
+        } else if (this.state.errors.includes("Email has already been taken")) {
+            return "Email has already been taken";
         }
     }
 
