@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentFormContainer from './comment_form_container';
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -7,7 +8,10 @@ class CommentIndex extends React.Component {
 
     render() {
         return (
-            <div>Comments</div>
+            <>
+                <CommentFormContainer />
+                <div>Comments</div>
+            </>
         )
     }
 }

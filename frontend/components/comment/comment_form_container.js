@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { createComment } from "../../actions/comment_actions";
 import CommentForm from './comment_form';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-
+        currentUser: state.session.currentUser,
+        videoId: ownProps
     }
 }
 

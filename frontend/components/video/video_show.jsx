@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CommentsContainer from '../comment/comment_index_container';
 import { 
     faThumbsUp, 
     faThumbsDown,
@@ -105,6 +106,7 @@ class VideoShow extends React.Component {
                             </div> */}
                         </div>
                     </div>
+                    <CommentsContainer />
                 </div>
 
                 <div className="videoshow-right-box">
