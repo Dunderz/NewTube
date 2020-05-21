@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Comment < ApplicationRecord
-    validates :body, presence: true
+    validates :body, presence: true, length: {minimum: 1}
 
     belongs_to :user,
         class_name: :User,
