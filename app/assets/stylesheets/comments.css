@@ -1,0 +1,47 @@
+.comment-box {
+    width: 100%;
+    height: 32.5px;
+    padding-top: 18px;
+    padding-bottom: -8px;
+    margin-bottom: 8px;
+    border: none;
+    resize: none;
+    overflow: auto;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.comment-box:focus {
+    border-bottom: 2px solid black;
+    transition: 0.15s;
+}
+
+.comment-box:not(:focus) {
+    transition: 0.25s;
+}
+
+.comment-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-cancel {
+    width: 101px;
+    height: 37px;
+    border: none;
+    margin-right: 8px;
+    color: #606060;
+    font-size: 14px;
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.comment-submit {
+    width: 101px;
+    height: 37px;
+    border: none;
+    background-color: #065fd4;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 3px;
+}

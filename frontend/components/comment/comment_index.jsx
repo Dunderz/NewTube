@@ -7,9 +7,10 @@ class CommentIndex extends React.Component {
     }
 
     render() {
+        
         return (
             <>
-                <CommentFormContainer />
+                <CommentFormContainer videoId={this.props.videoId} />
                 <div>Comments</div>
             </>
         )

@@ -106,7 +106,7 @@ class VideoShow extends React.Component {
                             </div> */}
                         </div>
                     </div>
-                    <CommentsContainer />
+                    <CommentsContainer videoId={this.props.match.params.id} />
                 </div>
 
                 <div className="videoshow-right-box">

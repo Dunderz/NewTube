@@ -26,7 +26,6 @@ class ProfileMenu extends React.Component {
 
     handleOutsideClick(e) {
         const current = this.container.current;
-        // console.log(current);
         const outside = current ? current.contains(e.target) ? false : true : false;
         if (outside === true) {
             this.setState({ active: false });
@@ -95,8 +94,6 @@ class ProfileMenu extends React.Component {
                         <div>Sign Out</div>
                     </div>
                 </div>
-                {/* {console.log(this.props.currentUser)}
-                {console.log("oh god")} */}
             </div>
         )
     }

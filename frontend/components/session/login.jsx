@@ -47,6 +47,7 @@ class Login extends React.Component {
     }
 
     renderErrors() {
+        
         let errors = [];
         if (this.props.errors.includes("Invalid username or password.")) {
             if (this.state.username.length === 0) {
@@ -82,7 +83,6 @@ class Login extends React.Component {
     }
 
     render() {
-
         let emailError = this.emailError() ? 'border-error' : '';
         let emailShow;
         if (emailError.length > 0) {

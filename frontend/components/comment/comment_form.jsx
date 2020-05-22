@@ -26,8 +26,17 @@ class CommentForm extends React.Component {
     }
 
     render() {
+        console.log(this.props.videoId);
         return (
-            <div>COMMENT FORM</div>
+            <div className="comment-form-container">
+                <form onSubmit={this.handleSubmit}>
+                    <textarea className="comment-box" placeholder="Add a public comment..." name="" id="" cols="30" rows="10"></textarea>
+                    <div className="comment-buttons">
+                        <button className="comment-cancel">CANCEL</button>
+                        <input className="comment-submit" type="submit" value="COMMENT"/>
+                    </div>
+                </form>
+            </div>
         )
     }
 }

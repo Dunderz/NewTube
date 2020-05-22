@@ -5,8 +5,9 @@ import { openModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => ({
-    currentUser: state.session.currentUser
+const mapStateToProps = (state, ownProps) => ({
+    currentUser: state.session.currentUser,
+    ownProps: ownProps
 });
 
 const mapDispatchToProps = dispatch => ({

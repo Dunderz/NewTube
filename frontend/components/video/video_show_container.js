@@ -5,7 +5,8 @@ import VideoShow from './video_show';
 const mapStateToProps = (state, ownProps) => {
     return {
         video: state.entities.videos[ownProps.match.params.id],
-        videos: Object.values(state.entities.videos)
+        videos: Object.values(state.entities.videos),
+        ownProps: ownProps
     }
 }
 
