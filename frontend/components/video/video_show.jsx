@@ -20,6 +20,7 @@ class VideoShow extends React.Component {
     componentDidMount() {
         this.props.requestVideo(this.props.match.params.id);
         this.props.requestVideos();
+        console.log("YO");
     }
 
     render() {
@@ -45,7 +46,7 @@ class VideoShow extends React.Component {
             <div className="videoshow-container">
                 <div className="videoshow-left-box">
                     <div className="videoshow-player">
-                        <video id="video" src={video.videoUrl} controls autoPlay/>
+                        <video id="video" src={video.videoUrl} />
                     </div>
                     <div className="videoshow-info">
                         <div className="videoshow-title">

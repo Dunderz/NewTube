@@ -15,22 +15,34 @@ class CommentForm extends React.Component {
 
     }
 
+    handleInput(field) {
+        return e => {
+            this.setState({
+                [field]: e.target.value
+            })
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment({
-            comment: {
-                body: this.state.body,
-                videoId: this.props.videoId
-            }
+            body: this.state.body,
+            video_id: this.props.videoId,
+            user_id: this.props.currentUser.id
         }).then(() => this.setState({ body: "" }))
     }
 
     render() {
-        console.log(this.props.videoId);
         return (
             <div className="comment-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <textarea className="comment-box" placeholder="Add a public comment..." name="" id="" cols="30" rows="10"></textarea>
+                    <textarea 
+                        className="comment-box" 
+                        placeholder="Add a public comment..." 
+                        onChange={this.handleInput('body')}
+                        cols="30" 
+                        rows="10" 
+                        value={this.state.body}></textarea>
                     <div className="comment-buttons">
                         <button className="comment-cancel">CANCEL</button>
                         <input className="comment-submit" type="submit" value="COMMENT"/>

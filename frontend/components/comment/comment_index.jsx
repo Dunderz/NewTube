@@ -6,13 +6,27 @@ class CommentIndex extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.requestComments(this.props.videoId)
+    }
+
     render() {
         
         return (
-            <>
+            <div>
                 <CommentFormContainer videoId={this.props.videoId} />
-                <div>Comments</div>
-            </>
+                <div>
+                    {Object.values(this.props.comments).map(comment => {
+                        return (
+                            <>
+                                <div>
+                                    {comment.body}
+                                </div>
+                            </>
+                        )
+                    })}
+                </div>
+            </div>
         )
     }
 }
