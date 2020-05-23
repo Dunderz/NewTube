@@ -2,8 +2,10 @@ import { connect } from 'react-redux';
 import Search from './search';
 import { fetchSearched } from '../../actions/search_actions';
 
-const mapStateToProps = state => {
-
+const mapStateToProps = (state, ownProps) => {
+    return {
+        ownProps: ownProps
+    }
 }
 
 const mapDispatchToProps = dispatch => {

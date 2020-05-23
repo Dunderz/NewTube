@@ -8,6 +8,7 @@ class Search extends React.Component {
     }
 
     render() {
+        console.log(this.props.ownProps);
         return (
             <>
                 <form className="search-bar">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TestContainer from '../test/test_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CommentsContainer from '../comment/comment_index_container';
 import { 
@@ -18,12 +19,15 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
+        
+        this.props.requestComments(this.props.match.params.id);
         this.props.requestVideo(this.props.match.params.id);
         this.props.requestVideos();
-        console.log("YO");
+        console.log("YOU SEE ME");
     }
 
     render() {
+        console.log(this.props.comments);
         if (this.props.video === undefined) {
             return (
                 <div>
@@ -43,7 +47,18 @@ class VideoShow extends React.Component {
 
         return (
             
-            <div className="videoshow-container">
+            <div key={video.id} className="videoshow-container">
+                <div>
+                    {this.props.comments.map(comment => {
+                        return (
+                                <div key={comment.id}>
+                                    {comment.body}
+                                </div>
+                        )
+                    })}
+                </div>
+                {/* <TestContainer comments={this.props.comments} videoId={this.props.match.params.id} /> */}
+                {/* <CommentsContainer videoId={this.props.match.params.id} /> */}
                 <div className="videoshow-left-box">
                     <div className="videoshow-player">
                         <video id="video" src={video.videoUrl} />
@@ -107,7 +122,7 @@ class VideoShow extends React.Component {
                             </div> */}
                         </div>
                     </div>
-                    <CommentsContainer videoId={this.props.match.params.id} />
+                    
                 </div>
 
                 <div className="videoshow-right-box">

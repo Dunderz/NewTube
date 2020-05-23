@@ -13,16 +13,14 @@ class CommentIndex extends React.Component {
     render() {
         
         return (
-            <div>
+            <div key="comment-index" className="comment-index">
                 <CommentFormContainer videoId={this.props.videoId} />
                 <div>
                     {Object.values(this.props.comments).map(comment => {
                         return (
-                            <>
-                                <div>
+                                <div key={comment.id}>
                                     {comment.body}
                                 </div>
-                            </>
                         )
                     })}
                 </div>
