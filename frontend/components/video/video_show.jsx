@@ -16,18 +16,32 @@ import {
 class VideoShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            newVideo: false
+        }
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        
         this.props.requestComments(this.props.match.params.id);
-        this.props.requestVideo(this.props.match.params.id);
         this.props.requestVideos();
-        console.log("YOU SEE ME");
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.newVideo) {
+            this.props.requestComments(this.props.match.params.id);
+            this.setState({ newVideo: false })
+        }
+    }
+
+    handleClick() {
+        this.setState({ newVideo: true })
+    }
+    
+
     render() {
-        console.log(this.props.comments);
+        
         if (this.props.video === undefined) {
             return (
                 <div>
@@ -48,17 +62,7 @@ class VideoShow extends React.Component {
         return (
             
             <div key={video.id} className="videoshow-container">
-                <div>
-                    {this.props.comments.map(comment => {
-                        return (
-                                <div key={comment.id}>
-                                    {comment.body}
-                                </div>
-                        )
-                    })}
-                </div>
                 {/* <TestContainer comments={this.props.comments} videoId={this.props.match.params.id} /> */}
-                {/* <CommentsContainer videoId={this.props.match.params.id} /> */}
                 <div className="videoshow-left-box">
                     <div className="videoshow-player">
                         <video id="video" src={video.videoUrl} />
@@ -122,14 +126,14 @@ class VideoShow extends React.Component {
                             </div> */}
                         </div>
                     </div>
-                    
+                    <CommentsContainer videoId={this.props.match.params.id} />
                 </div>
 
                 <div className="videoshow-right-box">
                     <div className="videoshow-up-next-container">
                         <p>Up Next</p>
                         <div className="videoshow-up-next-video">
-                            <Link key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
+                            <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
                                 <div className="videoshow-index">
                                     <video src={upNextVideo.videoUrl} controls={false}/>
                                 </div>
@@ -156,7 +160,7 @@ class VideoShow extends React.Component {
                             if (video.id !== this.props.video.id) {
                                 return (
                                     <div key={video.id} className="videoshow-up-next-video"> 
-                                        <Link className="videoshow-link" to={`/videos/${video.id}`}>                  
+                                        <Link onClick={this.handleClick} className="videoshow-link" to={`/videos/${video.id}`}>                  
                                             <div className="videoshow-index">
                                                 <video src={video.videoUrl} controls={false}/>
                                             </div>

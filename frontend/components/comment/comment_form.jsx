@@ -29,7 +29,7 @@ class CommentForm extends React.Component {
             body: this.state.body,
             video_id: this.props.videoId,
             user_id: this.props.currentUser.id
-        }).then(() => this.setState({ body: "" }))
+        }).then(() => this.setState({ body: "" })).then(() => this.props.handleCreateComment())
     }
 
     render() {
