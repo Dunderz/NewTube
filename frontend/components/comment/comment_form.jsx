@@ -39,7 +39,7 @@ class CommentForm extends React.Component {
         return (
             <div className="comment-form-container">
                 <FontAwesomeIcon className="comment-form-icon" icon={faUserCircle} />
-                <form onSubmit={this.handleSubmit}>
+                <form className="comment-form" onSubmit={this.handleSubmit}>
                     <textarea 
                         className="comment-box" 
                         placeholder="Add a public comment..." 
