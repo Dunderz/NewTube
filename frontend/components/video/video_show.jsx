@@ -41,7 +41,15 @@ class VideoShow extends React.Component {
     
 
     render() {
-        
+        let commentCount = Object.values(this.props.comments).length;
+        let commentWord;
+
+        if (commentCount === 1) {
+            commentWord = "Comment";
+        } else {
+            commentWord = "Comments";
+        }
+
         if (this.props.video === undefined) {
             return (
                 <div>
@@ -125,6 +133,9 @@ class VideoShow extends React.Component {
                                 <h2>SUBSCRIBE</h2>
                             </div> */}
                         </div>
+                    </div>
+                    <div className="video-comment-count">
+                        {commentCount} {commentWord}
                     </div>
                     <CommentsContainer videoId={this.props.match.params.id} />
                 </div>

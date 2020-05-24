@@ -1,3 +1,11 @@
+.comment-form-container {
+    display: flex;
+}
+
+.comment-form-icon {
+    font-size: 40px;
+}
+
 .comment-box {
     width: 100%;
     height: 32.5px;
@@ -48,9 +56,26 @@
 
 .comment-index-item {
     display: flex;
+    margin-bottom: 16px;
 }
 
 .comment-user-icon {
-    font-size: 50px;
+    font-size: 40px;
     margin-right: 20px;
+}
+
+.comment-content {
+    width: 80%;
+    overflow-wrap: break-word;
+}
+
+.comment-username {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.comment-body {
+    font-size: 14px;
+    line-height: 1.3;
 }

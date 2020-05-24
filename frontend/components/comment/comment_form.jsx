@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -36,6 +38,7 @@ class CommentForm extends React.Component {
     render() {
         return (
             <div className="comment-form-container">
+                <FontAwesomeIcon className="comment-form-icon" icon={faUserCircle} />
                 <form onSubmit={this.handleSubmit}>
                     <textarea 
                         className="comment-box" 

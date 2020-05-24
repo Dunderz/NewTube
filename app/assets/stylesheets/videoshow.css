@@ -135,6 +135,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
     width: 100%;
 }
 
@@ -176,6 +179,11 @@
     font-weight: 500;
     color: white;
     margin: 0 auto;
+}
+
+.video-comment-count {
+    font-size: 16px;
+    margin-bottom: 24px;
 }
 
 .videoshow-right-box {
