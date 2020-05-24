@@ -28,7 +28,8 @@ class CommentForm extends React.Component {
         this.props.createComment({
             body: this.state.body,
             video_id: this.props.videoId,
-            user_id: this.props.currentUser.id
+            user_id: this.props.currentUser.id,
+            username: this.props.currentUser.username
         }).then(() => this.setState({ body: "" })).then(() => this.props.handleCreateComment())
     }
 

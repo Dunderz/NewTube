@@ -12,6 +12,8 @@
 class Comment < ApplicationRecord
     validates :body, presence: true, length: {minimum: 1}
     validates :video_id, presence: true
+    validates :user_id, presence: true
+    validates :username, presence: true
     
     belongs_to :user,
         class_name: :User,

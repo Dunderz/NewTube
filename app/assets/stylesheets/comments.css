@@ -45,3 +45,12 @@
     font-size: 14px;
     border-radius: 3px;
 }
+
+.comment-index-item {
+    display: flex;
+}
+
+.comment-user-icon {
+    font-size: 50px;
+    margin-right: 20px;
+}

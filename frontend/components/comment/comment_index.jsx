@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentFormContainer from './comment_form_container';
+import CommentIndexItem from './comment_index_item'
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -33,9 +34,13 @@ class CommentIndex extends React.Component {
                 <CommentFormContainer handleCreateComment={this.handleCreateComment} videoId={this.props.videoId} />
                 <div>
                     {Object.values(this.props.comments).map(comment => {
+                        console.log(comment);
                         return (
                                 <div key={comment.id}>
-                                    {comment.body}
+                                    <CommentIndexItem 
+                                        body={comment.body}
+                                        username={comment.username}
+                                        />
                                 </div>
                         )
                     })}

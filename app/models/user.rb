@@ -20,7 +20,7 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
 
     has_many :comments,
-        foreign_key: :video_id,
+        foreign_key: :user_id,
         class_name: :Comment
 
     has_many :likes,
