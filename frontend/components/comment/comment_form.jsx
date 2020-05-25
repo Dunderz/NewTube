@@ -6,15 +6,21 @@ class CommentForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            body: ""
+            body: "",
+            showButtons: false
         }
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleBodyClick = this.handleBodyClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancelClick = this.handleCancelClick.bind(this);
     }
 
-    handleClick(e) {
+    handleBodyClick(e) {
+        this.setState({ showButtons: true })
+    }
 
+    handleCancelClick() {
+        this.setState({ showButtons: false })
     }
 
     handleInput(field) {
@@ -32,23 +38,36 @@ class CommentForm extends React.Component {
             video_id: this.props.videoId,
             user_id: this.props.currentUser.id,
             username: this.props.currentUser.username
-        }).then(() => this.setState({ body: "" })).then(() => this.props.handleCreateComment())
+        }).then(() => this.setState({ body: "" }))
+        .then(() => this.props.handleCreateComment())
+        .then(() => this.setState({ showButtons: false }))
     }
 
     render() {
+        let show;
+
+        if (this.state.showButtons) {
+            show = "comment-buttons";
+        } else {
+            show = "comment-buttons-hidden";
+        }
+
+
+
         return (
             <div className="comment-form-container">
                 <FontAwesomeIcon className="comment-form-icon" icon={faUserCircle} />
                 <form className="comment-form" onSubmit={this.handleSubmit}>
                     <textarea 
+                        onClick={this.handleBodyClick}
                         className="comment-box" 
                         placeholder="Add a public comment..." 
                         onChange={this.handleInput('body')}
                         cols="30" 
                         rows="10" 
                         value={this.state.body}></textarea>
-                    <div className="comment-buttons">
-                        <button className="comment-cancel">CANCEL</button>
+                    <div className={show}>
+                        <button onClick={this.handleCancelClick} className="comment-cancel">CANCEL</button>
                         <input className="comment-submit" type="submit" value="COMMENT"/>
                     </div>
                 </form>

@@ -1,5 +1,6 @@
 .comment-form-container {
     display: flex;
+    margin-bottom: 32px;
 }
 
 .comment-form-icon {
@@ -10,6 +11,8 @@
 .comment-form {
     width: 100%;
 }
+
+
 
 .comment-box {
     width: 100%;
@@ -30,6 +33,10 @@
 
 .comment-box:not(:focus) {
     transition: 0.15s;
+}
+
+.comment-buttons-hidden {
+    display: none;
 }
 
 .comment-buttons {
