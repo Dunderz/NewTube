@@ -28,7 +28,7 @@ class CommentIndex extends React.Component {
     }
 
     render() {
-        
+        console.log(this.props.comments);
         return (
             <div key="comment-index" className="comment-index">
                 <CommentFormContainer handleCreateComment={this.handleCreateComment} videoId={this.props.videoId} />
