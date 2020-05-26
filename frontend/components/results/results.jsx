@@ -4,19 +4,23 @@ class Results extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            result: this.props.location.search.slice(14).split("+").join(" ")
+            result: this.props.location.search.slice(14).split("+").join(" "),
+            update: false
         };
 
         this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchSearched(this.state.result)
-        .then(() => console.log(this.state.result));
+        .then(() => console.log(this.props));
+    }
+
+    componentDidUpdate() {
     }
 
     handleClick() {
+        this.setState({ update: true })
     }
 
     render() {
