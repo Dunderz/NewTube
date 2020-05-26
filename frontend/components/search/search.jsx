@@ -16,7 +16,7 @@ class Search extends React.Component {
     handleSearch(e) {
         e.preventDefault();
         const result = this.state.search.split(' ').join('+');
-        this.props.moreProps.history.push(`/results?search_query=${result}`);
+        this.props.moreProps.history.push(`/search?search_query=${result}`);
         window.location.reload();
     }
 

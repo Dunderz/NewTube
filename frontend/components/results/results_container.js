@@ -4,7 +4,7 @@ import { fetchSearched } from '../../actions/search_actions';
 
 const mapStateToProps = state => {
     return {
-
+        videos: Object.values(state.entities.videos)
     }
 }
 

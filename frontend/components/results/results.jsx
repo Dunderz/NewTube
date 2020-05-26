@@ -6,15 +6,22 @@ class Results extends React.Component {
         this.state = {
             result: this.props.location.search.slice(14).split("+").join(" ")
         };
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchSearched(this.state.result);
+        debugger
+        this.props.fetchSearched(this.state.result)
+        .then(() => console.log(this.state.result));
+    }
+
+    handleClick() {
     }
 
     render() {
         return (
-            <div>RESULTS COMPONENT</div>
+            <div onClick={this.handleClick} >RESULTS COMPONENT</div>
         )
     }
 }
