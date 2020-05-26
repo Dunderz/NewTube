@@ -73,7 +73,7 @@ class VideoShow extends React.Component {
                 {/* <TestContainer comments={this.props.comments} videoId={this.props.match.params.id} /> */}
                 <div className="videoshow-left-box">
                     <div className="videoshow-player">
-                        <video id="video" src={video.videoUrl} />
+                        <video id="video" src={video.videoUrl} autoPlay={true} controls />
                     </div>
                     <div className="videoshow-info">
                         <div className="videoshow-title">
@@ -146,7 +146,7 @@ class VideoShow extends React.Component {
                         <div className="videoshow-up-next-video">
                             <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
                                 <div className="videoshow-index">
-                                    <video src={upNextVideo.videoUrl} controls={false}/>
+                                    <img src={upNextVideo.thumbnailUrl} />
                                 </div>
                                 <div className="videoshow-rec-info">
                                     <h2>{upNextVideo.title}</h2>
@@ -173,7 +173,7 @@ class VideoShow extends React.Component {
                                     <div key={video.id} className="videoshow-up-next-video"> 
                                         <Link onClick={this.handleClick} className="videoshow-link" to={`/videos/${video.id}`}>                  
                                             <div className="videoshow-index">
-                                                <video src={video.videoUrl} controls={false}/>
+                                                <img src={video.thumbnailUrl} />
                                             </div>
                                             <div className="videoshow-rec-info">
                                                 <h2>{video.title}</h2>
