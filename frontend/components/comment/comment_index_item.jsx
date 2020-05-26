@@ -10,7 +10,9 @@ class CommentIndexItem extends React.Component {
     render() {
         return (
             <div className="comment-index-item">
-                <FontAwesomeIcon icon={faUserCircle} className="comment-user-icon" />
+                <div className="comment-user-icon" style={{backgroundColor: this.props.color}}>
+                        {this.props.username[0].toUpperCase()}
+                </div>
                 <div className="comment-content">
                     <div className="comment-username">{this.props.username}</div>
                     <div className="comment-body">{this.props.body}</div>

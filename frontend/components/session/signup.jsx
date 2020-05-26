@@ -3,15 +3,30 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
+const COLORS = [
+    '#A61B00',
+    '#CC0000',
+    '#E69038',
+    '#F1C231', 
+    '#6AA84E', 
+    '#44818E', 
+    '#3B77D8', 
+    '#3C84C6', 
+    '#674EA7', 
+    '#A64C79'
+];
+
 class Signup extends React.Component {
     constructor(props) {
         super(props);
+        let newColor = COLORS[Math.floor(Math.random() * COLORS.length)];
         this.state = {
             first_name: '',
             last_name: '',
             username: '',
             email: '',
             password: '',
+            color: newColor,
             errors: []
         };  
 

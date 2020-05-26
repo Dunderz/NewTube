@@ -11,6 +11,7 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+    validates :color, presence: true
     validates :first_name, presence: true
     validates :last_name, presence: true
     validates :username, presence: true, uniqueness: true

@@ -35,11 +35,12 @@ class Video extends React.Component {
                 </div>
                 <div className="video-index-videos">
                   {this.props.videos.map(video => {
+                    console.log(video);
                     return (
                           <div key={video.id} className="video-container"> 
                             <Link className="video-link" to={`/videos/${video.id}`}>                  
                               <div className="video-index">
-                                <video src={video.videoUrl} controls={false}/>
+                                <img src={video.thumbnailUrl} />
                               </div>
                               <div className="video-info">
                                 <div className="video-info-top-row">

@@ -38,8 +38,9 @@ class CommentForm extends React.Component {
             video_id: this.props.videoId,
             user_id: this.props.currentUser.id,
             username: this.props.currentUser.username
-        }).then(() => this.setState({ body: "" }))
+        })
         .then(() => this.props.handleCreateComment())
+        .then(() => this.setState({ body: "" }))
         .then(() => this.setState({ showButtons: false }))
     }
 
@@ -51,8 +52,6 @@ class CommentForm extends React.Component {
         } else {
             show = "comment-buttons-hidden";
         }
-
-
 
         return (
             <div className="comment-form-container">
@@ -67,7 +66,7 @@ class CommentForm extends React.Component {
                         rows="10" 
                         value={this.state.body}></textarea>
                     <div className={show}>
-                        <button onClick={this.handleCancelClick} className="comment-cancel">CANCEL</button>
+                        <div onClick={this.handleCancelClick} className="comment-cancel">CANCEL</div>
                         <input className="comment-submit" type="submit" value="COMMENT"/>
                     </div>
                 </form>

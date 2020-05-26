@@ -41,7 +41,7 @@ class ProfileMenu extends React.Component {
     }
 
     render() {
-        
+        console.log(this.props.currentUser);
         let isActive;
         if (this.state.active) {
             isActive = 'dropdown-show';
@@ -50,7 +50,7 @@ class ProfileMenu extends React.Component {
         }
         return (
             <div className="profile-menu" ref={this.container}>
-                <div className="profile-menu-icon" onClick={this.toggleActive}>
+                <div className="profile-menu-icon" style={{backgroundColor: this.props.currentUser.color}} onClick={this.toggleActive}>
                     <p className="profile-letter">{this.props.currentUser.username[0].toUpperCase()}</p>
                 </div>
                 <div className={isActive}>

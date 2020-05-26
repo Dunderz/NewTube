@@ -28,18 +28,21 @@ class CommentIndex extends React.Component {
     }
 
     render() {
-        console.log(this.props.comments);
         return (
             <div key="comment-index" className="comment-index">
                 <CommentFormContainer handleCreateComment={this.handleCreateComment} videoId={this.props.videoId} />
                 <div>
                     {Object.values(this.props.comments).map(comment => {
-                        console.log(comment);
+                        if (Object.values(comment).length === 0) {
+                            console.log("this is the comment");
+                            return;
+                        }
                         return (
                                 <div key={comment.id}>
                                     <CommentIndexItem 
                                         body={comment.body}
                                         username={comment.username}
+                                        color={comment.user.color}
                                         />
                                 </div>
                         )

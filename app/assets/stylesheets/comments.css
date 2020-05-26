@@ -45,6 +45,9 @@
 }
 
 .comment-cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 101px;
     height: 37px;
     border: none;
@@ -53,6 +56,10 @@
     font-size: 14px;
     background-color: #fff;
     font-weight: 600;
+}
+
+.comment-cancel:hover {
+    cursor: pointer;
 }
 
 .comment-submit {
@@ -72,7 +79,16 @@
 }
 
 .comment-user-icon {
-    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 40px;
+    width: 40px;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 300;
     margin-right: 20px;
 }
 
