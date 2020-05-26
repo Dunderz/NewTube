@@ -39,7 +39,7 @@ class NavBar extends React.Component {
                     <Link className="new-tube-top-left-logo" to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>
                 </div>
                 <div className="center">
-                    <Search />
+                    <Search moreProps={this.props} />
                 </div>
 
                 <div className="top-right">

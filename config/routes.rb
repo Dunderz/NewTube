@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
+    get :search, controller: :videos
   end
 end
