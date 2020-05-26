@@ -41,7 +41,6 @@ class ProfileMenu extends React.Component {
     }
 
     render() {
-        console.log(this.props.currentUser);
         let isActive;
         if (this.state.active) {
             isActive = 'dropdown-show';

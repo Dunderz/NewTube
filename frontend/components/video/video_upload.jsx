@@ -7,7 +7,8 @@ class VideoUpload extends React.Component {
         super(props);
         this.state = {
             title: '',
-            videoFile: null
+            videoFile: null,
+            thumbnail: null
         }
 
         this.handleFile = this.handleFile.bind(this);
@@ -23,7 +24,15 @@ class VideoUpload extends React.Component {
     handleFile(e) {
         this.setState({
             videoFile: e.currentTarget.files[0]
-        })
+        });
+        console.log(e.currentTarget.files);
+    }
+
+    handleThumbnail(e) {
+        this.setState({
+            thumbnail: e.currentTarget.files[0]
+        });
+        console.log(e.currentTarget.files);
     }
 
     handleFileFind() {
@@ -61,10 +70,14 @@ class VideoUpload extends React.Component {
                         </div>
                         <form onSubmit={this.handleSubmit} className="video-upload-form">
                             <div className="video-upload-file" onClick={this.handleFileFind}>
-                                <h2>SELECT FILE</h2>
+                                <h2>SELECT VIDEO</h2>
                                 <input type="file" id="file" onChange={this.handleFile} />
                             </div>
-                            <input placeholder="Please enter a title." maxlength="42" type="text" onChange={this.handleInput} className="video-upload-title" />
+                            <div className="video-upload-file" onClick={this.handleFileFind}>
+                                <h2>SELECT THUMBNAIL</h2>
+                                <input type="file" id="file" onChange={this.handleFile} />
+                            </div>
+                            <input placeholder="Please enter a title." maxLength="42" type="text" onChange={this.handleInput} className="video-upload-title" />
                             <button className="video-upload-button">UPLOAD</button>
                         </form>
                     </div>

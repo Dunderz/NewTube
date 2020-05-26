@@ -34,7 +34,6 @@ class CommentIndex extends React.Component {
                 <div>
                     {Object.values(this.props.comments).map(comment => {
                         if (Object.values(comment).length === 0) {
-                            console.log("this is the comment");
                             return;
                         }
                         return (
