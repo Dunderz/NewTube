@@ -14,7 +14,8 @@ class VideoUpload extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        
+        this.handleThumbnail = this.handleThumbnail.bind(this);
+        this.showState = this.showState.bind(this);
     }
 
     handleInput(e) {
@@ -39,12 +40,21 @@ class VideoUpload extends React.Component {
         document.getElementById('file').click();
     }
 
+    handleThumbnailFind() {
+        document.getElementById('thumbnail').click();
+    }
+
+    showState() {
+        console.log(this.state);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[video]', this.state.videoFile);
         formData.append('video[author_id]', this.props.currentUser.id);
+        formData.append('video[thumbnail]', this.state.thumbnail);
         this.props.uploadVideo(formData).then((video) => {
             this.props.history.push(`/videos/${video.video.id}`);
             this.props.closeModal();
@@ -53,7 +63,7 @@ class VideoUpload extends React.Component {
 
     render() {
         return (
-            <div className="video-upload-modal">
+            <div onClick={this.showState} className="video-upload-modal">
                 <div className="video-upload-top-row">
                     <h1>Upload video</h1>
                 </div>
@@ -73,9 +83,9 @@ class VideoUpload extends React.Component {
                                 <h2>SELECT VIDEO</h2>
                                 <input type="file" id="file" onChange={this.handleFile} />
                             </div>
-                            <div className="video-upload-file" onClick={this.handleFileFind}>
+                            <div className="video-upload-file" onClick={this.handleThumbnailFind}>
                                 <h2>SELECT THUMBNAIL</h2>
-                                <input type="file" id="file" onChange={this.handleFile} />
+                                <input type="file" id="thumbnail" onChange={this.handleThumbnail} />
                             </div>
                             <input placeholder="Please enter a title." maxLength="42" type="text" onChange={this.handleInput} className="video-upload-title" />
                             <button className="video-upload-button">UPLOAD</button>

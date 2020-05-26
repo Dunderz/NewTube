@@ -13,6 +13,7 @@ class Video < ApplicationRecord
     validates :author_id, presence: true
 
     has_one_attached :video
+    has_one_attached :thumbnail
 
     # belongs_to :author,
     #     foreign_key: :author_id,
