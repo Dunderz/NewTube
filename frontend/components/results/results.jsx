@@ -40,7 +40,7 @@ class Results extends React.Component {
         }
 
         return (
-            <>
+            <div className="results-component">
                 <div className="results-container">
                     <div className="results-for-input">
                         RESULTS FOR "{this.state.result}"
@@ -55,7 +55,7 @@ class Results extends React.Component {
                         })}
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }

@@ -1,9 +1,14 @@
+.results-component {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
 .results-container { 
     position: relative;
     background-color: #f9f9f9;
     top: 58px;
     width: 90%;
-    height: 100%;
+    height: 100vh;
     padding: 30px 24px 16px 24px;
     max-width: 865px;
 }
@@ -21,3 +26,43 @@
 }
 
 /* RESULTS ITEMS */
+
+.results-video-link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 140px;
+    outline: none !important;
+    margin-bottom: 10px;
+}
+
+.results-video-index {
+    width: 250px;
+    min-width: 250px;
+    height: 140px;
+    background-color: black;
+    margin-right: 10px;
+}
+
+.results-video-index img {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.results-video-info {
+    width: 300px;
+}
+
+.results-video-index-title {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.results-video-index-uploader {
+    font-weight: 400;
+    color: #606060;
+}
