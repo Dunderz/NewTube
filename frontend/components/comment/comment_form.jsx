@@ -16,11 +16,15 @@ class CommentForm extends React.Component {
     }
 
     handleBodyClick(e) {
-        this.setState({ showButtons: true })
+        if (this.props.currentUser) {
+            this.setState({ showButtons: true });
+        } else {
+            this.props.history.push('/login');
+        }
     }
 
     handleCancelClick() {
-        this.setState({ showButtons: false })
+        this.setState({ showButtons: false });
     }
 
     handleInput(field) {
