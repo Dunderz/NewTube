@@ -1,4 +1,5 @@
 import React from 'react';
+import ResultsItem from './results_item';
 
 class Results extends React.Component {
     constructor(props) {
@@ -19,13 +20,23 @@ class Results extends React.Component {
             )
         }
         return (
-            <div>
-                {this.props.videos.map(video => {
-                    return (
-                        <h1 key={video.id}>{video.title}</h1>
-                    )
-                })}
-            </div>
+            <>
+                
+                <div className="results-container">
+                    <div className="results-for-input">
+                        RESULTS FOR "{this.state.result}"
+                    </div>
+                    <div className="results-videos">
+                        {this.props.videos.map(video => {
+                            return (
+                                <>
+                                    <ResultsItem video={video} />
+                                </>
+                            )
+                        })}
+                    </div>
+                </div>
+            </>
         )
     }
 }

@@ -1,0 +1,21 @@
+.results-container { 
+    position: relative;
+    background-color: #f9f9f9;
+    top: 58px;
+    width: 90%;
+    height: 100%;
+    padding: 30px 24px 16px 24px;
+    max-width: 865px;
+}
+
+.results-for-input {
+    font-size: 14px;
+    color: #606060;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 8px;
+}
+
+.results-videos {
+    margin-top: 20px;
+}
