@@ -40,20 +40,22 @@ class Video extends React.Component {
                 <div className="video-index-videos">
                   {this.props.videos.map(video => {
                     return (
-                          <div key={video.id} className="video-container"> 
+                          <div key={video.id} className="video-container">
                             <Link className="video-link" to={`/videos/${video.id}`}>                  
                               <div className="video-index">
                                 <img src={video.thumbnailUrl} />
                               </div>
                               <div className="video-info">
                                 <div className="video-info-top-row">
-                                  <FontAwesomeIcon className="video-index-user-icon" icon={ faUserCircle}/>
+                                  <div className="video-user-icon" style={{backgroundColor: video.user.color}}>
+                                      {video.user.username[0].toUpperCase()}
+                                  </div>
                                   <div className="video-index-details">
                                     <div className="video-index-title">
                                       {video.title}
                                     </div>
                                     <div className="video-index-uploader">
-                                      <p>Bob Jenkins</p>
+                                      <p>{video.user.username}</p>
                                     </div>
                                     <div className="video-index-views-date-container">
                                       <div className="video-index-views">

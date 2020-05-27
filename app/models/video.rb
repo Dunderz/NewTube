@@ -15,9 +15,9 @@ class Video < ApplicationRecord
     has_one_attached :video
     has_one_attached :thumbnail
 
-    # belongs_to :author,
-    #     foreign_key: :author_id,
-    #     class_name: :User
+    belongs_to :user,
+        foreign_key: :author_id,
+        class_name: :User
 
     # has_many :comments,
     #     foreign_key: :video_id,

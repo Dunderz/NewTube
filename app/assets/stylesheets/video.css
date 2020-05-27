@@ -66,8 +66,18 @@
     margin-right: auto;
 }
 
-.video-index-user-icon {
-    font-size: 28px;
+.video-user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 28px;
+    width: 28px;
+    min-width: 28px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 300;
     margin-right: 8px;
 }
 

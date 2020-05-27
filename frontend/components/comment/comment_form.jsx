@@ -45,8 +45,23 @@ class CommentForm extends React.Component {
     }
 
     render() {
-        let show;
+        const { currentUser } = this.props;
+        let commentIcon;
 
+        if (currentUser) {
+            commentIcon = (
+                <div className="comment-user-icon" style={{backgroundColor: currentUser.color}}>
+                        {currentUser.username[0].toUpperCase()}
+                </div>
+            )
+        } else {
+            commentIcon = (
+                <FontAwesomeIcon className="comment-form-icon" icon={faUserCircle} />
+            )
+        }
+
+        let show;
+        
         if (this.state.showButtons) {
             show = "comment-buttons";
         } else {
@@ -55,7 +70,7 @@ class CommentForm extends React.Component {
 
         return (
             <div className="comment-form-container">
-                <FontAwesomeIcon className="comment-form-icon" icon={faUserCircle} />
+                {commentIcon}
                 <form className="comment-form" onSubmit={this.handleSubmit}>
                     <textarea 
                         onClick={this.handleBodyClick}

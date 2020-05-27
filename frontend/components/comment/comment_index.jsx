@@ -33,6 +33,7 @@ class CommentIndex extends React.Component {
                 <CommentFormContainer handleCreateComment={this.handleCreateComment} videoId={this.props.videoId} />
                 <div>
                     {Object.values(this.props.comments).map(comment => {
+                        console.log(comment);
                         if (Object.values(comment).length === 0) {
                             return;
                         }

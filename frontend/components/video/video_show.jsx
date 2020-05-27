@@ -41,6 +41,7 @@ class VideoShow extends React.Component {
     
 
     render() {
+
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;
 
@@ -119,10 +120,12 @@ class VideoShow extends React.Component {
                     <div className="videoshow-description">
                         <div className="description-top-row">
                             <div className="description-user-container hover">
-                                <FontAwesomeIcon className="description-user-icon" icon={faUserCircle} />
+                                <div className="description-user-icon" style={{backgroundColor: video.user.color}}>
+                                    {video.user.username[0].toUpperCase()}
+                                </div>
                                 <div className="description-user">
                                     <div className="description-username">
-                                        <h2>TestUser</h2>
+                                        <h2>{video.user.username}</h2>
                                     </div>
                                     <div className="description-sub-count">
                                         <h2>99.9K subscribers</h2>
@@ -151,7 +154,7 @@ class VideoShow extends React.Component {
                                 <div className="videoshow-rec-info">
                                     <h2>{upNextVideo.title}</h2>
                                     <div className="uploader-name">
-                                        <h2>Test Uploader</h2>
+                                        <h2>{upNextVideo.user.username}</h2>
                                     </div>
                                     <div className="videoshow-rec-vid-stats">
                                         <div className="videoshow-rec-views">
@@ -178,7 +181,7 @@ class VideoShow extends React.Component {
                                             <div className="videoshow-rec-info">
                                                 <h2>{video.title}</h2>
                                                 <div className="uploader-name">
-                                                    <h2>Test Uploader</h2>
+                                                    <h2>{video.user.username}</h2>
                                                 </div>
                                                 <div className="videoshow-rec-vid-stats">
                                                     <div className="videoshow-rec-views">
