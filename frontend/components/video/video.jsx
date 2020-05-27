@@ -21,6 +21,10 @@ class Video extends React.Component {
         this.props.requestVideos();
     }
 
+    componentWillUnmount() {
+      
+    }
+
     render() {
         if (this.props.videos === undefined) {
           return (
