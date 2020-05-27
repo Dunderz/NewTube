@@ -4,28 +4,28 @@ class Results extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            result: this.props.location.search.slice(14).split("+").join(" "),
-            update: false
+            result: this.props.location.search.slice(14).split("+").join(" ")
         };
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchSearched(this.state.result)
-        .then(() => console.log(this.props));
-    }
-
-    componentDidUpdate() {
-    }
-
-    handleClick() {
-        this.setState({ update: true })
     }
 
     render() {
+        if (this.props.videos === undefined) {
+            return (
+                <></>
+            )
+        }
         return (
-            <div onClick={this.handleClick} >RESULTS COMPONENT</div>
+            <div>
+                {this.props.videos.map(video => {
+                    return (
+                        <h1 key={video.id}>{video.title}</h1>
+                    )
+                })}
+            </div>
         )
     }
 }

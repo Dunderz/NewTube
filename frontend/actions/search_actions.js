@@ -1,9 +1,9 @@
 import { searchVideos } from '../util/search';
 import { RECEIVE_VIDEOS } from './video_actions';
 
-const receiveSearched = data => ({
+const receiveSearched = videos => ({
     type: RECEIVE_VIDEOS,
-    data
+    videos: videos
 });
 
 export const fetchSearched = (result) => dispatch => searchVideos(result)

@@ -5,13 +5,12 @@ export const fetchVideo = id => (
     })
 );
 
-export const fetchVideos = (data) => (
-    $.ajax({
+export const fetchVideos = () => {
+    return $.ajax({
         method: 'GET',
-        url: "/api/videos",
-        data
+        url: "/api/videos"
     })
-);
+};
 
 export const createVideo = formData => (
     $.ajax({
