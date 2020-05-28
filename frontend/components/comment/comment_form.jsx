@@ -72,6 +72,13 @@ class CommentForm extends React.Component {
             show = "comment-buttons-hidden";
         }
 
+        let commentFormClass;
+        if (this.state.body.length < 1) {
+            commentFormClass = "not-comment-submit";
+        } else {
+            commentFormClass = "comment-submit";
+        }
+
         return (
             <div className="comment-form-container">
                 {commentIcon}
@@ -86,7 +93,7 @@ class CommentForm extends React.Component {
                         value={this.state.body}></textarea>
                     <div className={show}>
                         <div onClick={this.handleCancelClick} className="comment-cancel">CANCEL</div>
-                        <input className="comment-submit" type="submit" value="COMMENT"/>
+                        <input className={commentFormClass} type="submit" value="COMMENT"/>
                     </div>
                 </form>
             </div>

@@ -93,7 +93,7 @@ class VideoUpload extends React.Component {
                                 <input type="file" id="thumbnail" onChange={this.handleThumbnail} />
                             </div>
                             <input placeholder="Please enter a title." maxLength="100" type="text" onChange={this.handleInput} className="video-upload-title" />
-                            <input placeholder="Enter a Description (Optional)" type="text" onChange={this.handleDescription} className="video-upload-description" />
+                            <input placeholder="Enter a Description (Optional)" maxLength="600" type="text" onChange={this.handleDescription} className="video-upload-description" />
                             <button className="video-upload-button">UPLOAD</button>
                         </form>
                     </div>
