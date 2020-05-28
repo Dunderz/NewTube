@@ -35,6 +35,7 @@
 .video-upload-icon-container {
     height: 140px;
     width: 140px;
+    min-height: 140px;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -67,7 +68,6 @@ input[type="file"] {
 .video-upload-file {
     display: flex;
     align-items: center;
-    margin-top: 10px;
     height: 38px;
     width: 115px;
     background-color: #065fd4;
@@ -124,17 +124,38 @@ input[type="file"] {
 }
 
 .video-upload-button {
+    position: relative;
+    top: 200px;
+    left: 100px;
     margin-top: 20px;
     height: 38px;
     width: 115px;
     margin-left: auto;
     margin-right: auto;
     border: none;
-    background-color: rgb(3, 189, 3);
+    background-color: #065fd4;
     border-radius: 2px;
     font-size: 14px;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.not-video-upload-button {
+    pointer-events: none;
+    position: relative;
+    top: 200px;
+    left: 100px;
+    margin-top: 20px;
+    height: 38px;
+    width: 115px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background-color: rgb(216, 215, 215);
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
 }
 
 .video-upload-left {
@@ -172,8 +193,74 @@ input[type="file"] {
     color: rgb(115, 115, 115);
 }
 
+.video-upload-thumbnail-container {
+    margin-top: 24px;
+}
+
+.video-upload-thumbnail-container h2 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.video-upload-thumbnail-container p {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.55);
+    line-height: 20px;
+}
+
+.video-upload-thumbnail {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed rgb(216, 215, 215);
+    height: 70px;
+    width: 130px;
+    margin-right: 6px;
+}
+
+.video-upload-thumbnail p {
+    color: rgb(216, 215, 215);
+}
+
+.thumbnail-upload-and-preview {
+    margin-top: 6px;
+    display: flex;
+}
+
+.video-thumbnail-icon {
+    font-size: 25px;
+    color: rgb(216, 215, 215);
+}
+
+.thumbnail-preview {
+    height: 72px;
+    width: 132px;
+}
+
+.thumbnail-preview img {
+    height: 100%;
+    width: 100%;
+}
+
 .video-upload-right {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+.video-file-name {
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.video-file-name-container {
+    height: 40px;
 }
 
 
