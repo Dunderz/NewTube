@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import timeAgo from '../video/video_time';
 
 class ResultsItem extends React.Component {
     constructor(props) {
@@ -26,11 +27,11 @@ class ResultsItem extends React.Component {
                                 </div>
                                 <span className="videoshow-views-dot"></span>
                                 <div className="video-index-views">
-                                2.2M views
+                                    {video.views} {video.views == 1 ? "view" : "views"}
                                 </div>
                                 <span className="videoshow-views-dot"></span>
                                 <div className="video-index-date">
-                                1 month ago
+                                    {timeAgo(video.created_at)}
                                 </div>
                             </div>
                             </div>

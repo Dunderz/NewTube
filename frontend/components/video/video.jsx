@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import timeAgo from './video_time';
 
 class Video extends React.Component {
     constructor(props) {
@@ -25,10 +26,7 @@ class Video extends React.Component {
       
     }
 
-    timeAgo(time) {
-      console.log(Date.now())
-      console.log(time);
-    }
+    
 
     render() {
         if (this.props.videos === undefined) {
@@ -68,7 +66,7 @@ class Video extends React.Component {
                                       </div>
                                       <span className="videoshow-views-dot"></span>
                                       <div className="video-index-date">
-                                        1 month ago
+                                        {timeAgo(video.created_at)}
                                       </div>
                                     </div>
                                   </div>
