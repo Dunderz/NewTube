@@ -59,7 +59,7 @@ class Video extends React.Component {
                                     </div>
                                     <div className="video-index-views-date-container">
                                       <div className="video-index-views">
-                                        2.2M views
+                                        {video.views} views
                                       </div>
                                       <span className="videoshow-views-dot"></span>
                                       <div className="video-index-date">

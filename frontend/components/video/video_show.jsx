@@ -25,7 +25,9 @@ class VideoShow extends React.Component {
 
     componentDidMount() {
         this.props.requestComments(this.props.match.params.id);
+        this.props.requestVideo(this.props.match.params.id);
         this.props.requestVideos();
+        console.log("WELCOME TO OAKLAND BITCH")
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -41,6 +43,10 @@ class VideoShow extends React.Component {
     
 
     render() {
+        console.log("VIDEOS:")
+        console.log(this.props.videos);
+        console.log("VIDEO:")
+        console.log(this.props.video);
 
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;

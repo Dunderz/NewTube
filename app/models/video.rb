@@ -10,6 +10,7 @@
 #
 class Video < ApplicationRecord
     validates :title, presence: true, uniqueness: true
+    validates :views, presence: true
     validates :author_id, presence: true
 
     has_one_attached :video

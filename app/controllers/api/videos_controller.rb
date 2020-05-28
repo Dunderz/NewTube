@@ -6,11 +6,13 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
+        @video.views += 1;
         render :show
     end
 
     def create
         @video = Video.new(video_params)
+        @video.views = 0
         if @video.save
             render :show
         else
@@ -24,6 +26,6 @@ class Api::VideosController < ApplicationController
     end
 
     def video_params
-        params.require(:video).permit(:title, :video, :author_id, :thumbnail)
+        params.require(:video).permit(:title, :video, :author_id, :thumbnail, :description)
     end
 end
