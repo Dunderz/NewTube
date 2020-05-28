@@ -73,8 +73,9 @@ class VideoUpload extends React.Component {
                     <h1>Upload video</h1>
                 </div>
                 <div className="video-upload-bottom-row-container">
+                    
                     <div className="video-upload-bottom-row">
-                        <div className="video-upload-icon-container">
+                        {/* <div className="video-upload-icon-container">
                             <FontAwesomeIcon icon={faUpload} className="video-upload-icon" />
                         </div>
                         <div className="video-upload-direction">
@@ -82,19 +83,30 @@ class VideoUpload extends React.Component {
                         </div>
                         <div className="video-upload-info">
                             <p>Your video will be private until you publish it</p>
-                        </div>
+                        </div> */}
                         <form onSubmit={this.handleSubmit} className="video-upload-form">
-                            <div className="video-upload-file" onClick={this.handleFileFind}>
-                                <h2>SELECT VIDEO</h2>
-                                <input type="file" id="file" onChange={this.handleFile} />
+                            <div className="video-upload-left">
+                                <h1>Details</h1>
+                                <div className="video-upload-title-container">
+                                    <p>Title (required)</p>
+                                    <textarea placeholder="Add a title that describes your video" maxLength="100" type="text" onChange={this.handleInput} className="video-upload-title" />
+                                </div>
+                                <div className="video-upload-description-container">
+                                    <p>Description (optional)</p>
+                                    <textarea placeholder="Enter a Description (Optional)" maxLength="600" type="text" onChange={this.handleDescription} className="video-upload-description" />
+                                </div>
+                                <div className="video-upload-file" onClick={this.handleThumbnailFind}>
+                                    <h2>SELECT THUMBNAIL</h2>
+                                    <input type="file" id="thumbnail" accept='image/*' onChange={this.handleThumbnail} />
+                                </div>
                             </div>
-                            <div className="video-upload-file" onClick={this.handleThumbnailFind}>
-                                <h2>SELECT THUMBNAIL</h2>
-                                <input type="file" id="thumbnail" onChange={this.handleThumbnail} />
+                            <div className="video-upload-right">
+                                <div className="video-upload-file" onClick={this.handleFileFind}>
+                                    <h2>SELECT VIDEO</h2>
+                                    <input type="file" id="file" accept='video/*' onChange={this.handleFile} />
+                                    <button className="video-upload-button">UPLOAD</button>
+                                </div>
                             </div>
-                            <input placeholder="Please enter a title." maxLength="100" type="text" onChange={this.handleInput} className="video-upload-title" />
-                            <input placeholder="Enter a Description (Optional)" maxLength="600" type="text" onChange={this.handleDescription} className="video-upload-description" />
-                            <button className="video-upload-button">UPLOAD</button>
                         </form>
                     </div>
                 </div>
