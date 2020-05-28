@@ -7,6 +7,7 @@ class VideoUpload extends React.Component {
         super(props);
         this.state = {
             title: '',
+            description: '',
             videoFile: null,
             thumbnail: null
         }
@@ -16,24 +17,27 @@ class VideoUpload extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleThumbnail = this.handleThumbnail.bind(this);
         this.showState = this.showState.bind(this);
+        this.handleDescription = this.handleDescription.bind(this);
     }
 
     handleInput(e) {
-        this.setState({ title: e.currentTarget.value })
+        this.setState({ title: e.currentTarget.value });
+    }
+
+    handleDescription(e) {
+        this.setState({ description: e.currentTarget.value });
     }
 
     handleFile(e) {
         this.setState({
             videoFile: e.currentTarget.files[0]
         });
-        console.log(e.currentTarget.files);
     }
 
     handleThumbnail(e) {
         this.setState({
             thumbnail: e.currentTarget.files[0]
         });
-        console.log(e.currentTarget.files);
     }
 
     handleFileFind() {
@@ -55,6 +59,7 @@ class VideoUpload extends React.Component {
         formData.append('video[video]', this.state.videoFile);
         formData.append('video[author_id]', this.props.currentUser.id);
         formData.append('video[thumbnail]', this.state.thumbnail);
+        formData.append('video[description]', this.state.description);
         this.props.uploadVideo(formData).then((video) => {
             this.props.history.push(`/videos/${video.video.id}`);
             this.props.closeModal();
@@ -87,7 +92,8 @@ class VideoUpload extends React.Component {
                                 <h2>SELECT THUMBNAIL</h2>
                                 <input type="file" id="thumbnail" onChange={this.handleThumbnail} />
                             </div>
-                            <input placeholder="Please enter a title." maxLength="42" type="text" onChange={this.handleInput} className="video-upload-title" />
+                            <input placeholder="Please enter a title." maxLength="100" type="text" onChange={this.handleInput} className="video-upload-title" />
+                            <input placeholder="Enter a Description (Optional)" type="text" onChange={this.handleDescription} className="video-upload-description" />
                             <button className="video-upload-button">UPLOAD</button>
                         </form>
                     </div>

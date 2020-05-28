@@ -135,13 +135,16 @@ class VideoShow extends React.Component {
                                         <h2>{video.user.username}</h2>
                                     </div>
                                     <div className="description-sub-count">
-                                        <h2>99.9K subscribers</h2>
+                                        <h2>Subscribers Placeholder</h2>
                                     </div>
                                 </div>
                             </div>
                             {/* <div className="subscribe hover">
                                 <h2>SUBSCRIBE</h2>
                             </div> */}
+                        </div>
+                        <div className="description">
+                            <h2>{video.description}</h2>
                         </div>
                     </div>
                     <div className="video-comment-count">

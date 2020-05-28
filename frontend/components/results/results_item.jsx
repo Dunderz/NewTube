@@ -5,10 +5,23 @@ import timeAgo from '../video/video_time';
 class ResultsItem extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            description: this.props.video.description
+        }
     }
 
     render() {
         const { video } = this.props;
+
+        let sliced;
+
+        if (this.state.description.length > 120) {
+            sliced = this.state.description.slice(0, 120) + " ...";
+        } else {
+            sliced = this.state.description
+        }
+
         return (
             <>
                 <Link className="results-video-link" to={`/videos/${video.id}`}>                  
@@ -18,22 +31,25 @@ class ResultsItem extends React.Component {
                     <div className="results-video-info">
                         <div className="video-info-top-row">
                             <div className="video-index-details">
-                            <div className="results-video-index-title">
-                                {video.title}
-                            </div>
-                            <div className="video-index-views-date-container">
-                                <div className="results-video-index-uploader">
-                                    {video.user.username}
+                                <div className="results-video-index-title">
+                                    {video.title}
                                 </div>
-                                <span className="videoshow-views-dot"></span>
-                                <div className="video-index-views">
-                                    {video.views} {video.views == 1 ? "view" : "views"}
+                                <div className="video-index-views-date-container result margin-adjust">
+                                    <div className="results-video-index-uploader">
+                                        {video.user.username}
+                                    </div>
+                                    <span className="videoshow-views-dot"></span>
+                                    <div className="video-index-views">
+                                        {video.views} {video.views == 1 ? "view" : "views"}
+                                    </div>
+                                    <span className="videoshow-views-dot"></span>
+                                    <div className="video-index-date">
+                                        {timeAgo(video.created_at)}
+                                    </div>
                                 </div>
-                                <span className="videoshow-views-dot"></span>
-                                <div className="video-index-date">
-                                    {timeAgo(video.created_at)}
+                                <div className="results-video-description">
+                                    <p>{sliced}</p>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
