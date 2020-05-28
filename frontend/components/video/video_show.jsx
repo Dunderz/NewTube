@@ -32,8 +32,8 @@ class VideoShow extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (this.state.newVideo) {
-            window.location.reload();
             this.props.requestComments(this.props.match.params.id);
+            this.props.requestVideo(this.props.match.params.id);
             this.setState({ newVideo: false });
         }
     }
