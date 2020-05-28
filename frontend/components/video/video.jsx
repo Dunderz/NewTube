@@ -25,6 +25,11 @@ class Video extends React.Component {
       
     }
 
+    timeAgo(time) {
+      console.log(Date.now())
+      console.log(time);
+    }
+
     render() {
         if (this.props.videos === undefined) {
           return (

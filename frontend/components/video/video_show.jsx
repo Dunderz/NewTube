@@ -40,13 +40,45 @@ class VideoShow extends React.Component {
     handleClick() {
         this.setState({ newVideo: true })
     }
-    
+
+    timeAgo(time) {
+        const uploadDate = new Date(time);
+        const currentDate = new Date();
+        
+        let days = (currentDate.getTime() - uploadDate.getTime())/1000/60/60/24;
+        if (days >= 365) {
+            let years = Math.floor(days/365);
+            if (years >= 1) {
+                return years == 1 ? "1 year ago" : `${years} years ago`;
+            }
+        } else if (days >= 30) {
+            let months = Math.floor(days/30);
+            if (months >= 1) {
+                return months == 1 ? "1 month ago" : `${months} months ago`;
+            }
+        } else if (days >= 7) {
+            let weeks = Math.floor(days/7);
+            return weeks == 1 ? "1 week ago" : `${weeks} weeks ago`;
+        } else if (days >= 1) {
+            return days == 1 ? "1 day ago" : `${days} days ago`;
+        } else {
+            let hours = days*24;
+            if (hours >= 1) {
+                hours = Math.floor(hours);
+                return hours == 1 ? "1 hour ago" : `${hours} hours ago`;
+            } else {
+                let minutes = hours*60;
+                if (minutes >= 1) {
+                    minutes = Math.floor(minutes);
+                    return minutes == 1 ? "1 minute ago" : `${minutes} minutes ago`;
+                } else {
+                    return 'Just now';
+                }
+            }
+        }
+    }
 
     render() {
-        console.log("VIDEOS:")
-        console.log(this.props.videos);
-        console.log("VIDEO:")
-        console.log(this.props.video);
 
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;
@@ -67,6 +99,13 @@ class VideoShow extends React.Component {
 
         const { video } = this.props;
         let upNextVideo;
+
+        this.timeAgo(video.created_at);
+
+        const date = new Date(video.created_at);
+        const dateArray = date.toDateString().split(" ").slice(1);
+        dateArray[1] += ",";
+        const formatted = dateArray.join(" ");
 
         if (video.id === this.props.videos[0].id) {
             upNextVideo = this.props.videos.pop();
@@ -89,10 +128,10 @@ class VideoShow extends React.Component {
                         
                         <div className="videoshow-views-likes-options">
                             <div className="videoshow-views">
-                                <h2>Test views</h2>
+                                <h2>{video.views} { video.views == 1 ? "view" : "views"}</h2>
                                 <span className="videoshow-views-dot"></span>
                                 <div className="videoshow-date">
-                                    <h2>Jan 23, 2020</h2>
+                                    <h2>{formatted}</h2>
                                 </div>
                             </div>
                             
