@@ -6,7 +6,11 @@ class LeftNav extends React.Component {
     }
 
     render() {
-        return null;
+        return (
+            <>
+                <div className="left-nav-container"></div>
+            </>
+        );
     }
 }
 

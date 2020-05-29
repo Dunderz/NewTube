@@ -1,11 +1,9 @@
 .video-index-recommended-container {
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    min-width: 1400px;
-    max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
-    background-color: #f9f9f9
+    background-color: #f9f9f9;
 }
 
 .video-index-videos {
@@ -15,7 +13,8 @@
 }
 
 .video-section {
-    
+    margin-left: 72px;
+    padding: 0px 20px;
 }
 
 .video-recommended h2 {
