@@ -35,6 +35,7 @@
     height: 140px;
     outline: none !important;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .results-video-index {

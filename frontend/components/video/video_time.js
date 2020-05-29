@@ -17,6 +17,7 @@ export default time => {
         let weeks = Math.floor(days/7);
         return weeks == 1 ? "1 week ago" : `${weeks} weeks ago`;
     } else if (days >= 1) {
+        days = Math.floor(days);
         return days == 1 ? "1 day ago" : `${days} days ago`;
     } else {
         let hours = days*24;
