@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultsItem from './results_item';
+import LeftNav from '../left_nav/left_nav';
 
 class Results extends React.Component {
     constructor(props) {
@@ -41,6 +42,9 @@ class Results extends React.Component {
 
         return (
             <div className="results-component">
+                <div className="left-nav-component">
+                    <LeftNav />
+                </div>
                 <div className="results-container">
                     <div className="results-for-input">
                         RESULTS FOR "{this.state.result}"

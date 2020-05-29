@@ -1,16 +1,18 @@
 .results-component {
+    position: relative;
+    top: 58px;
     width: 100%;
-    background-color: #f9f9f9;
+    height: 2000px;
 }
 
 .results-container { 
     position: relative;
     background-color: #f9f9f9;
-    top: 58px;
     width: 90%;
     height: 100vh;
     padding: 30px 24px 16px 24px;
     max-width: 865px;
+    margin-left: 72px;
 }
 
 .results-for-input {

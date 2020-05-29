@@ -110,40 +110,42 @@ class Login extends React.Component {
         }
 
         return (
-            <div className="session-form">
-                <div>
-                    <form className="form-sign-in" onSubmit={this.handleSubmit}>
-                        <Link className="session-newtube-logo" to="/"><img src={ window.newtube } id='signin-logo'/></Link>
-                        <h2 className="sign-in-title">Sign In</h2>
-                        <p className="sign-in-subtitle">to continue to NewTube</p>
-                        <label className={`input-username`}>
-                            <input type="text"
-                                className={`${emailError}`}
-                                value={this.state.username}
-                                onChange={this.handleInput('username')}
-                                placeholder="Username or Email"/>
-                            {emailShow}
-                            
-                        </label>
-                        <label className={`input-password`}>
-                            <input type="password"
-                                className={`${passwordError}`}
-                                value={this.state.password}
-                                onChange={this.handleInput('password')}
-                                placeholder="Password"/>
-                            {passwordShow}
-                        </label>
-                        <div className="demo-login-form">
-                            <p>Don't want to sign up? Use demo mode instead!</p>
-                            <div className="demo-login-button" onClick={this.demoLogin}>
-                                Demo Login
+            <div className="sign-in-container">
+                <div className="session-form">
+                    <div>
+                        <form className="form-sign-in" onSubmit={this.handleSubmit}>
+                            <Link className="session-newtube-logo" to="/"><img src={ window.newtube } id='signin-logo'/></Link>
+                            <h2 className="sign-in-title">Sign In</h2>
+                            <p className="sign-in-subtitle">to continue to NewTube</p>
+                            <label className={`input-username`}>
+                                <input type="text"
+                                    className={`${emailError}`}
+                                    value={this.state.username}
+                                    onChange={this.handleInput('username')}
+                                    placeholder="Username or Email"/>
+                                {emailShow}
+                                
+                            </label>
+                            <label className={`input-password`}>
+                                <input type="password"
+                                    className={`${passwordError}`}
+                                    value={this.state.password}
+                                    onChange={this.handleInput('password')}
+                                    placeholder="Password"/>
+                                {passwordShow}
+                            </label>
+                            <div className="demo-login-form">
+                                <p>Don't want to sign up? Use demo mode instead!</p>
+                                <div className="demo-login-button" onClick={this.demoLogin}>
+                                    Demo Login
+                                </div>
                             </div>
-                        </div>
-                        <div className="form-buttons">
-                            <Link className="sign-up-link" to="/signup">Create account</Link>
-                            <button className="log-in-btn" type="submit">Next</button>
-                        </div>
-                    </form>
+                            <div className="form-buttons">
+                                <Link className="sign-up-link" to="/signup">Create account</Link>
+                                <button className="log-in-btn" type="submit">Next</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         );

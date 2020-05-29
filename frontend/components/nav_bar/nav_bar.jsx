@@ -33,7 +33,7 @@ class NavBar extends React.Component {
         return (
             <div className="nav-bar">
                 <div className="top-left">
-                    <div className="hamburger-container">
+                    <div className="hamburger-container" onClick={() => this.props.openModal('modal-side-bar')}>
                         <img id='hamburger-logo' src={ window.hamburger } />
                     </div>
                     <Link className="new-tube-top-left-logo" to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>

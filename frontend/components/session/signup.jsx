@@ -185,68 +185,70 @@ class Signup extends React.Component {
             );
         }
         return (
-            <div className="session-form">
-                <div className="form-container">
-                    <form className="form-sign-up">
-                        <Link className="session-newtube-logo" to="/"><img src={ window.newtube } id='signin-logo'/></Link>
-                        <h2 className="sign-in-title">Create your NewTube account</h2>
-                        <p className="sign-in-subtitle">to continue to NewTube</p>
-                        <div className="fullname-container">
-                            <label className="input-first-name">
+            <div className="sign-up-container">
+                <div className="session-form">
+                    <div className="form-container">
+                        <form className="form-sign-up">
+                            <Link className="session-newtube-logo" to="/"><img src={ window.newtube } id='signin-logo'/></Link>
+                            <h2 className="sign-in-title">Create your NewTube account</h2>
+                            <p className="sign-in-subtitle">to continue to NewTube</p>
+                            <div className="fullname-container">
+                                <label className="input-first-name">
+                                    <input 
+                                        className={`${firstNameError}`}
+                                        type="text"
+                                        onChange={this.handleInput('first_name')}
+                                        value={this.state.first_name}
+                                        placeholder="First Name"/>
+                                    {firstNameShow}
+                                </label>
+                                <label className="input-last-name">
+                                    <input 
+                                        className={`${lastNameError}`}
+                                        type="text"
+                                        onChange={this.handleInput('last_name')}
+                                        value={this.state.last_name}
+                                        placeholder="Last Name"/>
+                                    {lastNameShow}
+                                </label>
+                            </div>
+                            <label className="input-username">
                                 <input 
-                                    className={`${firstNameError}`}
-                                    type="text"
-                                    onChange={this.handleInput('first_name')}
-                                    value={this.state.first_name}
-                                    placeholder="First Name"/>
-                                {firstNameShow}
+                                    className={`${usernameError}`}
+                                    type="text" 
+                                    value={this.state.username}
+                                    onChange={this.handleInput('username')}
+                                    placeholder="Username"
+                                    />
+                                {usernameShow}
                             </label>
-                            <label className="input-last-name">
+                            <label className="input-email">
                                 <input 
-                                    className={`${lastNameError}`}
-                                    type="text"
-                                    onChange={this.handleInput('last_name')}
-                                    value={this.state.last_name}
-                                    placeholder="Last Name"/>
-                                {lastNameShow}
+                                    className={`${emailError}`}
+                                    type="text" 
+                                    value={this.state.email}
+                                    onChange={this.handleInput('email')}
+                                    placeholder="Email"
+                                    />
+                                {emailShow}
                             </label>
-                        </div>
-                        <label className="input-username">
-                            <input 
-                                className={`${usernameError}`}
-                                type="text" 
-                                value={this.state.username}
-                                onChange={this.handleInput('username')}
-                                placeholder="Username"
-                                />
-                            {usernameShow}
-                        </label>
-                        <label className="input-email">
-                            <input 
-                                className={`${emailError}`}
-                                type="text" 
-                                value={this.state.email}
-                                onChange={this.handleInput('email')}
-                                placeholder="Email"
-                                />
-                            {emailShow}
-                        </label>
-                        <label className="input-password">
-                            <input 
-                                className={`${passwordError}`}
-                                type="password" 
-                                value={this.state.password}
-                                onChange={this.handleInput('password')}
-                                placeholder="Password"
-                                />
-                            {passwordShow}
-                        </label>
-                        
-                        <div className="form-buttons">
-                            <Link className="sign-up-link" to="/login">Sign in instead</Link>
-                            <button className="log-in-btn" onClick={this.handleSubmit}>Sign Up</button>
-                        </div>
-                    </form>
+                            <label className="input-password">
+                                <input 
+                                    className={`${passwordError}`}
+                                    type="password" 
+                                    value={this.state.password}
+                                    onChange={this.handleInput('password')}
+                                    placeholder="Password"
+                                    />
+                                {passwordShow}
+                            </label>
+                            
+                            <div className="form-buttons">
+                                <Link className="sign-up-link" to="/login">Sign in instead</Link>
+                                <button className="log-in-btn" onClick={this.handleSubmit}>Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         )

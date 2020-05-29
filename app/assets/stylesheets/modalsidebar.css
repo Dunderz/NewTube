@@ -1,0 +1,12 @@
+.modal-side-bar-container {
+    position: absolute;
+    width: 240px;
+    height: 100vh;
+    background-color: red;
+    animation: slide 0.25s;
+}
+
+@keyframes slide {
+    from { transform: translateX(-100%) }
+    to { transform: translateX(0) }
+}

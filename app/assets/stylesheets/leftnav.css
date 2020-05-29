@@ -5,6 +5,7 @@
     width: 72px;
     height: 100vh;
     background-color: white;
+    z-index: 1;
 }
 
 .left-nav-link {
