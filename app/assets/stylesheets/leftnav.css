@@ -1,6 +1,34 @@
 .left-nav-container {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     width: 72px;
     height: 100vh;
-    background-color: red;
+    background-color: white;
 }
+
+.left-nav-link {
+    height: 74px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    outline: none !important;
+}
+
+.left-nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: red;
+}
+
+.left-nav-icon {
+    margin-bottom: 6px;
+}
+
+.left-nav-icon-title {
+    font-size: 10px;
+}
+
