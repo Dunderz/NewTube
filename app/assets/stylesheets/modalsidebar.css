@@ -2,8 +2,42 @@
     position: absolute;
     width: 240px;
     height: 100vh;
-    background-color: red;
+    background-color: white;
     animation: slide 0.25s;
+}
+
+.modal-side-bar-links {
+    padding-top: 20px;
+    height: 500px;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+.modal-side-bar-link {
+    display: flex;
+    align-items: center;
+    outline: none !important;
+    text-decoration: none;
+    height: 40px;
+    padding: 0 24px;
+    margin-bottom: 10px;
+}
+
+.modal-side-bar-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal-side-bar-icon {
+    margin-right: 30px;
+    font-size: 16px;
+    color: #606060;
+}
+
+.modal-side-bar-title {
+    font-size: 14px;
+    color: #030303;
+    padding-top: 1px;
 }
 
 @keyframes slide {

@@ -17,7 +17,7 @@ function Modal({modal, closeModal}) {
       component = <VideoUploadContainer />;
       break;
     case 'modal-side-bar':
-      component = <ModalSideBar />;
+      component = <ModalSideBar closeModal={closeModal}/>;
       break;
     default:
       return null;

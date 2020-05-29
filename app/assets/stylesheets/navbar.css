@@ -32,7 +32,11 @@
 }
 
 .hamburger-container:active {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+}
+
+.hamburger-container:not( :active ) {
     transition: 0.25s;
 }
 
@@ -73,6 +77,20 @@
     background-color: #f8f8f8;
     border-radius: 0 2px 2px 0;
     margin-right: 16px;
+}
+
+.search-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: 0.2s
+}
+
+.search-button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.search-button:not( :active ) {
+    transition: 0.2s;
 }
 
 .search-bar input:focus {
