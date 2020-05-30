@@ -111,10 +111,20 @@
     overflow-wrap: break-word;
 }
 
+.comment-username-date-container {
+    display: flex;
+}
+
 .comment-username {
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 5px;
+    margin-right: 4px;
+}
+
+.comment-date {
+    font-size: 13px;
+    color: #606060;
 }
 
 .comment-body {
