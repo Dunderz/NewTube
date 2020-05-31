@@ -9,6 +9,9 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  first_name      :string
+#  last_name       :string
+#  color           :string           not null
 #
 class User < ApplicationRecord
     validates :color, presence: true
@@ -23,9 +26,6 @@ class User < ApplicationRecord
     has_many :comments,
         foreign_key: :user_id,
         class_name: :Comment
-
-    has_many :likes,
-        as: :likeable
 
     has_many :videos,
         foreign_key: :author_id,

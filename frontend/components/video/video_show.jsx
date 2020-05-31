@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TestContainer from '../test/test_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CommentsContainer from '../comment/comment_index_container';
+import LikesContainer from '../like/like_container';
 import timeAgo from './video_time';
 import { 
     faThumbsUp, 
@@ -98,15 +99,7 @@ class VideoShow extends React.Component {
                             </div>
                             
                             <div className="videoshow-likes-options">
-                                <div className="videoshow-thumbs-up hover">
-                                    <FontAwesomeIcon className="video-option-icons" icon={faThumbsUp}/>
-                                    <h2>0</h2>
-                                </div>
-
-                                <div className="videoshow-thumbs-down hover">
-                                    <FontAwesomeIcon className="video-option-icons" icon={faThumbsDown}/>
-                                    <h2>0</h2>
-                                </div>
+                                <LikesContainer videoId={video.id}/>
 
                                 {/* <div className="videoshow-share hover">
                                     <FontAwesomeIcon className="video-option-icons" icon={faShare}/>

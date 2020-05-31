@@ -8,6 +8,7 @@
 #  body       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  username   :string
 #
 class Comment < ApplicationRecord
     validates :body, presence: true, length: {minimum: 1}

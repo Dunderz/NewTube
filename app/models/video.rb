@@ -2,11 +2,13 @@
 #
 # Table name: videos
 #
-#  id         :bigint           not null, primary key
-#  title      :string           not null
-#  author_id  :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  title       :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  author_id   :integer
+#  views       :integer          not null
+#  description :string
 #
 class Video < ApplicationRecord
     validates :title, presence: true, uniqueness: true
@@ -19,6 +21,9 @@ class Video < ApplicationRecord
     belongs_to :user,
         foreign_key: :author_id,
         class_name: :User
+
+    has_many :likes,
+        as: :likeable
 
     # has_many :comments,
     #     foreign_key: :video_id,
