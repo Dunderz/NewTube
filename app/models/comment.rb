@@ -22,4 +22,7 @@ class Comment < ApplicationRecord
     belongs_to :video,
         class_name: :Video,
         foreign_key: :video_id
+
+    has_many :likes,
+        as: :likable
 end

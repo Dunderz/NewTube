@@ -12,11 +12,5 @@
 class Like < ApplicationRecord
     validates :is_like, presence: true
     
-    belongs_to :user,
-        class_name: :User,
-        foreign_key: :user_id
-
-    belongs_to :video,
-        class_name: :Video,
-        foreign_key: :video_id
+    belongs_to :likable, polumorphic: true
 end
