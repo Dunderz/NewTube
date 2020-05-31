@@ -10,7 +10,12 @@
 #  updated_at :datetime         not null
 #
 class Like < ApplicationRecord
-    validates :is_like, presence: true
+    validates :user_id, :likable_id, :likable_type, presence: true
+    validates :is_like, inclusion: { in: [true, false] }
     
-    belongs_to :likable, polumorphic: true
+    belongs_to :likable, polymorphic: true
+
+    belongs_to :user,
+        foreign_key: :user_id,
+        class_name: :User
 end
