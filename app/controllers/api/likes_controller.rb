@@ -8,8 +8,14 @@ class Api::LikesController < ApplicationController
 
     def create
         @like = Like.new(like_params)
-        if @like.save
-            render :show
+        @user_like = Like.find_by(user_id: params[:like][:user_id])
+        debugger
+        if !@user_like
+            if @like.save
+                render :show
+            end
+        elsif @user_like
+            @user_like.destroy
         else
             render json: @like.errors.full_messages, status: 422
         end

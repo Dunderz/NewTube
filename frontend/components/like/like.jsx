@@ -9,7 +9,9 @@ class Like extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            updated: false
+            updated: false,
+            likes: null,
+            dislikes: null
         }
 
         this.handleLike = this.handleLike.bind(this);
@@ -24,6 +26,7 @@ class Like extends React.Component {
         if (this.state.updated) {
             this.props.requestLikes(this.props.id)
                 .then(() => this.setState({ updated: false }))
+                .then(() => console.log(this.props.likes))
         }
     }
 
@@ -41,7 +44,8 @@ class Like extends React.Component {
     //     }
     // }
 
-    handleLike() {
+    handleLike(e) {
+        e.preventDefault();
         this.setState({ updated: true });
 
         let likesObj = {};
@@ -56,6 +60,8 @@ class Like extends React.Component {
                 dislikesObj[this.props.likes[i]['user_id']] = true;
             }
         }
+
+        
 
         if (dislikesObj[currentUserId] && likesObj[currentUserId] === undefined) {
             this.props.deleteLike(this.props.currentUser.id)
@@ -81,7 +87,8 @@ class Like extends React.Component {
         console.log(likesObj);   
     }
 
-    handleDislike() {
+    handleDislike(e) {
+        e.preventDefault();
         this.setState({ updated: true });
 
         let likesObj = {};
@@ -98,6 +105,7 @@ class Like extends React.Component {
         }
 
         if (likesObj[currentUserId] && dislikesObj[currentUserId] === undefined) {
+            
             this.props.deleteLike(this.props.currentUser.id)
             .then(() => {
                 this.props.createLike({
