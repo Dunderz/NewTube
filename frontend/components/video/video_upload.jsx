@@ -60,7 +60,6 @@ class VideoUpload extends React.Component {
     }
 
     showState() {
-        console.log(this.state);
     }
 
     handleSubmit(e) {
@@ -108,7 +107,6 @@ class VideoUpload extends React.Component {
             uploadColor = "not-video-upload-button";
         }
 
-        console.log(this.state);
         return (
             <div onClick={this.showState} className="video-upload-modal">
                 <div className="video-upload-top-row">

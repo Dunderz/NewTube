@@ -13,19 +13,16 @@ class Like extends React.Component {
         }
 
         this.handleLike = this.handleLike.bind(this);
-        this.handleCountLike = this.handleCountLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
     }
 
     componentDidMount() {
         this.props.requestLikes(this.props.id)
-            .then(likes => this.handleCountLike(likes.likes))
     }
 
     componentDidUpdate() {
         if (this.state.updated) {
             this.props.requestLikes(this.props.id)
-                .then(likes => this.handleCountLike(likes.likes))
                 .then(() => this.setState({ updated: false }))
         }
     }
@@ -44,16 +41,6 @@ class Like extends React.Component {
     //     }
     // }
 
-    handleCountLike(likes) {
-        for (let k in likes) {
-            if (likes[k]['value'] == "like") {
-                this.setState({ likes: this.state.likes++ });
-            } else {
-                this.setState({ dislikes: this.state.dislikes++ });
-            }
-        }
-    }
-
     handleLike() {
         this.setState({ updated: true });
 
@@ -70,7 +57,19 @@ class Like extends React.Component {
             }
         }
 
-        if (likesObj[currentUserId] === undefined && dislikesObj[currentUserId] === undefined) {
+        if (dislikesObj[currentUserId] && likesObj[currentUserId] === undefined) {
+            this.props.deleteLike(this.props.currentUser.id)
+            .then(() => {
+                this.props.createLike({
+                    value: 'like',
+                    user_id: this.props.currentUser.id,
+                    likable_type: this.props.type,
+                    likable_id: this.props.id
+                });
+            });
+        } else if (likesObj[currentUserId]) {
+            this.props.deleteLike(this.props.currentUser.id);
+        } else if (likesObj[currentUserId] === undefined && dislikesObj[currentUserId] === undefined) {
             likesObj[currentUserId] = true;
             this.props.createLike({
                 value: 'like',
@@ -78,17 +77,8 @@ class Like extends React.Component {
                 likable_type: this.props.type,
                 likable_id: this.props.id
             });
-        } else if (likesObj[currentUserId]) {
-            this.props.deleteLike(this.props.currentUser.id);
-        } else if (dislikesObj[currentUserId]) {
-            this.props.deleteLike(this.props.currentUser.id);
-            this.props.createLike({
-                value: 'like',
-                user_id: this.props.currentUser.id,
-                likable_type: this.props.type,
-                likable_id: this.props.id
-            });
-        }   
+        }
+        console.log(likesObj);   
     }
 
     handleDislike() {
@@ -107,7 +97,19 @@ class Like extends React.Component {
             }
         }
 
-        if (likesObj[currentUserId] === undefined && dislikesObj[currentUserId] === undefined) {
+        if (likesObj[currentUserId] && dislikesObj[currentUserId] === undefined) {
+            this.props.deleteLike(this.props.currentUser.id)
+            .then(() => {
+                this.props.createLike({
+                    value: 'dislike',
+                    user_id: this.props.currentUser.id,
+                    likable_type: this.props.type,
+                    likable_id: this.props.id
+                });
+            });
+        } else if (dislikesObj[currentUserId]) {
+            this.props.deleteLike(this.props.currentUser.id);
+        } else if (likesObj[currentUserId] === undefined && dislikesObj[currentUserId] === undefined) {
             dislikesObj[currentUserId] = true;
             this.props.createLike({
                 value: 'dislike',
@@ -115,17 +117,9 @@ class Like extends React.Component {
                 likable_type: this.props.type,
                 likable_id: this.props.id
             });
-        } else if (dislikesObj[currentUserId]) {
-            this.props.deleteLike(this.props.currentUser.id);
-        } else if (likesObj[currentUserId]) {
-            this.props.deleteLike(this.props.currentUser.id);
-            this.props.createLike({
-                value: 'dislike',
-                user_id: this.props.currentUser.id,
-                likable_type: this.props.type,
-                likable_id: this.props.id
-            });
+            
         }
+
     }
 
     render() {
@@ -136,20 +130,21 @@ class Like extends React.Component {
         let likes = 0;
         let dislikes = 0;
 
-        console.log(this.props.likes);
+        
+        // if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
+        //     likeSelected = 'like-selected';
+        //     console.log('YO');
+        // }
+
+        // if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
+        //     dislikeSelected = 'dislike-selected';
+        // }
         
         for (let i = 0; i < this.props.likes.length; i++) {
             if (this.props.likes[i]['value'] === 'like') {
                 likes++;
-                if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
-                    likeSelected = 'like-selected';
-                    console.log('YO');
-                }
-            } else {
+            } else if (this.props.likes[i]['value'] === 'dislike'){
                 dislikes++;
-                if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
-                    dislikeSelected = 'dislike-selected';
-                }
             }
         }
 

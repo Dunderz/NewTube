@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { faUserCircle, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ProfileMenu from '../profile_menu/profile_menu';
+import ProfileMenuContainer from '../profile_menu/profile_menu_container';
 import Search from '../search/search';
 
 class NavBar extends React.Component {
@@ -16,7 +16,7 @@ class NavBar extends React.Component {
 
         const display = currentUser ? (
                 <div>
-                    <ProfileMenu currentUser={currentUser} logout={logout}/>
+                    <ProfileMenuContainer currentUser={currentUser} logout={logout}/>
                 </div>
             ) : ( 
             

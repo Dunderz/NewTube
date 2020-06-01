@@ -17,6 +17,7 @@ class ProfileMenu extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.toggleActive = this.toggleActive.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     // fix //
@@ -30,6 +31,10 @@ class ProfileMenu extends React.Component {
         if (outside === true) {
             this.setState({ active: false });
         } 
+    }
+
+    handleLogout() {
+        this.props.logout().then(() => this.props.history.push("/"))
     }
 
     handleClick(e) {
@@ -86,7 +91,7 @@ class ProfileMenu extends React.Component {
                             <div>Github</div>
                         </div>
                     </a>
-                    <div onClick={this.props.logout} className="dropdown-logout">
+                    <div onClick={this.handleLogout} className="dropdown-logout">
                         <div className="dropdown-icon">
                             <FontAwesomeIcon icon={faSignOutAlt} />
                         </div>
