@@ -30,6 +30,7 @@ class User < ApplicationRecord
     has_many :videos,
         foreign_key: :author_id,
         class_name: :Video
+        
 
     attr_reader :password
 

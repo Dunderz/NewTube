@@ -1,4 +1,27 @@
-.like-button {
-    background-color: blue;
-    color: white;
+.status-button {
+    font-size: 13px;
+    color: #909090;
+    margin-left: 18px;
+    padding-right: 8px;
+}
+
+.status-button:hover {
+    cursor: pointer;
+}
+
+.like-selected {
+    color: #065fd4 !important;
+}
+
+.dislike-selected {
+    color: #065fd4 !important;
+}
+
+.test-class {
+    background-color: black;
+}
+
+.status-count {
+    font-size: 13px;
+    color: #606060;
 }

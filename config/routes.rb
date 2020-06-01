@@ -4,11 +4,12 @@
 #                      root GET    /                                                                                        static_pages#root
 #        api_video_comments GET    /api/videos/:video_id/comments(.:format)                                                 api/comments#index {:format=>"json"}
 #         api_video_comment DELETE /api/videos/:video_id/comments/:id(.:format)                                             api/comments#destroy {:format=>"json"}
-#           api_video_likes POST   /api/videos/:video_id/likes(.:format)                                                    api/likes#create {:format=>"json"}
-#            api_video_like DELETE /api/videos/:video_id/likes/:id(.:format)                                                api/likes#destroy {:format=>"json"}
+#           api_video_likes GET    /api/videos/:video_id/likes(.:format)                                                    api/likes#index {:format=>"json"}
 #                api_videos GET    /api/videos(.:format)                                                                    api/videos#index {:format=>"json"}
 #                           POST   /api/videos(.:format)                                                                    api/videos#create {:format=>"json"}
 #                 api_video GET    /api/videos/:id(.:format)                                                                api/videos#show {:format=>"json"}
+#                 api_likes POST   /api/likes(.:format)                                                                     api/likes#create {:format=>"json"}
+#                  api_like DELETE /api/likes/:id(.:format)                                                                 api/likes#destroy {:format=>"json"}
 #              api_comments POST   /api/comments(.:format)                                                                  api/comments#create {:format=>"json"}
 #                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>"json"}
 #                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>"json"}
