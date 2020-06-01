@@ -32,11 +32,11 @@ class LeftNav extends React.Component {
                         <div className="left-nav-icon"><FontAwesomeIcon icon={faLinkedin} /></div>
                         <div className="left-nav-icon-title">LinkedIn</div>
                     </a>
-                    <a className="left-nav-link" href="" target="_blank">
+                    <a className="left-nav-link" href="https://angel.co/u/isaac-nam" target="_blank">
                         <div className="left-nav-icon"><FontAwesomeIcon icon={faAngellist} /></div>
                         <div className="left-nav-icon-title">AngelList</div>
                     </a>
-                    <a className="left-nav-link" href="" target="_blank">
+                    <a className="left-nav-link" href="https://dunderproto.github.io/" target="_blank">
                         <div className="left-nav-icon"><FontAwesomeIcon icon={faFolderOpen} /></div>
                         <div className="left-nav-icon-title">Portfolio</div>
                     </a>

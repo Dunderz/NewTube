@@ -4,6 +4,7 @@ import { faUserCircle,
          faSignOutAlt,
          faUser} from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 class ProfileMenu extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class ProfileMenu extends React.Component {
         this.toggleActive = this.toggleActive.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        this.handleProfileLinkClick = this.handleProfileLinkClick.bind(this);
     }
 
     // fix //
@@ -43,6 +45,10 @@ class ProfileMenu extends React.Component {
 
     toggleActive(e) {
         this.setState({ active: !this.state.active });
+    }
+
+    handleProfileLinkClick() {
+        this.setState({ active: false })
     }
 
     render() {
@@ -77,12 +83,14 @@ class ProfileMenu extends React.Component {
                             </div> */}
                         </div>
                     </div>
-                    <div className="dropdown-channel">
-                        <div className="dropdown-icon">
-                            <FontAwesomeIcon icon={faUser} />
+                    <Link to={`/users/${currentUser.id}`} className="dropdown-channel-link" onClick={this.handleProfileLinkClick}>
+                        <div className="dropdown-channel">
+                            <div className="dropdown-icon">
+                                <FontAwesomeIcon icon={faUser} />
+                            </div>
+                            <div>Your Channel</div>
                         </div>
-                        <div>Your Channel</div>
-                    </div>
+                    </Link>
                     <a href="https://github.com/DunderProto/NewTube" className="dropdown-github-link" target="_blank">
                         <div className="dropdown-github">
                             <div className="dropdown-icon">
