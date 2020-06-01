@@ -4,11 +4,9 @@ class Api::LikesController < ApplicationController
     def index
         if params[:comment_id]
             @likes = Like.where(likable_id: params[:comment_id])
-            debugger
             render :index
         else
             @likes = Like.where(likable_id: params[:video_id])
-            debugger
             render :index
         end
     end

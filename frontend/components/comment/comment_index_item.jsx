@@ -20,9 +20,9 @@ class CommentIndexItem extends React.Component {
                         <div className="comment-date">{this.props.time}</div>
                     </div>
                     <div className="comment-body">{this.props.body}</div>
-                    <div className="comment-likes">
+                    {/* <div className="comment-likes">
                         <LikesContainer commentId={this.props.commentId} videoId={this.props.videoId} type="Comment"/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

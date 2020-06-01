@@ -21,6 +21,7 @@ class Like extends React.Component {
     componentDidMount() {
         if (this.props.type == "Comment") {
             this.props.requestCommentLikes(this.props.videoId, this.props.commentId);
+            console.log("COMMENT LIKES");
         } else if (this.props.type == "Video") {
             this.props.requestLikes(this.props.id)
         }
@@ -77,7 +78,12 @@ class Like extends React.Component {
             }
         }
 
-        
+        let likableId;
+        if (this.props.type == "Comment") {
+            likableId = this.props.commentId;
+        } else if (this.props.type == "Video") {
+            likableId = this.props.id;
+        }
 
         if (dislikesObj[currentUserId] && likesObj[currentUserId] === undefined) {
             this.props.deleteLike(dislikesObj[currentUserId].id)
@@ -86,7 +92,7 @@ class Like extends React.Component {
                     value: 'like',
                     user_id: this.props.currentUser.id,
                     likable_type: this.props.type,
-                    likable_id: this.props.id
+                    likable_id: likableId
                 });
             });
         } else if (likesObj[currentUserId]) {
@@ -96,7 +102,7 @@ class Like extends React.Component {
                 value: 'like',
                 user_id: this.props.currentUser.id,
                 likable_type: this.props.type,
-                likable_id: this.props.id
+                likable_id: likableId
             });
         }
     }
@@ -121,6 +127,13 @@ class Like extends React.Component {
             }
         }
 
+        let likableId;
+        if (this.props.type == "Comment") {
+            likableId = this.props.commentId;
+        } else if (this.props.type == "Video") {
+            likableId = this.props.id;
+        }
+
         if (likesObj[currentUserId] && dislikesObj[currentUserId] === undefined) {
             this.props.deleteLike(likesObj[currentUserId].id)
             .then(() => {
@@ -128,7 +141,7 @@ class Like extends React.Component {
                     value: 'dislike',
                     user_id: this.props.currentUser.id,
                     likable_type: this.props.type,
-                    likable_id: this.props.id
+                    likable_id: likableId
                 });
             });
         } else if (dislikesObj[currentUserId]) {
@@ -138,7 +151,7 @@ class Like extends React.Component {
                 value: 'dislike',
                 user_id: this.props.currentUser.id,
                 likable_type: this.props.type,
-                likable_id: this.props.id
+                likable_id: likableId
             });
             
         }
