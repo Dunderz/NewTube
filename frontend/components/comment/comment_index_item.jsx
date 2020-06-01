@@ -21,7 +21,7 @@ class CommentIndexItem extends React.Component {
                     </div>
                     <div className="comment-body">{this.props.body}</div>
                     <div className="comment-likes">
-                        {/* <LikesContainer id={this.props.commentId} type="Comment"/> */}
+                        <LikesContainer commentId={this.props.commentId} videoId={this.props.videoId} type="Comment"/>
                     </div>
                 </div>
             </div>

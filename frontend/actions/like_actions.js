@@ -1,4 +1,4 @@
-import { fetchLikes, postLike, destroyLike } from '../util/like';
+import { fetchLikes, postLike, destroyLike, fetchCommentLikes } from '../util/like';
 
 export const RECEIVE_LIKES = "RECEIVE_LIKES";
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
@@ -18,6 +18,9 @@ const removeLike = id => ({
     type: REMOVE_LIKE,
     id: id
 })
+
+export const requestCommentLikes = (videoId, commentId) => dispatch => fetchCommentLikes(videoId, commentId)
+    .then(likes => dispatch(receiveLikes(likes)));
 
 export const requestLikes = id => dispatch => fetchLikes(id)
     .then(likes => dispatch(receiveLikes(likes)));

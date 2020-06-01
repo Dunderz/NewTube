@@ -5,6 +5,13 @@ export const fetchLikes = id => {
     })
 }
 
+export const fetchCommentLikes = (videoId, commentId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/videos/${videoId}/likes/${commentId}`
+    })
+}
+
 export const postLike = like => {
     return $.ajax({
         method: "POST",

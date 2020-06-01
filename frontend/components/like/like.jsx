@@ -19,14 +19,23 @@ class Like extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestLikes(this.props.id)
+        if (this.props.type == "Comment") {
+            this.props.requestCommentLikes(this.props.videoId, this.props.commentId);
+        } else if (this.props.type == "Video") {
+            this.props.requestLikes(this.props.id)
+        }
     }
 
     componentDidUpdate(prev) {
         if (this.state.updated) {
-            console.log(prev)
-            this.props.requestLikes(this.props.id)
-                .then(() => this.setState({ updated: false }))
+            if (this.props.type == "Comment") {
+                this.props.requestCommentLikes(this.props.videoId, this.props.commentId)
+                .then(() => this.setState({ updated: false }));
+            } else if (this.props.type == "Video") {
+                this.props.requestLikes(this.props.id)
+                .then(() => this.setState({ updated: false }));
+            }
+                
         }
         // if (prev.match.params.id !== this.props.match.params.id) {
         //     console.log("UPDATED");

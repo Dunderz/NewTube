@@ -2,20 +2,21 @@ class Api::LikesController < ApplicationController
     before_action :ensure_logged_in, only: [:show, :create, :destroy]
 
     def index
-        @likes = Like.where(likable_id: params[:video_id])
-        render :index
+        if params[:comment_id]
+            @likes = Like.where(likable_id: params[:comment_id])
+            debugger
+            render :index
+        else
+            @likes = Like.where(likable_id: params[:video_id])
+            debugger
+            render :index
+        end
     end
 
     def create
         @like = Like.new(like_params)
-        @user_like = Like.find_by(user_id: params[:like][:user_id], likable_id: params[:like][:likable_id])
-        if !@user_like
-            if @like.save
-                render :show
-            end
-        elsif @user_like
-            @user_like.destroy
-            @like.save
+        if @like.save
+            render :show
         else
             render json: @like.errors.full_messages, status: 422
         end

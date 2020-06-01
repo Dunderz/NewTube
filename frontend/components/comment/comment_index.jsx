@@ -47,6 +47,7 @@ class CommentIndex extends React.Component {
                                         color={comment.user.color}
                                         time={timeSinceCommented}
                                         commentId={comment.id}
+                                        videoId={this.props.videoId}
                                         />
                                 </div>
                         )

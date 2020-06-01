@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Like from "./like";
 import { 
+    requestCommentLikes,
     requestLikes,
     createLike,
     deleteLike
@@ -16,6 +17,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        requestCommentLikes: (videoId, commentId) => dispatch(requestCommentLikes(videoId, commentId)),
         requestLikes: videoId => dispatch(requestLikes(videoId)),
         createLike: like => dispatch(createLike(like)),
         deleteLike: likeId => dispatch(deleteLike(likeId))

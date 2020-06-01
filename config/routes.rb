@@ -2,9 +2,10 @@
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                      root GET    /                                                                                        static_pages#root
+#           api_video_likes GET    /api/videos/:video_id/likes(.:format)                                                    api/likes#index {:format=>"json"}
+#   api_video_comment_likes GET    /api/videos/:video_id/comments/:comment_id/likes(.:format)                               api/likes#index {:format=>"json"}
 #        api_video_comments GET    /api/videos/:video_id/comments(.:format)                                                 api/comments#index {:format=>"json"}
 #         api_video_comment DELETE /api/videos/:video_id/comments/:id(.:format)                                             api/comments#destroy {:format=>"json"}
-#           api_video_likes GET    /api/videos/:video_id/likes(.:format)                                                    api/likes#index {:format=>"json"}
 #                api_videos GET    /api/videos(.:format)                                                                    api/videos#index {:format=>"json"}
 #                           POST   /api/videos(.:format)                                                                    api/videos#create {:format=>"json"}
 #                 api_video GET    /api/videos/:id(.:format)                                                                api/videos#show {:format=>"json"}
@@ -29,8 +30,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     
     resources :videos, only: [:create, :index, :show] do
-      resources :comments, only: [:index, :destroy]
       resources :likes, only: [:index]
+      resources :comments, only: [:index, :destroy] do
+        resources :likes, only: [:index]
+      end
     end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
