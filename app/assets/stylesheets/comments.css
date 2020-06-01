@@ -131,3 +131,12 @@
     font-size: 14px;
     line-height: 1.3;
 }
+
+.comment-likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -18px;
+    margin-top: 4px;
+    height: 32px;
+}

@@ -18,13 +18,13 @@ class Like extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestLikes(this.props.videoId)
+        this.props.requestLikes(this.props.id)
             .then(likes => this.handleCountLike(likes.likes))
     }
 
     componentDidUpdate() {
         if (this.state.updated) {
-            this.props.requestLikes(this.props.videoId)
+            this.props.requestLikes(this.props.id)
                 .then(likes => this.handleCountLike(likes.likes))
                 .then(() => this.setState({ updated: false }))
         }
@@ -75,8 +75,8 @@ class Like extends React.Component {
             this.props.createLike({
                 value: 'like',
                 user_id: this.props.currentUser.id,
-                likable_type: "Video",
-                likable_id: this.props.videoId
+                likable_type: this.props.type,
+                likable_id: this.props.id
             });
         } else if (likesObj[currentUserId]) {
             this.props.deleteLike(this.props.currentUser.id);
@@ -85,8 +85,8 @@ class Like extends React.Component {
             this.props.createLike({
                 value: 'like',
                 user_id: this.props.currentUser.id,
-                likable_type: "Video",
-                likable_id: this.props.videoId
+                likable_type: this.props.type,
+                likable_id: this.props.id
             });
         }   
     }
@@ -112,8 +112,8 @@ class Like extends React.Component {
             this.props.createLike({
                 value: 'dislike',
                 user_id: this.props.currentUser.id,
-                likable_type: "Video",
-                likable_id: this.props.videoId
+                likable_type: this.props.type,
+                likable_id: this.props.id
             });
         } else if (dislikesObj[currentUserId]) {
             this.props.deleteLike(this.props.currentUser.id);
@@ -122,8 +122,8 @@ class Like extends React.Component {
             this.props.createLike({
                 value: 'dislike',
                 user_id: this.props.currentUser.id,
-                likable_type: "Video",
-                likable_id: this.props.videoId
+                likable_type: this.props.type,
+                likable_id: this.props.id
             });
         }
     }

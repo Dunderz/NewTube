@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import LikesContainer from '../like/like_container';
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
@@ -19,6 +20,9 @@ class CommentIndexItem extends React.Component {
                         <div className="comment-date">{this.props.time}</div>
                     </div>
                     <div className="comment-body">{this.props.body}</div>
+                    <div className="comment-likes">
+                        {/* <LikesContainer id={this.props.commentId} type="Comment"/> */}
+                    </div>
                 </div>
             </div>
         )

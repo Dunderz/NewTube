@@ -46,6 +46,7 @@ class CommentIndex extends React.Component {
                                         username={comment.username}
                                         color={comment.user.color}
                                         time={timeSinceCommented}
+                                        commentId={comment.id}
                                         />
                                 </div>
                         )

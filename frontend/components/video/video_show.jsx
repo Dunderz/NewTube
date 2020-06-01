@@ -99,7 +99,7 @@ class VideoShow extends React.Component {
                             </div>
                             
                             <div className="videoshow-likes-options">
-                                <LikesContainer videoId={video.id}/>
+                                <LikesContainer id={video.id} type="Video"/>
 
                                 {/* <div className="videoshow-share hover">
                                     <FontAwesomeIcon className="video-option-icons" icon={faShare}/>
