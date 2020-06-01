@@ -22,12 +22,16 @@ class Like extends React.Component {
         this.props.requestLikes(this.props.id)
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prev) {
         if (this.state.updated) {
+            console.log(prev)
             this.props.requestLikes(this.props.id)
                 .then(() => this.setState({ updated: false }))
-                .then(() => console.log(this.props.likes))
         }
+        // if (prev.match.params.id !== this.props.match.params.id) {
+        //     console.log("UPDATED");
+        //     this.props.requestLikes(this.props.match.params.id);
+        // }
     }
 
     // Please refactor in the future lmao
@@ -55,16 +59,16 @@ class Like extends React.Component {
 
         for (let i = 0; i < this.props.likes.length; i++) {
             if (this.props.likes[i]['value'] == 'like') {
-                likesObj[this.props.likes[i]['user_id']] = true;
+                likesObj[this.props.likes[i]['user_id']] = this.props.likes[i];
             } else {
-                dislikesObj[this.props.likes[i]['user_id']] = true;
+                dislikesObj[this.props.likes[i]['user_id']] = this.props.likes[i];
             }
         }
 
         
 
         if (dislikesObj[currentUserId] && likesObj[currentUserId] === undefined) {
-            this.props.deleteLike(this.props.currentUser.id)
+            this.props.deleteLike(dislikesObj[currentUserId].id)
             .then(() => {
                 this.props.createLike({
                     value: 'like',
@@ -74,9 +78,8 @@ class Like extends React.Component {
                 });
             });
         } else if (likesObj[currentUserId]) {
-            this.props.deleteLike(this.props.currentUser.id);
+            this.props.deleteLike(likesObj[currentUserId].id);
         } else if (likesObj[currentUserId] === undefined && dislikesObj[currentUserId] === undefined) {
-            likesObj[currentUserId] = true;
             this.props.createLike({
                 value: 'like',
                 user_id: this.props.currentUser.id,
@@ -84,7 +87,6 @@ class Like extends React.Component {
                 likable_id: this.props.id
             });
         }
-        console.log(likesObj);   
     }
 
     handleDislike(e) {
@@ -98,15 +100,14 @@ class Like extends React.Component {
 
         for (let i = 0; i < this.props.likes.length; i++) {
             if (this.props.likes[i]['value'] == 'like') {
-                likesObj[this.props.likes[i]['user_id']] = true;
+                likesObj[this.props.likes[i]['user_id']] = this.props.likes[i];
             } else {
-                dislikesObj[this.props.likes[i]['user_id']] = true;
+                dislikesObj[this.props.likes[i]['user_id']] = this.props.likes[i];
             }
         }
 
         if (likesObj[currentUserId] && dislikesObj[currentUserId] === undefined) {
-            
-            this.props.deleteLike(this.props.currentUser.id)
+            this.props.deleteLike(likesObj[currentUserId].id)
             .then(() => {
                 this.props.createLike({
                     value: 'dislike',
@@ -116,9 +117,8 @@ class Like extends React.Component {
                 });
             });
         } else if (dislikesObj[currentUserId]) {
-            this.props.deleteLike(this.props.currentUser.id);
+            this.props.deleteLike(dislikesObj[currentUserId].id);
         } else if (likesObj[currentUserId] === undefined && dislikesObj[currentUserId] === undefined) {
-            dislikesObj[currentUserId] = true;
             this.props.createLike({
                 value: 'dislike',
                 user_id: this.props.currentUser.id,
