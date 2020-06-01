@@ -51,6 +51,9 @@ class Like extends React.Component {
     handleLike(e) {
         e.preventDefault();
         this.setState({ updated: true });
+        if (!this.props.currentUser) {
+            this.props.history.push("/login");
+        }
 
         let likesObj = {};
         let dislikesObj = {};
@@ -92,6 +95,9 @@ class Like extends React.Component {
     handleDislike(e) {
         e.preventDefault();
         this.setState({ updated: true });
+        if (!this.props.currentUser) {
+            this.props.history.push("/login");
+        }
 
         let likesObj = {};
         let dislikesObj = {};
@@ -139,22 +145,31 @@ class Like extends React.Component {
         let dislikes = 0;
 
         
-        // if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
-        //     likeSelected = 'like-selected';
-        //     console.log('YO');
-        // }
-
-        // if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
-        //     dislikeSelected = 'dislike-selected';
-        // }
-        
-        for (let i = 0; i < this.props.likes.length; i++) {
-            if (this.props.likes[i]['value'] === 'like') {
-                likes++;
-            } else if (this.props.likes[i]['value'] === 'dislike'){
-                dislikes++;
+        if (this.props.currentUser) {
+            for (let i = 0; i < this.props.likes.length; i++) {
+                if (this.props.likes[i]['value'] === 'like') {
+                    likes++;
+                    if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
+                        likeSelected = 'like-selected';
+                        console.log('YO');
+                    }
+                } else if (this.props.likes[i]['value'] === 'dislike'){
+                    dislikes++;
+                    if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
+                        dislikeSelected = 'dislike-selected';
+                    }
+                }
+            }
+        } else {
+            for (let i = 0; i < this.props.likes.length; i++) {
+                if (this.props.likes[i]['value'] === 'like') {
+                    likes++;
+                } else if (this.props.likes[i]['value'] === 'dislike'){
+                    dislikes++;
+                }
             }
         }
+        
 
         let testClass = "test-class";
 

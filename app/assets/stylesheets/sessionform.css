@@ -198,6 +198,7 @@ input::placeholder {
     color: #1A73E8;
     font-size: 14px;
     padding-top: 10px;
+    outline: none !important;
 }
 
 .demo-login-form {
