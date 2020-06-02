@@ -2,6 +2,7 @@
     position: relative;
     top: 58px;
     width: 100%;
+    min-width: 1000px;
 }
 
 .user-show-banner {
@@ -75,6 +76,7 @@
 
 .user-show-videos-content {
     display: flex;
+    flex-direction: column;
     width: 80%;
 }
 
@@ -87,6 +89,13 @@
     width: 100%;
     margin: 8px 0px;
 
+}
+
+.user-show-uploaded-videos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .user-show-banner-content {

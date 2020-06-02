@@ -21,6 +21,10 @@ class VideoUpload extends React.Component {
         this.handleDescription = this.handleDescription.bind(this);
     }
 
+    componentDidMount() {
+        console.log(this.props.currentUser);
+    }
+
     handleInput(e) {
         this.setState({ title: e.currentTarget.value });
     }

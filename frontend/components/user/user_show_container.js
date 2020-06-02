@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
+import { withRouter } from 'react-router-dom';
+import { requestUser } from '../../actions/user_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: state.session.currentUser
+        currentUser: state.session.currentUser,
+        user: state.entities.users[ownProps.match.params.id]
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        requestUser: id => dispatch(requestUser(id))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserShow));

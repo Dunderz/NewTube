@@ -83,7 +83,7 @@ class ProfileMenu extends React.Component {
                             </div> */}
                         </div>
                     </div>
-                    <Link to={`/users/${currentUser.id}`} className="dropdown-channel-link" onClick={this.handleProfileLinkClick}>
+                    <Link to={`/users/${this.props.currentUser.id}`} className="dropdown-channel-link" onClick={this.handleProfileLinkClick}>
                         <div className="dropdown-channel">
                             <div className="dropdown-icon">
                                 <FontAwesomeIcon icon={faUser} />
