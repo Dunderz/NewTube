@@ -6,3 +6,4 @@ json.videos do
         end
     end
 end
+# json.videoCount user.videos.count

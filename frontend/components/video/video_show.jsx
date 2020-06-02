@@ -45,6 +45,7 @@ class VideoShow extends React.Component {
 
     render() {
 
+        console.log(this.props.video);
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;
 

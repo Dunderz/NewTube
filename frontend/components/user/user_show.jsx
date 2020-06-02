@@ -20,6 +20,7 @@ class UserShow extends React.Component {
     }
 
     render() {
+        console.log(this.props.user);
         if (this.props.user === undefined) {
             return (
                 <>
@@ -30,7 +31,6 @@ class UserShow extends React.Component {
         for (let id in this.props.user.videos) {
             videos.push(this.props.user.videos[id]);
         }
-        console.log(videos);
         return (
             <div onClick={this.testClick} className="user-show-container">
                 <div className="left-nav-component">
@@ -60,7 +60,6 @@ class UserShow extends React.Component {
                             </div>
                             <div className="user-show-uploaded-videos">
                                 {videos.map(video => {
-                                    console.log(video.thumbnailUrl);
                                     return (
                                         <div key={video.id} className="video-container">
                                             <Link className="video-link" to={`/videos/${video.id}`}>                  
