@@ -88,7 +88,7 @@
     height: 56px;
     width: 100%;
     margin: 8px 0px;
-
+    font-weight: 500;
 }
 
 .user-show-uploaded-videos {
@@ -100,4 +100,12 @@
 
 .user-show-banner-content {
     
+}
+
+.user-show-subscription-header {
+    border-top: 1px solid #d8d8d8;
+    padding-top: 24px;
+    font-size: 16px;
+    color: #030303;
+    font-weight: 500;
 }

@@ -93,6 +93,12 @@ class UserShow extends React.Component {
                                     );
                                 })}
                             </div>
+                            <div className="user-show-subscription-header">
+                                Subscriptions
+                            </div>
+                            <div className="user-show-subscriptions">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
