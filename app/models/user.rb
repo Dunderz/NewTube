@@ -34,8 +34,15 @@ class User < ApplicationRecord
     has_many :likes,
         foreign_key: :user_id,
         class_name: :Like
-        
 
+    has_many :subscriptions,
+        foreign_key: :subscriber_id,
+        class_name: :Subscription
+
+    has_many :subscribers,
+        foreign_key: :channel_id,
+        class_name: :Subscription
+        
     attr_reader :password
 
     after_initialize :ensure_session_token
@@ -67,5 +74,13 @@ class User < ApplicationRecord
 
     def ensure_session_token
         self.session_token ||= User.generate_session_token
+    end
+
+    def channel_subscribers
+        self.subscribers
+    end
+
+    def your_subscriptions
+        self.subscriptions
     end
 end

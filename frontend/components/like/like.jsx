@@ -21,7 +21,6 @@ class Like extends React.Component {
     componentDidMount() {
         if (this.props.type == "Comment") {
             this.props.requestCommentLikes(this.props.videoId, this.props.commentId);
-            console.log("COMMENT LIKES");
         } else if (this.props.type == "Video") {
             this.props.requestLikes(this.props.id)
         }
@@ -173,7 +172,6 @@ class Like extends React.Component {
                     likes++;
                     if (this.props.likes[i]['user_id'] == this.props.currentUser.id) {
                         likeSelected = 'like-selected';
-                        console.log('YO');
                     }
                 } else if (this.props.likes[i]['value'] === 'dislike'){
                     dislikes++;

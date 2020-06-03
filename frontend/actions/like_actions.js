@@ -29,4 +29,4 @@ export const createLike = newLike => dispatch => postLike(newLike)
     .then(like => dispatch(receiveLike(like)));
 
 export const deleteLike = id => dispatch => destroyLike(id)
-    .then(like => dispatch(removeLike(id)));
+    .then(() => dispatch(removeLike(id)));

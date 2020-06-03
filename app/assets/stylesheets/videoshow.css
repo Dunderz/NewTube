@@ -194,6 +194,23 @@
     margin: 0 auto;
 }
 
+.subscribed {
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    width: 105px;
+    height: 36px;
+    background-color: #e0e0e0;
+    text-align: center;
+}
+
+.subscribed h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #606060;
+    margin: 0 auto;
+}
+
 .description {
     padding-left: 64px;
     font-size: 14px;

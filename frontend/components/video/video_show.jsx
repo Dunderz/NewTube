@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CommentsContainer from '../comment/comment_index_container';
 import LikesContainer from '../like/like_container';
 import timeAgo from './video_time';
+import Subscription from '../subscriptions/subscription_container';
 import { 
     faThumbsUp, 
     faThumbsDown,
@@ -19,19 +20,29 @@ class VideoShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            newVideo: false
+            newVideo: false,
+            subscribeToggle: false,
+            subscribeText: "SUBSCRIBE",
+            subscribeClass: "subscribe"
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleSubscribeToggle = this.handleSubscribeToggle.bind(this);
     }
 
     componentDidMount() {
         this.props.requestComments(this.props.match.params.id);
-        this.props.requestVideo(this.props.match.params.id);
+        this.props.requestVideo(this.props.match.params.id)
+        .then(() => this.props.requestChannelSubscribers(this.props.video.user.id));
         this.props.requestVideos();
     }
 
     componentDidUpdate(prevProps, prevState) {
+        if (this.state.subscribeToggle) {
+            this.props.requestChannelSubscribers(this.props.video.user.id);
+            this.setState({ subscribeToggle: false });
+        }
+
         if (this.state.newVideo) {
             this.props.requestComments(this.props.match.params.id);
             this.props.requestVideo(this.props.match.params.id);
@@ -43,9 +54,30 @@ class VideoShow extends React.Component {
         this.setState({ newVideo: true })
     }
 
+    handleSubscribeToggle(subscribeClass, subId) {
+        if (subscribeClass == "subscribe") {
+            this.props.subscribe({
+                channel_id: this.props.video.user.id,
+                subscriber_id: this.props.currentUser.id
+            }).then(() => this.setState({ subscribeToggle: true }));
+        } else if (subscribeClass == "subscribed") {
+            this.props.unsubscribe(subId).then(() => this.setState({ subscribeToggle: true }));
+        }
+    }
+
+    // testClick() {
+    //     console.log("testing");
+    // }
+
     render() {
 
-        console.log(this.props.video);
+        if (this.props.video === undefined) {
+            return (
+                <>
+                </>
+            )
+        }
+
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;
 
@@ -54,16 +86,40 @@ class VideoShow extends React.Component {
         } else {
             commentWord = "Comments";
         }
+        
+        let subscriberClass;
+        let subscriberText;
+        let subscribeId;
 
-        if (this.props.video === undefined) {
-            return (
-                <div>
-                    nooo
-                </div>
-            )
+        let subscriberCount = 0;
+        let subscriberCountName;
+
+        let subscribers = this.props.subscribers;
+
+        if (this.props.currentUser) {
+            if (subscribers) {
+                for (let k in subscribers) {
+                    if (this.props.currentUser.id == subscribers[k].subscriber_id) {
+                        subscriberClass = "subscribed";
+                        subscriberText = "SUBSCRIBED";
+                        subscribeId = k;
+                    }
+                    subscriberCount++;
+                }
+            }
+        }
+
+        subscriberCount === 1 ? subscriberCountName = "Subscriber" : subscriberCountName = "Subscribers";
+
+        if (!subscriberClass) {
+            subscriberClass = "subscribe";
+            subscriberText = "SUBSCRIBE";
         }
 
         const { video } = this.props;
+        
+        
+       
         let upNextVideo;
 
         const date = new Date(video.created_at);
@@ -71,12 +127,44 @@ class VideoShow extends React.Component {
         dateArray[1] += ",";
         const formatted = dateArray.join(" ");
 
-        if (video.id === this.props.videos[0].id) {
-            upNextVideo = this.props.videos.pop();
-        } else {
-            upNextVideo = this.props.videos.shift();
-        }
+        let upNextBox;
 
+        if (this.props.videos.length > 1) {
+            if (video.id === this.props.videos[0].id) {
+                upNextVideo = this.props.videos.pop();
+            } else {
+                upNextVideo = this.props.videos.shift();
+            }
+
+            upNextBox = (
+                <div className="videoshow-up-next-container">
+                        <p>Up Next</p>
+                        <div className="videoshow-up-next-video">
+                            <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
+                                <div className="videoshow-index">
+                                    <img src={upNextVideo.thumbnailUrl} />
+                                </div>
+                                <div className="videoshow-rec-info">
+                                    <h2>{upNextVideo.title}</h2>
+                                    <div className="uploader-name">
+                                        <h2>{upNextVideo.user.username}</h2>
+                                    </div>
+                                    <div className="videoshow-rec-vid-stats">
+                                        <div className="videoshow-rec-views">
+                                            <h2>{upNextVideo.views} {upNextVideo.views == 1 ? "view" : "views"}</h2>
+                                            <span className="videoshow-views-dot"></span>
+                                        </div>
+                                        <div className="videoshow-rec-timeago">
+                                            <h2>{timeAgo(upNextVideo.created_at)}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link> 
+                        </div>
+                    </div>
+            )
+        }
+        
         return (
             
             <div key={video.id} className="videoshow-container">
@@ -129,13 +217,13 @@ class VideoShow extends React.Component {
                                         <h2>{video.user.username}</h2>
                                     </div>
                                     <div className="description-sub-count">
-                                        <h2>Subscribers Placeholder</h2>
+                                        <h2>{subscriberCount} {subscriberCountName}</h2>
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="subscribe hover">
-                                <h2>SUBSCRIBE</h2>
-                            </div> */}
+                            <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
+                                <h2>{subscriberText}</h2>
+                            </div>
                         </div>
                         <div className="description">
                             <h2>{video.description}</h2>
@@ -148,31 +236,7 @@ class VideoShow extends React.Component {
                 </div>
 
                 <div className="videoshow-right-box">
-                    <div className="videoshow-up-next-container">
-                        <p>Up Next</p>
-                        <div className="videoshow-up-next-video">
-                            <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
-                                <div className="videoshow-index">
-                                    <img src={upNextVideo.thumbnailUrl} />
-                                </div>
-                                <div className="videoshow-rec-info">
-                                    <h2>{upNextVideo.title}</h2>
-                                    <div className="uploader-name">
-                                        <h2>{upNextVideo.user.username}</h2>
-                                    </div>
-                                    <div className="videoshow-rec-vid-stats">
-                                        <div className="videoshow-rec-views">
-                                            <h2>{upNextVideo.views} {upNextVideo.views == 1 ? "view" : "views"}</h2>
-                                            <span className="videoshow-views-dot"></span>
-                                        </div>
-                                        <div className="videoshow-rec-timeago">
-                                            <h2>{timeAgo(upNextVideo.created_at)}</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link> 
-                        </div>
-                    </div>
+                    { upNextBox }
                     <div className="videoshow-recommended">
                         {this.props.videos.map(video => {
                             if (video.id !== this.props.video.id) {

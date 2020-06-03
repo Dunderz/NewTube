@@ -22,7 +22,7 @@ class VideoUpload extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.currentUser);
+        
     }
 
     handleInput(e) {

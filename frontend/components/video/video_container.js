@@ -4,7 +4,9 @@ import Video from './video';
 
 const mapStateToProps = (state) => {
     return {
-        videos: Object.values(state.entities.videos)
+        videos: Object.values(state.entities.videos),
+        currentUser: state.session.currentUser,
+        state
     }
 };
 

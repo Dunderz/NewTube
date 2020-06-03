@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :email, :color
+json.extract! user, :id, :username, :email, :color, :subscribers, :subscriptions
 json.videos do
     @user.videos.each do |video|
         json.set! video.id do

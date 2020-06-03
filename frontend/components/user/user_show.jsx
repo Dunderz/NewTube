@@ -11,7 +11,6 @@ class UserShow extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
         this.props.requestUser(this.props.match.params.id);
     }
 
@@ -20,7 +19,6 @@ class UserShow extends React.Component {
     }
 
     render() {
-        console.log(this.props.user);
         if (this.props.user === undefined) {
             return (
                 <>
