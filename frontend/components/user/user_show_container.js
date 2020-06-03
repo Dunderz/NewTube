@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
+    debugger
     return {
         requestUser: id => dispatch(requestUser(id)),
         requestSelfSubscriptions: id => dispatch(requestSelfSubscriptions(id)),

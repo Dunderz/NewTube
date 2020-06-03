@@ -21,9 +21,7 @@ class VideoShow extends React.Component {
         super(props);
         this.state = {
             newVideo: false,
-            subscribeToggle: false,
-            subscribeText: "SUBSCRIBE",
-            subscribeClass: "subscribe"
+            subscribeToggle: false
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -60,12 +58,15 @@ class VideoShow extends React.Component {
     }
 
     handleSubscribeToggle(subscribeClass, subId) {
+        
         if (subscribeClass == "subscribe") {
+            
             this.props.subscribe({
                 channel_id: this.props.video.user.id,
                 subscriber_id: this.props.currentUser.id
             }).then(() => this.setState({ subscribeToggle: true }));
         } else if (subscribeClass == "subscribed") {
+            
             this.props.unsubscribe(subId).then(() => this.setState({ subscribeToggle: true }));
         }
     }
@@ -91,34 +92,32 @@ class VideoShow extends React.Component {
             commentWord = "Comments";
         }
         
-        let subscriberClass;
-        let subscriberText;
-        let subscribeId;
-
         let subscriberCount = 0;
-        let subscriberCountName;
 
         let subscribers = this.props.subscribers;
 
+        let subscriberClass = "subscribe";
+        let subscriberText = "SUBSCRIBE";
+        let subscribeId;
+
         if (this.props.currentUser) {
-            if (subscribers) {
-                for (let k in subscribers) {
-                    if (this.props.currentUser.id == subscribers[k].subscriber_id) {
-                        subscriberClass = "subscribed";
-                        subscriberText = "SUBSCRIBED";
-                        subscribeId = k;
-                    }
-                    subscriberCount++;
+            for (let k in subscribers) {
+                if (this.props.currentUser.id == subscribers[k].subscriber_id) {
+                    subscriberClass = "subscribed";
+                    subscriberText = "SUBSCRIBED";
+                    subscribeId = k;
                 }
+                subscriberCount++;
             }
         }
 
-        subscriberCount === 1 ? subscriberCountName = "Subscriber" : subscriberCountName = "Subscribers";
+        
 
-        if (!subscriberClass) {
-            subscriberClass = "subscribe";
-            subscriberText = "SUBSCRIBE";
-        }
+        console.log(subscriberClass);
+
+        let subscriberCountName;
+
+        subscriberCount === 1 ? subscriberCountName = "Subscriber" : subscriberCountName = "Subscribers";
 
         const { video } = this.props;
         
