@@ -31,6 +31,9 @@
     flex-wrap: wrap;
 }
 
+.user-icon-link {
+    text-decoration: none;
+}
 
 
 .video-container {

@@ -35,9 +35,11 @@ class ResultsItem extends React.Component {
                                     {video.title}
                                 </div>
                                 <div className="video-index-views-date-container result margin-adjust">
-                                    <div className="results-video-index-uploader">
-                                        {video.user.username}
-                                    </div>
+                                    <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                        <div className="results-video-index-uploader">
+                                            {video.user.username}
+                                        </div>
+                                    </Link>
                                     <span className="videoshow-views-dot"></span>
                                     <div className="video-index-views">
                                         {video.views} {video.views == 1 ? "view" : "views"}

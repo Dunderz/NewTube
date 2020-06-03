@@ -50,16 +50,20 @@ class Video extends React.Component {
                               </div>
                               <div className="video-info">
                                 <div className="video-info-top-row">
-                                  <div className="video-user-icon" style={{backgroundColor: video.user.color}}>
-                                      {video.user.username[0].toUpperCase()}
-                                  </div>
+                                  <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                    <div className="video-user-icon" style={{backgroundColor: video.user.color}}>
+                                        {video.user.username[0].toUpperCase()}
+                                    </div>
+                                  </Link>
                                   <div className="video-index-details">
                                     <div className="video-index-title">
                                       {video.title}
                                     </div>
-                                    <div className="video-index-uploader">
-                                      <p>{video.user.username}</p>
-                                    </div>
+                                    <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                      <div className="video-index-uploader">
+                                        <p>{video.user.username}</p>
+                                      </div>
+                                    </Link>
                                     <div className="video-index-views-date-container">
                                       <div className="video-index-views">
                                         {video.views} views

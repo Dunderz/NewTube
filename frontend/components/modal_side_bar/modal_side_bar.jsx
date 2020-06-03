@@ -32,6 +32,27 @@ class ModalSideBar extends React.Component {
             subsArray.push(selfSubscriptions[k]);
         }
 
+        let subsContainer;
+        if (subsArray.length > 0) {
+            subsContainer = (
+                <div className="modal-side-bar-subscriptions">
+                    <div className="modal-side-bar-subscriptions-header">SUBSCRIPTIONS</div>
+                    {subsArray.map(sublink => {
+                        return (
+                            <Link onClick={() => this.props.closeModal()} to={`/users/${sublink.subscription.id}`} key={sublink.id} className="modal-side-bar-sub-link">
+                                <div className="modal-side-bar-sub-icon" style={{backgroundColor: sublink.subscription.color}}>
+                                    {sublink.subscription.username[0].toUpperCase()}
+                                </div>
+                                <div className="modal-side-bar-sub-name">
+                                    {sublink.subscription.username}
+                                </div>
+                            </Link>
+                        )
+                    })}
+                </div>
+            )
+        }
+
         return (
             <>
                 <div className="modal-side-bar-container">
@@ -63,21 +84,7 @@ class ModalSideBar extends React.Component {
                             <div className="modal-side-bar-title">Portfolio</div>
                         </a>
                     </div>
-                    <div className="modal-side-bar-subscriptions">
-                        <div className="modal-side-bar-subscriptions-header">SUBSCRIPTIONS</div>
-                        {subsArray.map(sublink => {
-                            return (
-                                <Link onClick={() => this.props.closeModal()} to={`/users/${sublink.subscription.id}`} key={sublink.id} className="modal-side-bar-sub-link">
-                                    <div className="modal-side-bar-sub-icon" style={{backgroundColor: sublink.subscription.color}}>
-                                        {sublink.subscription.username[0].toUpperCase()}
-                                    </div>
-                                    <div className="modal-side-bar-sub-name">
-                                        {sublink.subscription.username}
-                                    </div>
-                                </Link>
-                            )
-                        })}
-                    </div>
+                    { subsContainer }
                 </div>
             </>
         )

@@ -132,7 +132,7 @@ class VideoShow extends React.Component {
 
         let upNextBox;
 
-        if (this.props.videos.length > 1) {
+        if (this.props.videos.length >= 1) {
             if (video.id === this.props.videos[0].id) {
                 upNextVideo = this.props.videos.pop();
             } else {
@@ -149,9 +149,11 @@ class VideoShow extends React.Component {
                                 </div>
                                 <div className="videoshow-rec-info">
                                     <h2>{upNextVideo.title}</h2>
-                                    <div className="uploader-name">
-                                        <h2>{upNextVideo.user.username}</h2>
-                                    </div>
+                                    <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                        <div className="uploader-name">
+                                            <h2>{upNextVideo.user.username}</h2>
+                                        </div>
+                                    </Link>
                                     <div className="videoshow-rec-vid-stats">
                                         <div className="videoshow-rec-views">
                                             <h2>{upNextVideo.views} {upNextVideo.views == 1 ? "view" : "views"}</h2>
@@ -251,9 +253,11 @@ class VideoShow extends React.Component {
                                             </div>
                                             <div className="videoshow-rec-info">
                                                 <h2>{video.title}</h2>
-                                                <div className="uploader-name">
-                                                    <h2>{video.user.username}</h2>
-                                                </div>
+                                                <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                                    <div className="uploader-name">
+                                                        <h2>{video.user.username}</h2>
+                                                    </div>
+                                                </Link>
                                                 <div className="videoshow-rec-vid-stats">
                                                     <div className="videoshow-rec-views">
                                                         <h2>{video.views} {video.views == 1 ? "view" : "views"}</h2>

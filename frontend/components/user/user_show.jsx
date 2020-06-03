@@ -41,6 +41,77 @@ class UserShow extends React.Component {
             subsArr.push(subscriptions[k]);
         }
 
+        let videosContainer;
+        if (videos.length > 0) {
+            videosContainer = (
+                <>
+                    <div className="user-show-upload-header">
+                        Uploads
+                    </div>
+                    <div className="user-show-uploaded-videos">
+                        {videos.map(video => {
+                            return (
+                                <div key={video.id} className="video-container">
+                                    <Link className="video-link" to={`/videos/${video.id}`}>                  
+                                    <div className="video-index">
+                                        <img src={video.thumbnailUrl} />
+                                    </div>
+                                    <div className="video-info">
+                                        <div className="video-info-top-row">
+                                        
+                                        <div className="video-index-details">
+                                            <div className="video-index-title">
+                                            {video.title}
+                                            </div>
+                                            <div className="video-index-views-date-container">
+                                            <div className="video-index-views">
+                                                {video.views} views
+                                            </div>
+                                            <span className="videoshow-views-dot"></span>
+                                            <div className="video-index-date">
+                                                {timeAgo(video.created_at)}
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                    </div>
+                                    </Link> 
+                                </div>
+                                
+                            );
+                        })}
+                    </div>
+                </>
+            )
+        };
+
+        let subsContainer;
+        if (subsArr.length > 0) {
+            subsContainer = (
+                <>
+                    <div className="user-show-subscription-header">
+                        Subscriptions
+                    </div>
+                    <div className="user-show-subscriptions">
+                        {subsArr.map(sublink => {
+                                return (
+                                    <Link to={`/users/${sublink.subscription.id}`} key={sublink.id} className="user-show-subscriptions-link">
+                                        <div className="user-show-subscriptions-icon" style={{ backgroundColor: sublink.subscription.color }}>
+                                            {sublink.subscription.username[0].toUpperCase()}
+                                        </div>
+                                        <div className="user-show-subscriptions-username">
+                                            {sublink.subscription.username}
+                                        </div>
+                                    </Link>
+                                )
+                            })
+                        }
+                    </div>
+                </>
+            )
+        };
+        
         return (
             <div onClick={this.testClick} className="user-show-container">
                 <div className="left-nav-component">
@@ -65,61 +136,8 @@ class UserShow extends React.Component {
                     </div>
                     <div className="user-show-videos-container">
                         <div className="user-show-videos-content">
-                            <div className="user-show-upload-header">
-                                Uploads
-                            </div>
-                            <div className="user-show-uploaded-videos">
-                                {videos.map(video => {
-                                    return (
-                                        <div key={video.id} className="video-container">
-                                            <Link className="video-link" to={`/videos/${video.id}`}>                  
-                                            <div className="video-index">
-                                                <img src={video.thumbnailUrl} />
-                                            </div>
-                                            <div className="video-info">
-                                                <div className="video-info-top-row">
-                                                
-                                                <div className="video-index-details">
-                                                    <div className="video-index-title">
-                                                    {video.title}
-                                                    </div>
-                                                    <div className="video-index-views-date-container">
-                                                    <div className="video-index-views">
-                                                        {video.views} views
-                                                    </div>
-                                                    <span className="videoshow-views-dot"></span>
-                                                    <div className="video-index-date">
-                                                        {timeAgo(video.created_at)}
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-
-                                            </div>
-                                            </Link> 
-                                        </div>
-                                        
-                                    );
-                                })}
-                            </div>
-                            <div className="user-show-subscription-header">
-                                Subscriptions
-                            </div>
-                            <div className="user-show-subscriptions">
-                                {subsArr.map(sublink => {
-                                        return (
-                                            <Link to={`/users/${sublink.subscription.id}`} key={sublink.id} className="user-show-subscriptions-link">
-                                                <div className="user-show-subscriptions-icon" style={{ backgroundColor: sublink.subscription.color }}>
-                                                    {sublink.subscription.username[0].toUpperCase()}
-                                                </div>
-                                                <div className="user-show-subscriptions-username">
-                                                    {sublink.subscription.username}
-                                                </div>
-                                            </Link>
-                                        )
-                                    })
-                                }
-                            </div>
+                            { videosContainer }
+                            { subsContainer }
                         </div>
                     </div>
                 </div>
