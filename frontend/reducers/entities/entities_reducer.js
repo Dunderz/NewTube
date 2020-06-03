@@ -4,13 +4,15 @@ import usersReducer from './users_reducer';
 import commentsReducer from './comments_reducer';
 import likesReducer from './likes_reducer';
 import subscriptionsReducer from './subscriptions_reducer';
+import selfSubscriptionsReducer from './self_subscriptions_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
     videos: videosReducer,
     comments: commentsReducer,
     likes: likesReducer,
-    subscriptions: subscriptionsReducer
+    subscriptions: subscriptionsReducer,
+    selfSubscriptions: selfSubscriptionsReducer
 });
 
 export default entitiesReducer;

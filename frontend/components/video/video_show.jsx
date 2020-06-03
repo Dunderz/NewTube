@@ -45,7 +45,8 @@ class VideoShow extends React.Component {
 
         if (this.state.newVideo) {
             this.props.requestComments(this.props.match.params.id);
-            this.props.requestVideo(this.props.match.params.id);
+            this.props.requestVideo(this.props.match.params.id)
+            .then(() => this.props.requestChannelSubscribers(this.props.video.user.id));
             this.setState({ newVideo: false });
         }
     }
@@ -77,6 +78,8 @@ class VideoShow extends React.Component {
                 </>
             )
         }
+
+        
 
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;

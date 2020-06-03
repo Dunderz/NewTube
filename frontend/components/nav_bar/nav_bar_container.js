@@ -4,15 +4,18 @@ import NavBar from './nav_bar';
 import { openModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session';
 import { withRouter } from 'react-router-dom';
+import { requestSelfSubscriptions } from '../../actions/subscriber_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.currentUser,
-    ownProps: ownProps
+    ownProps: ownProps,
+    selfSubscriptions: state.entities.selfSubscriptions
 });
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: modal => dispatch(openModal(modal)),
+    requestSelfSubscriptions: id => dispatch(requestSelfSubscriptions(id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

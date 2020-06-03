@@ -10,6 +10,11 @@ class NavBar extends React.Component {
         super(props);
     }
     
+    componentDidMount() {
+        if (this.props.currentUser) {
+            this.props.requestSelfSubscriptions(this.props.currentUser.id);
+        }
+    }
        
     render() {
         const { currentUser, logout } = this.props;

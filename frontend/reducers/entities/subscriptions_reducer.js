@@ -1,4 +1,9 @@
-import { RECEIVE_SUBSCRIPTIONS, RECEIVE_SUBSCRIPTION, REMOVE_SUBSCRIPTION } from '../../actions/subscriber_actions';
+import { 
+    RECEIVE_SUBSCRIPTIONS, 
+    RECEIVE_SUBSCRIPTION, 
+    REMOVE_SUBSCRIPTION,
+    RECEIVE_SELF_SUBSCRIPTIONS
+} from '../../actions/subscriber_actions';
 
 const subscriptionsReducer = (state = {}, action) => {
     Object.freeze(state);
