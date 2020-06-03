@@ -109,3 +109,38 @@
     color: #030303;
     font-weight: 500;
 }
+
+.user-show-subscriptions {
+    display: flex;
+    flex-direction: row;
+    margin-top: 44px;
+}
+
+.user-show-subscriptions-link {
+    display: flex;
+    flex-direction: column;
+    outline: none !important;
+    align-items: center;
+    text-decoration: none;
+    width: 150px;
+    margin: 0px 10px;
+    height: 150px;
+}
+
+.user-show-subscriptions-username {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #030303;
+    font-weight: 500;
+}
+
+.user-show-subscriptions-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: white;
+    width: 103px;
+    height: 103px;
+    border-radius: 54px;
+}

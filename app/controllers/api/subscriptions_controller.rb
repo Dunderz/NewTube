@@ -5,6 +5,10 @@ class Api::SubscriptionsController < ApplicationController
             @subscribers = Subscription.where(subscriber_id: params[:user_id])
             render :index
             return
+        elsif params[:status] = "channel-subscriptions"
+            @subscribers = Subscription.where(subscriber_id: params[:user_id])
+            render :index
+            return 
         end
 
         @subscribers = Subscription.where(channel_id: params[:user_id])

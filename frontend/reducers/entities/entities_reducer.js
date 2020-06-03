@@ -5,6 +5,7 @@ import commentsReducer from './comments_reducer';
 import likesReducer from './likes_reducer';
 import subscriptionsReducer from './subscriptions_reducer';
 import selfSubscriptionsReducer from './self_subscriptions_reducer';
+import channelSubscriptionsReducer from './channel_subscriptions_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     comments: commentsReducer,
     likes: likesReducer,
     subscriptions: subscriptionsReducer,
-    selfSubscriptions: selfSubscriptionsReducer
+    selfSubscriptions: selfSubscriptionsReducer,
+    channelSubscriptions: channelSubscriptionsReducer
 });
 
 export default entitiesReducer;

@@ -66,7 +66,6 @@ class ModalSideBar extends React.Component {
                     <div className="modal-side-bar-subscriptions">
                         <div className="modal-side-bar-subscriptions-header">SUBSCRIPTIONS</div>
                         {subsArray.map(sublink => {
-                            console.log(sublink.subscription);
                             return (
                                 <Link onClick={() => this.props.closeModal()} to={`/users/${sublink.subscription.id}`} key={sublink.id} className="modal-side-bar-sub-link">
                                     <div className="modal-side-bar-sub-icon" style={{backgroundColor: sublink.subscription.color}}>

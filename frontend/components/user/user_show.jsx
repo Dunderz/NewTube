@@ -9,12 +9,14 @@ class UserShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestUser(this.props.match.params.id);
+        this.props.requestUser(this.props.match.params.id)
+        .then(() => this.props.requestChannelSubscriptions(this.props.user.id));
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            this.props.requestUser(this.props.match.params.id);
+            this.props.requestUser(this.props.match.params.id)
+            .then(() => this.props.requestChannelSubscriptions(this.props.user.id));
         }
     }
 
@@ -26,12 +28,19 @@ class UserShow extends React.Component {
             )
         }
 
-        console.log(this.props.newUser);
+        let subscriptions = this.props.channelSubscriptions;
+        console.log(this.props.state);
 
         let videos = [];
         for (let id in this.props.user.videos) {
             videos.push(this.props.user.videos[id]);
         }
+
+        let subsArr = [];
+        for (let k in subscriptions) {
+            subsArr.push(subscriptions[k]);
+        }
+
         return (
             <div onClick={this.testClick} className="user-show-container">
                 <div className="left-nav-component">
@@ -97,7 +106,19 @@ class UserShow extends React.Component {
                                 Subscriptions
                             </div>
                             <div className="user-show-subscriptions">
-                                
+                                {subsArr.map(sublink => {
+                                        return (
+                                            <Link to={`/users/${sublink.subscription.id}`} key={sublink.id} className="user-show-subscriptions-link">
+                                                <div className="user-show-subscriptions-icon" style={{ backgroundColor: sublink.subscription.color }}>
+                                                    {sublink.subscription.username[0].toUpperCase()}
+                                                </div>
+                                                <div className="user-show-subscriptions-username">
+                                                    {sublink.subscription.username}
+                                                </div>
+                                            </Link>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,14 @@ export const fetchChannelSubscribers = userId => {
     })
 }
 
+export const fetchChannelSubscriptions = userId => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/users/${userId}/subscriptions`,
+        data: { status: "channel-subscriptions" }
+    })
+}
+
 export const fetchSelfSubscriptions = userId => {
     return $.ajax({
         method: "GET",
