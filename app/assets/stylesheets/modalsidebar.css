@@ -8,7 +8,7 @@
 
 .modal-side-bar-links {
     padding-top: 20px;
-    height: 500px;
+    height: 270px;
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     
@@ -38,6 +38,52 @@
     font-size: 14px;
     color: #030303;
     padding-top: 1px;
+}
+
+.modal-side-bar-subscriptions {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-side-bar-subscriptions-header {
+    padding: 8px 24px;
+    font-size: 14px;
+    color: #606060;
+    font-weight: 500;
+}
+
+.modal-side-bar-sub-link {
+    padding: 0px 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: none;
+    outline: none !important;
+}
+
+.modal-side-bar-sub-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal-side-bar-sub-icon {
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-weight: 300;
+}
+
+.modal-side-bar-sub-name {
+    font-size: 14px;
+    color: #030303;
 }
 
 @keyframes slide {

@@ -3,13 +3,11 @@ class Api::SubscriptionsController < ApplicationController
     def index
         if params[:status] == "self-subscriptions"
             @subscribers = Subscription.where(subscriber_id: params[:user_id])
-            debugger
             render :index
             return
         end
 
         @subscribers = Subscription.where(channel_id: params[:user_id])
-        debugger
         render :index
     end
 

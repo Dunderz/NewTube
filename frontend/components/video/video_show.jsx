@@ -34,12 +34,16 @@ class VideoShow extends React.Component {
         this.props.requestComments(this.props.match.params.id);
         this.props.requestVideo(this.props.match.params.id)
         .then(() => this.props.requestChannelSubscribers(this.props.video.user.id));
+        
         this.props.requestVideos();
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (this.state.subscribeToggle) {
             this.props.requestChannelSubscribers(this.props.video.user.id);
+            if (this.props.currentUser) {
+                this.props.requestSelfSubscriptions(this.props.currentUser.id);
+            }
             this.setState({ subscribeToggle: false });
         }
 
@@ -66,9 +70,6 @@ class VideoShow extends React.Component {
         }
     }
 
-    // testClick() {
-    //     console.log("testing");
-    // }
 
     render() {
 

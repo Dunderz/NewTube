@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { requestVideo, requestVideos } from '../../actions/video_actions';
 import { requestComments } from '../../actions/comment_actions';
-import { subscribe, unsubscribe, requestChannelSubscribers } from '../../actions/subscriber_actions';
+import { subscribe, unsubscribe, requestChannelSubscribers, requestSelfSubscriptions } from '../../actions/subscriber_actions';
 import VideoShow from './video_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,7 +23,8 @@ const mapDispatchToProps = dispatch => {
         requestComments: (id) => dispatch(requestComments(id)),
         subscribe: newSub => dispatch(subscribe(newSub)),
         unsubscribe: id => dispatch(unsubscribe(id)),
-        requestChannelSubscribers: id => dispatch(requestChannelSubscribers(id))
+        requestChannelSubscribers: id => dispatch(requestChannelSubscribers(id)),
+        requestSelfSubscriptions: id => dispatch(requestSelfSubscriptions(id))
     }
 }
 

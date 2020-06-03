@@ -16,7 +16,22 @@ class ModalSideBar extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        
+        if (this.props.currentUser) {
+            this.props.requestSelfSubscriptions(this.props.currentUser.id);
+        }
+    }
+
     render() {
+
+        const { selfSubscriptions } = this.props;
+        let subsArray = [];
+
+        for (let k in selfSubscriptions) {
+            subsArray.push(selfSubscriptions[k]);
+        }
+
         return (
             <>
                 <div className="modal-side-bar-container">
@@ -24,7 +39,7 @@ class ModalSideBar extends React.Component {
                         <div className="hamburger-container noSelect" onClick={() => this.props.closeModal()}>
                             <img id='hamburger-logo' src={ window.hamburger } />
                         </div>
-                        <Link className="new-tube-top-left-logo noSelect" to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>
+                        <Link className="new-tube-top-left-logo noSelect" onClick={() => this.props.closeModal()} to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>
                     </div>
                     <div className="modal-side-bar-links">
                         <Link className="modal-side-bar-link" to="/">
@@ -47,7 +62,23 @@ class ModalSideBar extends React.Component {
                             <div className="modal-side-bar-icon"><FontAwesomeIcon icon={faFolderOpen} /></div>
                             <div className="modal-side-bar-title">Portfolio</div>
                         </a>
-                        </div>
+                    </div>
+                    <div className="modal-side-bar-subscriptions">
+                        <div className="modal-side-bar-subscriptions-header">SUBSCRIPTIONS</div>
+                        {subsArray.map(sublink => {
+                            console.log(sublink.subscription);
+                            return (
+                                <Link onClick={() => this.props.closeModal()} to={`/users/${sublink.subscription.id}`} key={sublink.id} className="modal-side-bar-sub-link">
+                                    <div className="modal-side-bar-sub-icon" style={{backgroundColor: sublink.subscription.color}}>
+                                        {sublink.subscription.username[0].toUpperCase()}
+                                    </div>
+                                    <div className="modal-side-bar-sub-name">
+                                        {sublink.subscription.username}
+                                    </div>
+                                </Link>
+                            )
+                        })}
+                    </div>
                 </div>
             </>
         )

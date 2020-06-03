@@ -37,10 +37,7 @@ class Like extends React.Component {
             }
                 
         }
-        // if (prev.match.params.id !== this.props.match.params.id) {
-        //     console.log("UPDATED");
-        //     this.props.requestLikes(this.props.match.params.id);
-        // }
+
     }
 
     // Please refactor in the future lmao
@@ -50,7 +47,7 @@ class Like extends React.Component {
     //             this.setState(prevState => {
     //                 let likeIDs = Object.assign({}, prevState.likeIDs);
     //                 likeIDs[this.props.likes[i]['user_id']] = true;
-    //                 // console.log(likeIDs);
+    //                 
     //                 return { likeIDs };
     //             })
     //         }
@@ -161,7 +158,7 @@ class Like extends React.Component {
 
         let likeSelected;
         let dislikeSelected;
-        // console.log(this.state);
+
         let likes = 0;
         let dislikes = 0;
 

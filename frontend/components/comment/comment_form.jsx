@@ -63,7 +63,7 @@ class CommentForm extends React.Component {
                 <FontAwesomeIcon className="comment-form-icon" icon={faUserCircle} />
             )
         }
-
+        
         let show;
         
         if (this.state.showButtons) {

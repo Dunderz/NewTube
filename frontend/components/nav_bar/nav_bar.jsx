@@ -8,6 +8,9 @@ import Search from '../search/search';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            state: this.props.state
+        }
     }
     
     componentDidMount() {
@@ -15,10 +18,14 @@ class NavBar extends React.Component {
             this.props.requestSelfSubscriptions(this.props.currentUser.id);
         }
     }
+
+    componentDidUpdate(prev) {
+    }
+
+
        
     render() {
         const { currentUser, logout } = this.props;
-
         const display = currentUser ? (
                 <div>
                     <ProfileMenuContainer currentUser={currentUser} logout={logout}/>

@@ -6,16 +6,16 @@ import timeAgo from '../video/video_time';
 class UserShow extends React.Component {
     constructor(props) {
         super(props);
-
-        this.testClick = this.testClick.bind(this);
     }
 
     componentDidMount() {
         this.props.requestUser(this.props.match.params.id);
     }
 
-    testClick() {
-        console.log(this.props.user);
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            this.props.requestUser(this.props.match.params.id);
+        }
     }
 
     render() {
@@ -25,6 +25,9 @@ class UserShow extends React.Component {
                 </>
             )
         }
+
+        console.log(this.props.newUser);
+
         let videos = [];
         for (let id in this.props.user.videos) {
             videos.push(this.props.user.videos[id]);

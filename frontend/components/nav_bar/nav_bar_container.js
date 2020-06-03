@@ -9,7 +9,8 @@ import { requestSelfSubscriptions } from '../../actions/subscriber_actions';
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.currentUser,
     ownProps: ownProps,
-    selfSubscriptions: state.entities.selfSubscriptions
+    selfSubscriptions: state.entities.selfSubscriptions,
+    state
 });
 
 const mapDispatchToProps = dispatch => ({
