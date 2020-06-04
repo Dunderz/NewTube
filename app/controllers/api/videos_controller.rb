@@ -24,6 +24,11 @@ class Api::VideosController < ApplicationController
         end
     end
 
+    def destroy
+        @video = Video.find_by(id: params[:id])
+        @video.destroy
+    end
+
     def search
         @videos = Video.where('lower(title) LIKE lower(?)', "%#{params[:result]}%")
         render :index

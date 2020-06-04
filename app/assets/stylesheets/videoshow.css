@@ -271,6 +271,19 @@
     margin: 0 auto;
 }
 
+.videoshow-delete-video {
+    cursor: pointer;
+}
+
+.videoshow-delete-video-text {
+    background-color: #065fd4;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 3px;
+}
+
 .description {
     padding-left: 64px;
     font-size: 14px;

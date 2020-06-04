@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestVideo, requestVideos } from '../../actions/video_actions';
+import { requestVideo, requestVideos, destroyVideo } from '../../actions/video_actions';
 import { requestComments } from '../../actions/comment_actions';
 import { subscribe, unsubscribe, requestChannelSubscribers, requestSelfSubscriptions } from '../../actions/subscriber_actions';
 import VideoShow from './video_show';
@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch => {
     return {
         requestVideo: (id) => dispatch(requestVideo(id)),
         requestVideos: () => dispatch(requestVideos()),
+        destroyVideo: (id) => dispatch(destroyVideo(id)),
         requestComments: (id) => dispatch(requestComments(id)),
         subscribe: newSub => dispatch(subscribe(newSub)),
         unsubscribe: id => dispatch(unsubscribe(id)),

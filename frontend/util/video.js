@@ -20,7 +20,14 @@ export const createVideo = formData => (
         contentType: false,
         processData: false
     })
-)
+);
+
+export const deleteVideo = id => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/videos/${id}`
+    })
+}
 
 // search bar functionality
 // export const fetchVideos = () => {

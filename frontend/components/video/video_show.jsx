@@ -31,6 +31,7 @@ class VideoShow extends React.Component {
         this.handleStopPropagation = this.handleStopPropagation.bind(this);
         this.handleNewVidState = this.handleNewVidState.bind(this);
         this.handleSubPopUp = this.handleSubPopUp.bind(this);
+        this.handleRemoveVideo = this.handleRemoveVideo.bind(this);
     }
 
     componentDidMount() {
@@ -109,6 +110,12 @@ class VideoShow extends React.Component {
         }
     }
 
+    handleRemoveVideo(e) {
+        e.preventDefault();
+        this.props.destroyVideo(this.props.video.id)
+            .then(() => this.props.history.push("/"));
+    }
+
     handleStopPropagation(e) {
         e.stopPropagation();
     }
@@ -123,7 +130,7 @@ class VideoShow extends React.Component {
             )
         }
 
-        
+        console.log(this.props);
 
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;
@@ -188,6 +195,32 @@ class VideoShow extends React.Component {
                 </div>
             )
         }
+
+        let videoButton;
+        if (this.props.currentUser) {
+            if (this.props.currentUser.id == video.user.id) {
+                videoButton = (
+                    <div className="videoshow-delete-video" onClick={this.handleRemoveVideo}>
+                        <h4 className="videoshow-delete-video-text">DELETE VIDEO</h4>
+                    </div>
+                )
+            } else {
+                videoButton = (
+                    <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
+                        { subscribePopUp }
+                        <h4>{subscriberText}</h4>
+                    </div>
+                );
+            }
+        } else {
+            videoButton = (
+                <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
+                    { subscribePopUp }
+                    <h4>{subscriberText}</h4>
+                </div>
+            );
+        }
+
         
         return (
             <div key={video.id} className="videoshow-container">
@@ -231,10 +264,7 @@ class VideoShow extends React.Component {
                                     </div>
                                 </div>
                             </Link>
-                            <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
-                                { subscribePopUp }
-                                <h4>{subscriberText}</h4>
-                            </div>
+                            { videoButton }
                         </div>
                         <div className="description">
                             <h2>{video.description}</h2>

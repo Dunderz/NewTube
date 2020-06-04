@@ -1,6 +1,7 @@
 import {
     RECEIVE_VIDEO,
-    RECEIVE_VIDEOS
+    RECEIVE_VIDEOS,
+    REMOVE_VIDEO
 } from '../../actions/video_actions';
 
 const videosReducer = (state = {}, action) => {
@@ -10,6 +11,10 @@ const videosReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.video.id]: action.video} );
         case RECEIVE_VIDEOS:
             return Object.assign({}, action.videos);
+        case REMOVE_VIDEO:
+            let newState = Object.assign({}, state);
+            delete newState[action.id];
+            return newState;
         default:
             return state;
     }

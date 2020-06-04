@@ -8,6 +8,7 @@
 #                api_videos GET    /api/videos(.:format)                                                                    api/videos#index {:format=>"json"}
 #                           POST   /api/videos(.:format)                                                                    api/videos#create {:format=>"json"}
 #                 api_video GET    /api/videos/:id(.:format)                                                                api/videos#show {:format=>"json"}
+#                           DELETE /api/videos/:id(.:format)                                                                api/videos#destroy {:format=>"json"}
 #                 api_likes POST   /api/likes(.:format)                                                                     api/likes#create {:format=>"json"}
 #                  api_like DELETE /api/likes/:id(.:format)                                                                 api/likes#destroy {:format=>"json"}
 #              api_comments POST   /api/comments(.:format)                                                                  api/comments#create {:format=>"json"}
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
   
   namespace :api, defaults: {format: 'json'} do
     
-    resources :videos, only: [:create, :index, :show] do
+    resources :videos, only: [:create, :index, :show, :destroy] do
       resources :likes, only: [:index]
       resources :comments, only: [:index, :destroy] 
     end

@@ -28,6 +28,10 @@
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+.modal-side-bar-link:hover > .modal-side-bar-icon {
+    color: red;
+}
+
 .modal-side-bar-icon {
     margin-right: 30px;
     font-size: 16px;
@@ -67,6 +71,7 @@
 
 .modal-side-bar-sub-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
+
 }
 
 .modal-side-bar-sub-icon {

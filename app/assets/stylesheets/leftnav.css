@@ -20,6 +20,10 @@
     outline: none !important;
 }
 
+.left-nav-link:hover > .left-nav-icon {
+    color: red !important;
+}
+
 .left-nav-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
     color: red;
@@ -27,9 +31,11 @@
 
 .left-nav-icon {
     margin-bottom: 6px;
+    color: #606060;
 }
 
 .left-nav-icon-title {
     font-size: 10px;
+    
 }
 
