@@ -29,7 +29,6 @@ class UserShow extends React.Component {
         }
 
         let subscriptions = this.props.channelSubscriptions;
-        console.log(this.props.state);
 
         let videos = [];
         for (let id in this.props.user.videos) {

@@ -6,6 +6,7 @@ import CommentsContainer from '../comment/comment_index_container';
 import LikesContainer from '../like/like_container';
 import timeAgo from './video_time';
 import Subscription from '../subscriptions/subscription_container';
+import RecommendedVideosContainer from '../recommended_videos/recommended_videos_container';
 import { 
     faThumbsUp, 
     faThumbsDown,
@@ -111,64 +112,57 @@ class VideoShow extends React.Component {
             }
         }
 
-        
-
-        console.log(subscriberClass);
-
         let subscriberCountName;
 
         subscriberCount === 1 ? subscriberCountName = "Subscriber" : subscriberCountName = "Subscribers";
 
         const { video } = this.props;
-        
-        
-       
-        let upNextVideo;
 
         const date = new Date(video.created_at);
         const dateArray = date.toDateString().split(" ").slice(1);
         dateArray[1] += ",";
         const formatted = dateArray.join(" ");
 
-        let upNextBox;
+        // let upNextBox;
+        // let upNextVideo;
 
-        if (this.props.videos.length >= 1) {
-            if (video.id === this.props.videos[0].id) {
-                upNextVideo = this.props.videos.pop();
-            } else {
-                upNextVideo = this.props.videos.shift();
-            }
+        // if (this.props.videos.length >= 1) {
+        //     if (video.id === this.props.videos[0].id) {
+        //         upNextVideo = this.props.videos.pop();
+        //     } else {
+        //         upNextVideo = this.props.videos.shift();
+        //     }
 
-            upNextBox = (
-                <div className="videoshow-up-next-container">
-                        <p>Up Next</p>
-                        <div className="videoshow-up-next-video">
-                            <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
-                                <div className="videoshow-index">
-                                    <img src={upNextVideo.thumbnailUrl} />
-                                </div>
-                                <div className="videoshow-rec-info">
-                                    <h2>{upNextVideo.title}</h2>
-                                    <Link to={`/users/${video.user.id}`} className="user-icon-link">
-                                        <div className="uploader-name">
-                                            <h2>{upNextVideo.user.username}</h2>
-                                        </div>
-                                    </Link>
-                                    <div className="videoshow-rec-vid-stats">
-                                        <div className="videoshow-rec-views">
-                                            <h2>{upNextVideo.views} {upNextVideo.views == 1 ? "view" : "views"}</h2>
-                                            <span className="videoshow-views-dot"></span>
-                                        </div>
-                                        <div className="videoshow-rec-timeago">
-                                            <h2>{timeAgo(upNextVideo.created_at)}</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link> 
-                        </div>
-                    </div>
-            )
-        }
+        //     upNextBox = (
+        //         <div className="videoshow-up-next-container">
+        //             <p>Up Next</p>
+        //             <div className="videoshow-up-next-video">
+        //                 <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
+        //                     <div className="videoshow-index">
+        //                         <img src={upNextVideo.thumbnailUrl} />
+        //                     </div>
+        //                     <div className="videoshow-rec-info">
+        //                         <h2>{upNextVideo.title}</h2>
+        //                         <Link to={`/users/${video.user.id}`} className="user-icon-link">
+        //                             <div className="uploader-name">
+        //                                 <h2>{upNextVideo.user.username}</h2>
+        //                             </div>
+        //                         </Link>
+        //                         <div className="videoshow-rec-vid-stats">
+        //                             <div className="videoshow-rec-views">
+        //                                 <h2>{upNextVideo.views} {upNextVideo.views == 1 ? "view" : "views"}</h2>
+        //                                 <span className="videoshow-views-dot"></span>
+        //                             </div>
+        //                             <div className="videoshow-rec-timeago">
+        //                                 <h2>{timeAgo(upNextVideo.created_at)}</h2>
+        //                             </div>
+        //                         </div>
+        //                     </div>
+        //                 </Link> 
+        //             </div>
+        //         </div>
+        //     )
+        // }
         
         return (
             
@@ -241,39 +235,7 @@ class VideoShow extends React.Component {
                 </div>
 
                 <div className="videoshow-right-box">
-                    { upNextBox }
-                    <div className="videoshow-recommended">
-                        {this.props.videos.map(video => {
-                            if (video.id !== this.props.video.id) {
-                                return (
-                                    <div key={video.id} className="videoshow-up-next-video"> 
-                                        <Link onClick={this.handleClick} className="videoshow-link" to={`/videos/${video.id}`}>                  
-                                            <div className="videoshow-index">
-                                                <img src={video.thumbnailUrl} />
-                                            </div>
-                                            <div className="videoshow-rec-info">
-                                                <h2>{video.title}</h2>
-                                                <Link to={`/users/${video.user.id}`} className="user-icon-link">
-                                                    <div className="uploader-name">
-                                                        <h2>{video.user.username}</h2>
-                                                    </div>
-                                                </Link>
-                                                <div className="videoshow-rec-vid-stats">
-                                                    <div className="videoshow-rec-views">
-                                                        <h2>{video.views} {video.views == 1 ? "view" : "views"}</h2>
-                                                        <span className="videoshow-views-dot"></span>
-                                                    </div>
-                                                    <div className="videoshow-rec-timeago">
-                                                        <h2>{timeAgo(video.created_at)}</h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Link> 
-                                    </div>
-                                );
-                            }
-                        })}
-                    </div>
+                    <RecommendedVideosContainer videos={this.props.videos} />
                 </div>
             </div>
         );

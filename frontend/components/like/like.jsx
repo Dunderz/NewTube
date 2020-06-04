@@ -161,7 +161,6 @@ class Like extends React.Component {
 
         let likes = 0;
         let dislikes = 0;
-
         
         if (this.props.currentUser) {
             for (let i = 0; i < this.props.likes.length; i++) {
