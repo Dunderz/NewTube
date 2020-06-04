@@ -22,16 +22,19 @@ class VideoShow extends React.Component {
         super(props);
         this.state = {
             newVideo: false,
-            subscribeToggle: false
+            subscribeToggle: false,
+            showSubscribePopUp: false
         }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleSubscribeToggle = this.handleSubscribeToggle.bind(this);
         this.handleStopPropagation = this.handleStopPropagation.bind(this);
         this.handleNewVidState = this.handleNewVidState.bind(this);
+        this.handleSubPopUp = this.handleSubPopUp.bind(this);
     }
 
     componentDidMount() {
+        document.addEventListener('click', this.handleSubPopUp);
         this.props.requestComments(this.props.match.params.id);
         this.props.requestVideo(this.props.match.params.id)
         .then(() => this.props.requestChannelSubscribers(this.props.video.user.id));
@@ -56,21 +59,40 @@ class VideoShow extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleSubPopUp);
+    }
+
+    handleSubPopUp(e) {
+        if (this.state.showSubscribePopUp) {
+            if (e.target.classList[0] == undefined) {
+                if (e.target.nodeName != "H4") {
+                    this.setState({ showSubscribePopUp: false });
+                }
+            } else if (!e.target.classList[0].includes("subscribe-pop-up")) {
+                this.setState({ showSubscribePopUp: false });
+            }
+        }
+    }
+
     handleClick() {
         this.setState({ newVideo: true })
     }
 
     handleSubscribeToggle(subscribeClass, subId) {
-        
-        if (subscribeClass == "subscribe") {
-            
-            this.props.subscribe({
-                channel_id: this.props.video.user.id,
-                subscriber_id: this.props.currentUser.id
-            }).then(() => this.setState({ subscribeToggle: true }));
-        } else if (subscribeClass == "subscribed") {
-            
-            this.props.unsubscribe(subId).then(() => this.setState({ subscribeToggle: true }));
+        if (this.props.currentUser) {
+            if (subscribeClass == "subscribe") {
+                
+                this.props.subscribe({
+                    channel_id: this.props.video.user.id,
+                    subscriber_id: this.props.currentUser.id
+                }).then(() => this.setState({ subscribeToggle: true }));
+            } else if (subscribeClass == "subscribed") {
+                
+                this.props.unsubscribe(subId).then(() => this.setState({ subscribeToggle: true }));
+            }
+        } else if (!this.props.currentUser) {
+            this.setState({ showSubscribePopUp: true });
         }
     }
 
@@ -141,6 +163,31 @@ class VideoShow extends React.Component {
         const dateArray = date.toDateString().split(" ").slice(1);
         dateArray[1] += ",";
         const formatted = dateArray.join(" ");
+
+        let subscribePopUp;
+        let subscribeShow;
+
+        if (this.state.showSubscribePopUp) {
+            subscribeShow = "subscribe-show";
+        } else {
+            subscribeShow = "";
+        }
+
+        if (!this.props.currentUser) {
+            subscribePopUp = (
+                <div className={`subscribe-pop-up-container ${subscribeShow}`}>
+                    <div className="subscribe-pop-up-query flex-start">
+                        Want to subscribe to this channel?
+                    </div>
+                    <div className="subscribe-pop-up-description flex-start">
+                        Sign in to subscribe to this channel.
+                    </div>
+                    <div className="subscribe-pop-up-sign-in flex-start">
+                        <Link className="subscribe-pop-up-sign-in-link" to="/login">SIGN IN</Link>
+                    </div>
+                </div>
+            )
+        }
         
         return (
             <div key={video.id} className="videoshow-container">
@@ -185,7 +232,8 @@ class VideoShow extends React.Component {
                                 </div>
                             </Link>
                             <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
-                                <h2>{subscriberText}</h2>
+                                { subscribePopUp }
+                                <h4>{subscriberText}</h4>
                             </div>
                         </div>
                         <div className="description">

@@ -3,6 +3,7 @@ import { requestVideo, requestVideos } from '../../actions/video_actions';
 import { requestComments } from '../../actions/comment_actions';
 import { subscribe, unsubscribe, requestChannelSubscribers, requestSelfSubscriptions } from '../../actions/subscriber_actions';
 import VideoShow from './video_show';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -28,4 +29,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoShow));
