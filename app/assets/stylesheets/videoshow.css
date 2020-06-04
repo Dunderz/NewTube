@@ -144,6 +144,10 @@
     width: 100%;
 }
 
+.description-user-link {
+    text-decoration: none;
+}
+
 .description-user-container {
     display: flex;
     align-items: center;

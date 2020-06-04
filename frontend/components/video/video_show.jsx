@@ -169,19 +169,21 @@ class VideoShow extends React.Component {
                     </div>
                     <div className="videoshow-description">
                         <div className="description-top-row">
-                            <div className="description-user-container hover">
-                                <div className="description-user-icon" style={{backgroundColor: video.user.color}}>
-                                    {video.user.username[0].toUpperCase()}
-                                </div>
-                                <div className="description-user">
-                                    <div className="description-username">
-                                        <h2>{video.user.username}</h2>
+                            <Link to={`/users/${video.user.id}`} className="description-user-link">
+                                <div className="description-user-container hover">
+                                    <div className="description-user-icon" style={{backgroundColor: video.user.color}}>
+                                        {video.user.username[0].toUpperCase()}
                                     </div>
-                                    <div className="description-sub-count">
-                                        <h2>{subscriberCount} {subscriberCountName}</h2>
+                                    <div className="description-user">
+                                        <div className="description-username">
+                                            <h2>{video.user.username}</h2>
+                                        </div>
+                                        <div className="description-sub-count">
+                                            <h2>{subscriberCount} {subscriberCountName}</h2>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                             <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
                                 <h2>{subscriberText}</h2>
                             </div>
