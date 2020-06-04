@@ -9,6 +9,12 @@ class ResultsItem extends React.Component {
         this.state = {
             description: this.props.video.description
         }
+
+        this.handleStopPropagation = this.handleStopPropagation.bind(this);
+    }
+
+    handleStopPropagation(e) {
+        e.stopPropagation();
     }
 
     render() {
@@ -24,7 +30,7 @@ class ResultsItem extends React.Component {
 
         return (
             <>
-                <Link className="results-video-link" to={`/videos/${video.id}`}>                  
+                <div onClick={() => this.props.history.push(`/videos/${video.id}`)} className="results-video-link">                  
                     <div className="results-video-index">
                         <img src={video.thumbnailUrl} />
                     </div>
@@ -35,7 +41,7 @@ class ResultsItem extends React.Component {
                                     {video.title}
                                 </div>
                                 <div className="video-index-views-date-container result margin-adjust">
-                                    <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                    <Link onClick={this.handleStopPropagation} to={`/users/${video.user.id}`} className="user-icon-link">
                                         <div className="results-video-index-uploader">
                                             {video.user.username}
                                         </div>
@@ -55,7 +61,7 @@ class ResultsItem extends React.Component {
                             </div>
                         </div>
                     </div>
-                </Link> 
+                </div> 
             </>
         )
     }

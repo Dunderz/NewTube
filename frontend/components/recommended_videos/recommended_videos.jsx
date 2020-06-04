@@ -7,18 +7,20 @@ class RecommendedVideos extends React.Component {
         super(props);
 
         this.handleRenderVideos = this.handleRenderVideos.bind(this);
+        this.handleStopPropagation = this.handleStopPropagation.bind(this);
     }
 
     handleRenderVideos() {
         this.props.videos.map(video => {
-            debugger
             console.log(video);
         }) 
     }
 
+    handleStopPropagation(e) {
+        e.stopPropagation();
+    }
+
     render() {
-        console.log("RECOMMENDED VIDEOS: ");
-        console.log(this);
         if (this.props.videos.length <= 1) {
             return (
                 <></>
@@ -27,23 +29,30 @@ class RecommendedVideos extends React.Component {
 
         let recVideos = [];
         let currentVid;
-        let propVids = this.props.videos;
+        let upNextVid;
+        let propVids = this.props.videos.slice();
+
+        for (let k = 0; k < propVids.length; k++) {
+            if (propVids[k].id == this.props.match.params.id) {
+                propVids.splice(k, 1);
+            }
+        }
 
         for (let i = 0; i < propVids.length; i++) {
             if (propVids[i]) {
                 if (propVids[i].id != this.props.match.params.id) {
                     if (i == 0) {
-                        currentVid = (
-                            <div className="videoshow-up-next-container">
+                        upNextVid = (
+                            <div key={propVids[i].id} className="videoshow-up-next-container">
                                 <p>Up Next</p>
                                 <div className="videoshow-up-next-video">
-                                    <Link onClick={this.handleClick} key={propVids[i].id} className="videoshow-link" to={`/videos/${propVids[i].id}`}>                  
+                                    <div onClick={() => this.props.history.push(`/videos/${propVids[i].id}`)} key={propVids[i].id} className="videoshow-link">                  
                                         <div className="videoshow-index">
                                             <img src={propVids[i].thumbnailUrl} />
                                         </div>
                                         <div className="videoshow-rec-info">
                                             <h2>{propVids[i].title}</h2>
-                                            <Link to={`/users/${propVids[i].user.id}`} className="user-icon-link">
+                                            <Link to={`/users/${propVids[i].user.id}`} onClick={this.handleStopPropagation} className="user-icon-link">
                                                 <div className="uploader-name">
                                                     <h2>{propVids[i].user.username}</h2>
                                                 </div>
@@ -58,47 +67,48 @@ class RecommendedVideos extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link> 
+                                    </div> 
                                 </div>
                             </div>
                         );
-                        recVideos.push(currentVid);
                         continue;
-                    }
-                    currentVid = (
-                        <div key={propVids[i].id} className="videoshow-up-next-video"> 
-                            <Link onClick={this.handleClick} className="videoshow-link" to={`/videos/${propVids[i].id}`}>                  
-                                <div className="videoshow-index">
-                                    <img src={propVids[i].thumbnailUrl} />
-                                </div>
-                                <div className="videoshow-rec-info">
-                                    <h2>{propVids[i].title}</h2>
-                                    <Link to={`/users/${propVids[i].user.id}`} className="user-icon-link">
-                                        <div className="uploader-name">
-                                            <h2>{propVids[i].user.username}</h2>
-                                        </div>
-                                    </Link>
-                                    <div className="videoshow-rec-vid-stats">
-                                        <div className="videoshow-rec-views">
-                                            <h2>{propVids[i].views} {propVids[i].views == 1 ? "view" : "views"}</h2>
-                                            <span className="videoshow-views-dot"></span>
-                                        </div>
-                                        <div className="videoshow-rec-timeago">
-                                            <h2>{timeAgo(propVids[i].created_at)}</h2>
+                    } else {
+                        currentVid = (
+                            <div key={propVids[i].id} className="videoshow-up-next-video"> 
+                                <div onClick={() => this.props.history.push(`/videos/${propVids[i].id}`)} className="videoshow-link">                  
+                                    <div className="videoshow-index">
+                                        <img src={propVids[i].thumbnailUrl} />
+                                    </div>
+                                    <div className="videoshow-rec-info">
+                                        <h2>{propVids[i].title}</h2>
+                                        <Link to={`/users/${propVids[i].user.id}`} onClick={this.handleStopPropagation} className="user-icon-link">
+                                            <div className="uploader-name">
+                                                <h2>{propVids[i].user.username}</h2>
+                                            </div>
+                                        </Link>
+                                        <div className="videoshow-rec-vid-stats">
+                                            <div className="videoshow-rec-views">
+                                                <h2>{propVids[i].views} {propVids[i].views == 1 ? "view" : "views"}</h2>
+                                                <span className="videoshow-views-dot"></span>
+                                            </div>
+                                            <div className="videoshow-rec-timeago">
+                                                <h2>{timeAgo(propVids[i].created_at)}</h2>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Link> 
-                        </div>
-                    );
-                    recVideos.push(currentVid);
-                }
+                                </div> 
+                            </div>
+                        );
+                        recVideos.push(currentVid);
+                    }
+                } 
             }
         }
         
         return (
             <div className="recommended-videos-container">
                 <div className="videoshow-recommended">
+                    { upNextVid }
                     { recVideos }
                 </div>
             </div>

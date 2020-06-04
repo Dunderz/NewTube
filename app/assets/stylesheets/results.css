@@ -29,6 +29,7 @@
 /* RESULTS ITEMS */
 
 .results-video-link {
+    cursor: pointer;
     display: flex;
     text-decoration: none;
     color: black;

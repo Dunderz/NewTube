@@ -27,6 +27,8 @@ class VideoShow extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleSubscribeToggle = this.handleSubscribeToggle.bind(this);
+        this.handleStopPropagation = this.handleStopPropagation.bind(this);
+        this.handleNewVidState = this.handleNewVidState.bind(this);
     }
 
     componentDidMount() {
@@ -70,6 +72,23 @@ class VideoShow extends React.Component {
             
             this.props.unsubscribe(subId).then(() => this.setState({ subscribeToggle: true }));
         }
+    }
+
+    handleNewVidState(e) {
+        if (e.target.className === "videoshow-rec-info" ||
+            e.target.nodeName === "H2" ||
+            e.target.nodeName === "IMG" ||
+            e.target.nodeName === "SPAN" ||
+            e.target.className === "videoshow-rec-views" ||
+            e.target.className === "videoshow-link" ||
+            e.target.className === "videoshow-index") {
+
+            this.setState({ newVideo: true });
+        }
+    }
+
+    handleStopPropagation(e) {
+        e.stopPropagation();
     }
 
 
@@ -122,52 +141,9 @@ class VideoShow extends React.Component {
         const dateArray = date.toDateString().split(" ").slice(1);
         dateArray[1] += ",";
         const formatted = dateArray.join(" ");
-
-        // let upNextBox;
-        // let upNextVideo;
-
-        // if (this.props.videos.length >= 1) {
-        //     if (video.id === this.props.videos[0].id) {
-        //         upNextVideo = this.props.videos.pop();
-        //     } else {
-        //         upNextVideo = this.props.videos.shift();
-        //     }
-
-        //     upNextBox = (
-        //         <div className="videoshow-up-next-container">
-        //             <p>Up Next</p>
-        //             <div className="videoshow-up-next-video">
-        //                 <Link onClick={this.handleClick} key={upNextVideo.id} className="videoshow-link" to={`/videos/${upNextVideo.id}`}>                  
-        //                     <div className="videoshow-index">
-        //                         <img src={upNextVideo.thumbnailUrl} />
-        //                     </div>
-        //                     <div className="videoshow-rec-info">
-        //                         <h2>{upNextVideo.title}</h2>
-        //                         <Link to={`/users/${video.user.id}`} className="user-icon-link">
-        //                             <div className="uploader-name">
-        //                                 <h2>{upNextVideo.user.username}</h2>
-        //                             </div>
-        //                         </Link>
-        //                         <div className="videoshow-rec-vid-stats">
-        //                             <div className="videoshow-rec-views">
-        //                                 <h2>{upNextVideo.views} {upNextVideo.views == 1 ? "view" : "views"}</h2>
-        //                                 <span className="videoshow-views-dot"></span>
-        //                             </div>
-        //                             <div className="videoshow-rec-timeago">
-        //                                 <h2>{timeAgo(upNextVideo.created_at)}</h2>
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //                 </Link> 
-        //             </div>
-        //         </div>
-        //     )
-        // }
         
         return (
-            
             <div key={video.id} className="videoshow-container">
-                {/* <TestContainer comments={this.props.comments} videoId={this.props.match.params.id} /> */}
                 <div className="videoshow-left-box">
                     <div className="videoshow-player">
                         <video id="video" src={video.videoUrl} autoPlay={true} controls />
@@ -188,20 +164,6 @@ class VideoShow extends React.Component {
                             
                             <div className="videoshow-likes-options">
                                 <LikesContainer id={video.id} type="Video"/>
-
-                                {/* <div className="videoshow-share hover">
-                                    <FontAwesomeIcon className="video-option-icons" icon={faShare}/>
-                                    <h2>SHARE</h2>
-                                </div>
-
-                                <div className="videoshow-save hover">
-                                    <FontAwesomeIcon className="video-option-icons" icon={faListUl}/>
-                                    <h2>SAVE</h2>
-                                </div>
-
-                                <div className="videoshow-more-options hover">
-                                    <FontAwesomeIcon className="video-option-icons" icon={faEllipsisH}/>
-                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -234,7 +196,7 @@ class VideoShow extends React.Component {
                     <CommentsContainer videoId={this.props.match.params.id} />
                 </div>
 
-                <div className="videoshow-right-box">
+                <div className="videoshow-right-box" onClick={this.handleNewVidState}>
                     <RecommendedVideosContainer videos={this.props.videos} />
                 </div>
             </div>

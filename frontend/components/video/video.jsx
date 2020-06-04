@@ -8,6 +8,7 @@ class Video extends React.Component {
     constructor(props) {
         super(props);
         
+        this.handleStopPropagation = this.handleStopPropagation.bind(this);
     }
 
     // fetchPosts() {
@@ -26,7 +27,9 @@ class Video extends React.Component {
       
     }
 
-    
+    handleStopPropagation(e) {
+      e.stopPropagation();
+    }
 
     render() {
         if (this.props.videos === undefined) {
@@ -34,6 +37,7 @@ class Video extends React.Component {
             <></>
           )
         }
+        console.log(this.props);
         return (
             <section className="video-section">
               <div className="video-index-recommended-container">
@@ -43,14 +47,13 @@ class Video extends React.Component {
                 <div className="video-index-videos">
                   {this.props.videos.map(video => {
                     return (
-                          <div key={video.id} className="video-container">
-                            <Link className="video-link" to={`/videos/${video.id}`}>                  
+                          <div onClick={() => this.props.history.push(`/videos/${video.id}`)} key={video.id} className="video-container">                
                               <div className="video-index">
                                 <img src={video.thumbnailUrl} />
                               </div>
                               <div className="video-info">
                                 <div className="video-info-top-row">
-                                  <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                  <Link to={`/users/${video.user.id}`} onClick={this.handleStopPropagation} className="user-icon-link">
                                     <div className="video-user-icon" style={{backgroundColor: video.user.color}}>
                                         {video.user.username[0].toUpperCase()}
                                     </div>
@@ -59,7 +62,7 @@ class Video extends React.Component {
                                     <div className="video-index-title">
                                       {video.title}
                                     </div>
-                                    <Link to={`/users/${video.user.id}`} className="user-icon-link">
+                                    <Link to={`/users/${video.user.id}`} onClick={this.handleStopPropagation} className="user-icon-link">
                                       <div className="video-index-uploader">
                                         <p>{video.user.username}</p>
                                       </div>
@@ -77,7 +80,6 @@ class Video extends React.Component {
                                 </div>
 
                               </div>
-                            </Link> 
                           </div>
                         
                     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultsItem from './results_item';
+import ResultsItemContainer from './results_item_container';
 import LeftNav from '../left_nav/left_nav';
 
 class Results extends React.Component {
@@ -53,7 +53,7 @@ class Results extends React.Component {
                         {this.props.videos.map(video => {
                             return (
                                 <div key={video.id}>
-                                    <ResultsItem video={video} />
+                                    <ResultsItemContainer video={video} />
                                 </div>
                             )
                         })}

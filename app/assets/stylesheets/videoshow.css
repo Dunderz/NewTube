@@ -246,8 +246,16 @@
     margin-bottom: 12px;
 }
 
+.videoshow-up-next-video:hover {
+    cursor: pointer;
+}
+
 .videoshow-link {
     outline: none !important;
+}
+
+.videoshow-link:hover {
+    cursor: pointer;
 }
 
 .videoshow-index {

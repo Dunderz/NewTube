@@ -36,7 +36,7 @@ class ModalSideBar extends React.Component {
         }
 
         let subsContainer;
-        if (subsArray.length > 0) {
+        if (subsArray.length > 0 && this.props.currentUser) {
             subsContainer = (
                 <div className="modal-side-bar-subscriptions">
                     <div className="modal-side-bar-subscriptions-header">SUBSCRIPTIONS</div>
