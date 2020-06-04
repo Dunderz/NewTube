@@ -66,7 +66,7 @@ class ModalSideBar extends React.Component {
                         <Link className="new-tube-top-left-logo noSelect" onClick={() => this.props.closeModal()} to="/"><img id='new-tube-logo' src={ window.newtube } /></Link>
                     </div>
                     <div className="modal-side-bar-links">
-                        <Link className="modal-side-bar-link" to="/">
+                        <Link className="modal-side-bar-link" onClick={() => this.props.closeModal()} to="/">
                             <div className="modal-side-bar-icon"><FontAwesomeIcon icon={faHome} /></div>
                             <div className="modal-side-bar-title">Home</div>
                         </Link>
@@ -78,11 +78,11 @@ class ModalSideBar extends React.Component {
                             <div className="modal-side-bar-icon"><FontAwesomeIcon icon={faLinkedin} /></div>
                             <div className="modal-side-bar-title">LinkedIn</div>
                         </a>
-                        <a className="modal-side-bar-link" href="" target="_blank">
+                        <a className="modal-side-bar-link" href="https://angel.co/u/isaac-nam" target="_blank">
                             <div className="modal-side-bar-icon"><FontAwesomeIcon icon={faAngellist} /></div>
                             <div className="modal-side-bar-title">AngelList</div>
                         </a>
-                        <a className="modal-side-bar-link" href="" target="_blank">
+                        <a className="modal-side-bar-link" href="https://dunderproto.github.io/" target="_blank">
                             <div className="modal-side-bar-icon"><FontAwesomeIcon icon={faFolderOpen} /></div>
                             <div className="modal-side-bar-title">Portfolio</div>
                         </a>
