@@ -14,10 +14,13 @@ import {
 class ModalSideBar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            klass: ''
+        }
     }
 
     componentDidMount() {
-        
+        this.setState({ klass: "modal-side-bar-container" })
         if (this.props.currentUser) {
             this.props.requestSelfSubscriptions(this.props.currentUser.id);
         }
