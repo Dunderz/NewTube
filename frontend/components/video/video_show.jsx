@@ -44,19 +44,21 @@ class VideoShow extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.state.subscribeToggle) {
-            this.props.requestChannelSubscribers(this.props.video.user.id);
-            if (this.props.currentUser) {
-                this.props.requestSelfSubscriptions(this.props.currentUser.id);
+        if (prevProps.match.params.id != this.props.match.params.id) {
+            if (this.state.subscribeToggle) {
+                this.props.requestChannelSubscribers(this.props.video.user.id);
+                if (this.props.currentUser) {
+                    this.props.requestSelfSubscriptions(this.props.currentUser.id);
+                }
+                this.setState({ subscribeToggle: false });
             }
-            this.setState({ subscribeToggle: false });
-        }
-
-        if (this.state.newVideo) {
-            this.props.requestComments(this.props.match.params.id);
-            this.props.requestVideo(this.props.match.params.id)
-            .then(() => this.props.requestChannelSubscribers(this.props.video.user.id));
-            this.setState({ newVideo: false });
+    
+            if (prevProps.match.params.id != this.props.match.params.id) {
+                this.props.requestComments(this.props.match.params.id);
+                this.props.requestVideo(this.props.match.params.id)
+                .then(() => this.props.requestChannelSubscribers(this.props.video.user.id));
+                this.setState({ newVideo: false });
+            }
         }
     }
 
@@ -130,8 +132,6 @@ class VideoShow extends React.Component {
             )
         }
 
-        console.log(this.props);
-
         let commentCount = Object.values(this.props.comments).length;
         let commentWord;
 
@@ -158,7 +158,12 @@ class VideoShow extends React.Component {
                 }
                 subscriberCount++;
             }
+        } else {
+            for (let i in subscribers) {
+                subscriberCount++;
+            }
         }
+
 
         let subscriberCountName;
 
