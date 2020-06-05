@@ -24,6 +24,10 @@ class Comment < ApplicationRecord
         class_name: :Video,
         foreign_key: :video_id
 
+    belongs_to :commentable, polymorphic: true
+
+    has_many :comments, as: :commentable
+
     has_many :likes,
         as: :likable
 end
