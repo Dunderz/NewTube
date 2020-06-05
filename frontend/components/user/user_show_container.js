@@ -5,7 +5,9 @@ import { requestUser } from '../../actions/user_actions';
 import { 
     requestSelfSubscriptions, 
     requestChannelSubscribers,
-    requestChannelSubscriptions
+    requestChannelSubscriptions,
+    subscribe, 
+    unsubscribe
 } from '../../actions/subscriber_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
         user: state.entities.users[ownProps.match.params.id],
         selfSubscriptions: state.entities.selfSubscriptions,
         channelSubscriptions: state.entities.channelSubscriptions,
+        subscribers: state.entities.subscriptions,
         state
     }
 }
@@ -22,7 +25,10 @@ const mapDispatchToProps = dispatch => {
     return {
         requestUser: id => dispatch(requestUser(id)),
         requestSelfSubscriptions: id => dispatch(requestSelfSubscriptions(id)),
-        requestChannelSubscriptions: id => dispatch(requestChannelSubscriptions(id))
+        requestChannelSubscriptions: id => dispatch(requestChannelSubscriptions(id)),
+        requestChannelSubscribers: id => dispatch(requestChannelSubscribers(id)),
+        subscribe: newSub => dispatch(subscribe(newSub)),
+        unsubscribe: id => dispatch(unsubscribe(id))
     }
 }
 

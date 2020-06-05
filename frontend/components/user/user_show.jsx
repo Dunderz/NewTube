@@ -6,17 +6,63 @@ import timeAgo from '../video/video_time';
 class UserShow extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            showSubscribePopUp: false
+        }
+
+        this.handleSubscribeToggle = this.handleSubscribeToggle.bind(this);
+        this.handleSubPopUp = this.handleSubPopUp.bind(this);
+        this.testClick = this.testClick.bind(this);
     }
 
     componentDidMount() {
+        document.addEventListener('click', this.handleSubPopUp);
         this.props.requestUser(this.props.match.params.id)
-        .then(() => this.props.requestChannelSubscriptions(this.props.user.id));
+        .then(() => this.props.requestChannelSubscriptions(this.props.user.id))
+        .then(() => this.props.requestChannelSubscribers(this.props.user.id));
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleSubPopUp);
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
             this.props.requestUser(this.props.match.params.id)
-            .then(() => this.props.requestChannelSubscriptions(this.props.user.id));
+            .then(() => this.props.requestChannelSubscriptions(this.props.user.id))
+            .then(() => this.props.requestChannelSubscribers(this.props.user.id));
+        }
+    }
+
+    testClick(e) {
+        console.log(e.target)
+    }
+
+    handleSubPopUp(e) {
+        if (this.state.showSubscribePopUp) {
+            if (e.target.classList[0] == undefined) {
+                if (e.target.nodeName != "H4") {
+                    this.setState({ showSubscribePopUp: false });
+                }
+            } else if (!e.target.classList[0].includes("subscribe-pop-up")) {
+                this.setState({ showSubscribePopUp: false });
+            }
+        }
+    }
+
+    handleSubscribeToggle(subscribeClass, subId) {
+        if (this.props.currentUser) {
+            if (subscribeClass == "subscribe") {
+                this.props.subscribe({
+                    channel_id: this.props.user.id,
+                    subscriber_id: this.props.currentUser.id
+                }).then(() => this.setState({ subscribeToggle: true }));
+            } else if (subscribeClass == "subscribed") {
+                this.props.unsubscribe(subId).then(() => this.setState({ subscribeToggle: true }));
+            }
+        } else if (!this.props.currentUser) {
+            this.setState({ showSubscribePopUp: true });
         }
     }
 
@@ -110,6 +156,87 @@ class UserShow extends React.Component {
                 </>
             )
         };
+
+        // Please refactor subscription sometime in the future
+
+        let subscriberCount = 0;
+
+        let subscribers = this.props.subscribers;
+
+        let subscriberClass = "subscribe";
+        let subscriberText = "SUBSCRIBE";
+        let subscribeId;
+
+        if (this.props.currentUser) {
+            for (let k in subscribers) {
+                if (this.props.currentUser.id == subscribers[k].subscriber_id) {
+                    subscriberClass = "subscribed";
+                    subscriberText = "SUBSCRIBED";
+                    subscribeId = k;
+                }
+                subscriberCount++;
+            }
+        } else {
+            for (let i in subscribers) {
+                subscriberCount++;
+            }
+        }
+        
+        let subscriberCountName;
+
+        subscriberCount === 1 ? subscriberCountName = "Subscriber" : subscriberCountName = "Subscribers";
+
+        const { user } = this.props;
+
+        let subscribePopUp;
+        let subscribeShow;
+
+        if (this.state.showSubscribePopUp) {
+            subscribeShow = "subscribe-show";
+        } else {
+            subscribeShow = "";
+        }
+
+        if (!this.props.currentUser) {
+            subscribePopUp = (
+                <div className={`subscribe-pop-up-container user-subscribe ${subscribeShow}`}>
+                    <div className="subscribe-pop-up-query flex-start">
+                        Want to subscribe to this channel?
+                    </div>
+                    <div className="subscribe-pop-up-description flex-start">
+                        Sign in to subscribe to this channel.
+                    </div>
+                    <div className="subscribe-pop-up-sign-in flex-start">
+                        <Link className="subscribe-pop-up-sign-in-link" to="/login">SIGN IN</Link>
+                    </div>
+                </div>
+            )
+        }
+
+        let videoButton;
+        if (this.props.currentUser) {
+            if (this.props.currentUser.id == user.id) {
+                videoButton = (
+                    <div className="videoshow-delete-video">
+                        <h4 className="videoshow-delete-video-text">EDIT CHANNEL</h4>
+                    </div>
+                )
+            } else {
+                videoButton = (
+                    <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
+                        { subscribePopUp }
+                        <h4>{subscriberText}</h4>
+                    </div>
+                );
+            }
+        } else {
+            videoButton = (
+                <div className={`${subscriberClass} hover`} onClick={() => this.handleSubscribeToggle(subscriberClass, subscribeId)}>
+                    { subscribePopUp }
+                    <h4>{subscriberText}</h4>
+                </div>
+            );
+        }
         
         return (
             <div onClick={this.testClick} className="user-show-container">
@@ -119,12 +246,22 @@ class UserShow extends React.Component {
                 <div className="user-show-content">
                     <div className="user-show-banner">
                         <div className="user-show-banner-content">
-                            <div className="user-show-current-user">
-                                <div className="user-show-banner-icon" style={{backgroundColor: this.props.user.color}}>
-                                    {this.props.user.username[0].toUpperCase()}
+                            <div className="user-show-banner-top-row">
+                                <div className="user-show-current-user">
+                                    <div className="user-show-banner-icon" style={{backgroundColor: this.props.user.color}}>
+                                        {this.props.user.username[0].toUpperCase()}
+                                    </div>
+                                    <div className="user-show-banner-username">
+                                        <div className="user-show-username">
+                                            {this.props.user.username}
+                                        </div>
+                                        <div className="user-show-sub-count">
+                                            <h2>{subscriberCount} {subscriberCountName}</h2>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="user-show-banner-username">
-                                    {this.props.user.username}
+                                <div className="user-show-subscribe">
+                                { videoButton }
                                 </div>
                             </div>
                             

@@ -85,7 +85,6 @@ class VideoShow extends React.Component {
     handleSubscribeToggle(subscribeClass, subId) {
         if (this.props.currentUser) {
             if (subscribeClass == "subscribe") {
-                
                 this.props.subscribe({
                     channel_id: this.props.video.user.id,
                     subscriber_id: this.props.currentUser.id
@@ -171,10 +170,7 @@ class VideoShow extends React.Component {
 
         const { video } = this.props;
 
-        const date = new Date(video.created_at);
-        const dateArray = date.toDateString().split(" ").slice(1);
-        dateArray[1] += ",";
-        const formatted = dateArray.join(" ");
+        
 
         let subscribePopUp;
         let subscribeShow;
@@ -226,6 +222,10 @@ class VideoShow extends React.Component {
             );
         }
 
+        const date = new Date(video.created_at);
+        const dateArray = date.toDateString().split(" ").slice(1);
+        dateArray[1] += ",";
+        const formatted = dateArray.join(" ");
         
         return (
             <div key={video.id} className="videoshow-container">
