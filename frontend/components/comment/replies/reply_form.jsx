@@ -12,7 +12,6 @@ class ReplyForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    // i think i understand this now
     handleInput(field) {
         return e => {
             this.setState({

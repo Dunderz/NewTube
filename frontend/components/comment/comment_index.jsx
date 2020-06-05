@@ -35,25 +35,26 @@ class CommentIndex extends React.Component {
                 <CommentFormContainer handleCreateComment={this.handleCreateComment} videoId={this.props.videoId} />
                 <div>
                     {Object.values(this.props.comments).map(comment => {
-                        console.log(comment);
-                        let timeSinceCommented = timeAgo(comment.created_at);
-                        if (Object.values(comment).length === 0) {
-                            return;
+                        if (comment.commentable_type == "Video") {
+                            let timeSinceCommented = timeAgo(comment.created_at);
+                            if (Object.values(comment).length === 0) {
+                                return;
+                            }
+                            return (
+                                    <div key={comment.id}>
+                                        <CommentIndexItemContainer 
+                                            body={comment.body}
+                                            username={comment.username}
+                                            color={comment.user.color}
+                                            time={timeSinceCommented}
+                                            commentId={comment.id}
+                                            videoId={this.props.videoId}
+                                            handleCreateComment={this.handleCreateComment}
+                                            replies={comment.replies}
+                                            />
+                                    </div>
+                            )
                         }
-                        return (
-                                <div key={comment.id}>
-                                    <CommentIndexItemContainer 
-                                        body={comment.body}
-                                        username={comment.username}
-                                        color={comment.user.color}
-                                        time={timeSinceCommented}
-                                        commentId={comment.id}
-                                        videoId={this.props.videoId}
-                                        handleCreateComment={this.handleCreateComment}
-                                        replies={comment.replies}
-                                        />
-                                </div>
-                        )
                     })}
                 </div>
             </div>
