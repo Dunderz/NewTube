@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import CommentIndexItem from './comment_index_item';
 import { withRouter } from 'react-router-dom';
-
+import { deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        requestComments: videoId => dispatch(requestComments(videoId))
+        requestComments: videoId => dispatch(requestComments(videoId)),
+        deleteComment: id => dispatch(deleteComment(id))
     }
 }
 

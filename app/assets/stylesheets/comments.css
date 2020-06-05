@@ -120,7 +120,16 @@
     overflow-wrap: break-word;
 }
 
+.parent-comment-container:hover .comment-ellipsis {
+    display: block;
+}
+
 .comment-username-date-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-username-date-content {
     display: flex;
 }
 
@@ -133,7 +142,19 @@
 
 .comment-date {
     font-size: 13px;
+    color: #909090;
+}
+
+.comment-ellipsis {
+    display: none;
+    position: relative;
+    left: 0px;
     color: #606060;
+}
+
+.comment-ellipsis:hover {
+    color: #303030;
+    cursor: pointer;
 }
 
 .comment-body {

@@ -4,7 +4,6 @@
 #                      root GET    /                                                                                        static_pages#root
 #           api_video_likes GET    /api/videos/:video_id/likes(.:format)                                                    api/likes#index {:format=>"json"}
 #        api_video_comments GET    /api/videos/:video_id/comments(.:format)                                                 api/comments#index {:format=>"json"}
-#         api_video_comment DELETE /api/videos/:video_id/comments/:id(.:format)                                             api/comments#destroy {:format=>"json"}
 #                api_videos GET    /api/videos(.:format)                                                                    api/videos#index {:format=>"json"}
 #                           POST   /api/videos(.:format)                                                                    api/videos#create {:format=>"json"}
 #                 api_video GET    /api/videos/:id(.:format)                                                                api/videos#show {:format=>"json"}
@@ -12,6 +11,7 @@
 #                 api_likes POST   /api/likes(.:format)                                                                     api/likes#create {:format=>"json"}
 #                  api_like DELETE /api/likes/:id(.:format)                                                                 api/likes#destroy {:format=>"json"}
 #              api_comments POST   /api/comments(.:format)                                                                  api/comments#create {:format=>"json"}
+#               api_comment DELETE /api/comments/:id(.:format)                                                              api/comments#destroy {:format=>"json"}
 #    api_user_subscriptions GET    /api/users/:user_id/subscriptions(.:format)                                              api/subscriptions#index {:format=>"json"}
 #                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>"json"}
 #                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>"json"}
@@ -34,11 +34,11 @@ Rails.application.routes.draw do
     
     resources :videos, only: [:create, :index, :show, :destroy] do
       resources :likes, only: [:index]
-      resources :comments, only: [:index, :destroy] 
+      resources :comments, only: [:index] 
     end
     
     resources :likes, only: [:create, :destroy]
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
     resources :users, only: [:create, :show] do
       resources :subscriptions, only: [:index]
     end
