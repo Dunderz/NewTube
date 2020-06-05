@@ -63,6 +63,15 @@
     cursor: pointer;
 }
 
+.comment-cancel:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+}
+
+.comment-cancel:not( :active ) {
+    transition: 0.25s;
+}
+
 .comment-submit {
     width: 101px;
     height: 37px;
@@ -107,7 +116,7 @@
 }
 
 .comment-content {
-    width: 80%;
+    width: 100%;
     overflow-wrap: break-word;
 }
 
@@ -130,6 +139,30 @@
 .comment-body {
     font-size: 14px;
     line-height: 1.3;
+}
+
+.comment-reply-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    font-size: 13px;
+    color: #606060;
+    width: 60px;
+    border-radius: 3px;
+}
+
+.comment-reply-button:hover {
+    cursor: pointer;
+}
+
+.comment-reply-button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+}
+
+.comment-reply-button:not( :active ) {
+    transition: 0.25s;
 }
 
 .comment-likes {

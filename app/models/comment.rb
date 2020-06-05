@@ -28,6 +28,4 @@ class Comment < ApplicationRecord
 
     has_many :comments, as: :commentable
 
-    has_many :likes,
-        as: :likable
 end

@@ -37,7 +37,6 @@ class Video extends React.Component {
             <></>
           )
         }
-        console.log(this.props);
         return (
             <section className="video-section">
               <div className="video-index-recommended-container">

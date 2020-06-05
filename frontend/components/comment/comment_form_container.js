@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { createComment } from "../../actions/comment_actions";
 import CommentForm from './comment_form';
 import { withRouter } from 'react-router-dom';
-
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.session.currentUser,

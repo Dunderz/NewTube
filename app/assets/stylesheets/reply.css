@@ -1,0 +1,22 @@
+.reply-user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 24px;
+    width: 24px;
+    min-width: 24px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 300;
+    margin-right: 10px;
+}
+
+.reply-submit {
+    width: 70px;
+}
+
+.reply-container {
+    margin: 0px;
+}

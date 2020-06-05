@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentFormContainer from './comment_form_container';
-import CommentIndexItem from './comment_index_item'
+import CommentIndexItemContainer from './comment_index_item_container'
 import timeAgo from '../video/video_time';
 
 class CommentIndex extends React.Component {
@@ -35,19 +35,22 @@ class CommentIndex extends React.Component {
                 <CommentFormContainer handleCreateComment={this.handleCreateComment} videoId={this.props.videoId} />
                 <div>
                     {Object.values(this.props.comments).map(comment => {
+                        console.log(comment);
                         let timeSinceCommented = timeAgo(comment.created_at);
                         if (Object.values(comment).length === 0) {
                             return;
                         }
                         return (
                                 <div key={comment.id}>
-                                    <CommentIndexItem 
+                                    <CommentIndexItemContainer 
                                         body={comment.body}
                                         username={comment.username}
                                         color={comment.user.color}
                                         time={timeSinceCommented}
                                         commentId={comment.id}
                                         videoId={this.props.videoId}
+                                        handleCreateComment={this.handleCreateComment}
+                                        replies={comment.replies}
                                         />
                                 </div>
                         )

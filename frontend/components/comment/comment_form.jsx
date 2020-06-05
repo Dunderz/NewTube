@@ -41,7 +41,9 @@ class CommentForm extends React.Component {
             body: this.state.body,
             video_id: this.props.videoId,
             user_id: this.props.currentUser.id,
-            username: this.props.currentUser.username
+            username: this.props.currentUser.username,
+            commentable_type: "Video",
+            commentable_id: this.props.videoId
         })
         .then(() => this.props.handleCreateComment())
         .then(() => this.setState({ body: "" }))
@@ -92,7 +94,7 @@ class CommentForm extends React.Component {
                         rows="10" 
                         value={this.state.body}></textarea>
                     <div className={show}>
-                        <div onClick={this.handleCancelClick} className="comment-cancel">CANCEL</div>
+                        <div onClick={this.handleCancelClick} className="comment-cancel noSelect">CANCEL</div>
                         <input className={commentFormClass} type="submit" value="COMMENT"/>
                     </div>
                 </form>

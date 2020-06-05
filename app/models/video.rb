@@ -23,11 +23,13 @@ class Video < ApplicationRecord
         class_name: :User
 
     has_many :likes,
-        as: :likeable
+        as: :likable,
+        dependent: :destroy
 
-    # has_many :comments,
-    #     foreign_key: :video_id,
-    #     class_name: :Comment
+    has_many :comments,
+        foreign_key: :video_id,
+        class_name: :Comment,
+        dependent: :destroy
 
     # has_many :likes,
     #     foreign_key: :video_id,

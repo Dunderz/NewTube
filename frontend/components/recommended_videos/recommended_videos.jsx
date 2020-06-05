@@ -12,7 +12,7 @@ class RecommendedVideos extends React.Component {
 
     handleRenderVideos() {
         this.props.videos.map(video => {
-            console.log(video);
+            //
         }) 
     }
 
