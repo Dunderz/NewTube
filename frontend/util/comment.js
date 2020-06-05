@@ -20,3 +20,10 @@ export const postComment = comment => (
     })
 );
 
+export const destroyComment = id => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/likes/${id}`
+    })
+}
+
