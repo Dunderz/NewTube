@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-
+ 
 class CommentForm extends React.Component {
     constructor(props) {
         super(props);
@@ -9,12 +9,12 @@ class CommentForm extends React.Component {
             body: "",
             showButtons: false
         }
-
+ 
         this.handleBodyClick = this.handleBodyClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancelClick = this.handleCancelClick.bind(this);
     }
-
+ 
     handleBodyClick(e) {
         if (this.props.currentUser) {
             this.setState({ showButtons: true });
@@ -22,11 +22,11 @@ class CommentForm extends React.Component {
             this.props.history.push('/login');
         }
     }
-
+ 
     handleCancelClick() {
         this.setState({ showButtons: false });
     }
-
+ 
     handleInput(field) {
         return e => {
             this.setState({
@@ -34,7 +34,7 @@ class CommentForm extends React.Component {
             })
         }
     }
-
+ 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment({
@@ -49,11 +49,11 @@ class CommentForm extends React.Component {
         .then(() => this.setState({ body: "" }))
         .then(() => this.setState({ showButtons: false }))
     }
-
+ 
     render() {
         const { currentUser } = this.props;
         let commentIcon;
-
+ 
         if (currentUser) {
             commentIcon = (
                 <div className="comment-user-icon" style={{backgroundColor: currentUser.color}}>
@@ -73,14 +73,14 @@ class CommentForm extends React.Component {
         } else {
             show = "comment-buttons-hidden";
         }
-
+ 
         let commentFormClass;
         if (this.state.body.length < 1) {
             commentFormClass = "not-comment-submit";
         } else {
             commentFormClass = "comment-submit";
         }
-
+ 
         return (
             <div className="comment-form-container">
                 {commentIcon}
@@ -102,5 +102,5 @@ class CommentForm extends React.Component {
         )
     }
 }
-
+ 
 export default CommentForm;

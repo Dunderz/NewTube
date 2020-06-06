@@ -1,13 +1,13 @@
 import React from 'react';
-
+ 
 class ReplyForm extends React.Component {
     constructor(props) {
         super(props);
-
+ 
         this.state = {
             body: ''
         }
-
+ 
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -19,7 +19,7 @@ class ReplyForm extends React.Component {
             })
         }
     }
-
+ 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment({
@@ -34,22 +34,25 @@ class ReplyForm extends React.Component {
         .then(() => this.setState({ body: "" }))
         .then(() => this.props.hideReply())
     }
-
+ 
     render() {
-
+ 
         let commentFormClass;
         if (this.state.body.length < 1) {
             commentFormClass = "not-comment-submit";
         } else {
             commentFormClass = "comment-submit";
         }
-
-        let commentIcon = (
-            <div className="reply-user-icon" style={{backgroundColor: this.props.currentUser.color}}>
-                    {this.props.currentUser.username[0].toUpperCase()}
-            </div>
-        )
-
+ 
+        let commentIcon;
+        if (this.props.currentUser) {
+            commentIcon = (
+                <div className="reply-user-icon" style={{backgroundColor: this.props.currentUser.color}}>
+                        {this.props.currentUser.username[0].toUpperCase()}
+                </div>
+            )
+        }
+ 
         return (
             <>
                 <div className="comment-form-container reply-container">
@@ -72,5 +75,5 @@ class ReplyForm extends React.Component {
         )
     }
 }
-
+ 
 export default ReplyForm;
