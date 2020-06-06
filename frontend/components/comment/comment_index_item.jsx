@@ -40,7 +40,7 @@ class CommentIndexItem extends React.Component {
     }
 
     toggleDeleteForm() {
-        
+
     }
 
     handleDeleteComment() {
@@ -120,7 +120,7 @@ class CommentIndexItem extends React.Component {
                                 <div className="comment-username">{this.props.username}</div>
                                 <div className="comment-date">{this.props.time}</div>
                             </div>
-                            <FontAwesomeIcon onClick={} className="comment-ellipsis" icon={faEllipsisV} />
+                            <FontAwesomeIcon className="comment-ellipsis" icon={faEllipsisV} />
                         </div>
                         <div className="comment-body">{this.props.body}</div>
                         <div className="comment-reply-button" onClick={this.handleShowReply}>
