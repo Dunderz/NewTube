@@ -50,3 +50,7 @@
 .reply-index-container {
     margin-top: 24px;
 }
+
+.reply-index-item {
+    display: flex;
+}

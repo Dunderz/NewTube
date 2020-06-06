@@ -100,6 +100,15 @@
     margin-bottom: 16px;
 }
 
+.comment-index-link {
+    text-decoration: none;
+}
+
+.comment-index-username-link {
+    text-decoration: none;
+    color: #222222;
+}
+
 .comment-user-icon {
     display: flex;
     align-items: center;
@@ -120,8 +129,24 @@
     overflow-wrap: break-word;
 }
 
-.parent-comment-container:hover .comment-ellipsis {
+.ellipsis-test {
+    font-size: 100px;
+}
+
+.hide-ellipsis {
+    display: none;
+}
+
+.comment-ellipsis-anchor {
     display: block;
+}
+
+.parent-comment-container:hover .ellipsis-container {
+    display: block;
+}
+
+.ellipsis-container {
+    display: none;
 }
 
 .comment-username-date-container {

@@ -90,6 +90,8 @@ class CommentIndexItem extends React.Component {
                     videoId={this.props.videoId}
                 />
             )
+        } else {
+            ellipsisAnchor = "hide-ellipsis";
         }
  
         let showHoverEllipsis;
@@ -154,7 +156,7 @@ class CommentIndexItem extends React.Component {
                                 <div className="comment-date">{this.props.time}</div>
                             </div>
                             <div onClick={this.toggleDeleteForm} className="ellipsis-container">
-                                <FontAwesomeIcon className={`hide-ellipsis ${showHoverEllipsis} ${ellipsisAnchor}`} icon={faEllipsisV} />
+                                <FontAwesomeIcon className={`${showHoverEllipsis} ${ellipsisAnchor}`} icon={faEllipsisV} />
                                 {deletePopUp}
                             </div>
                             
