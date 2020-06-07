@@ -13,16 +13,12 @@ class CommentDelete extends React.Component {
         this.container = React.createRef();
         this.handleHideForm = this.handleHideForm.bind(this);
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
-        this.testClick = this.testClick.bind(this);
     }
  
     componentDidMount() {
         document.addEventListener('click', this.handleHideForm);
     }
  
-    testClick() {
-        console.log("YO WHATUP");
-    }
  
     handleHideForm(e) {
         const current = this.container.current;

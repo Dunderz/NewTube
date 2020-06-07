@@ -27,10 +27,6 @@ class CommentIndexItem extends React.Component {
         this.handleHideDeleteForm = this.handleHideDeleteForm.bind(this);
     }
  
-    componentDidUpdate() {
-        console.log("UPDATED");
-    }
- 
     handleShowReply() {
         if (!this.props.currentUser) {
             this.props.history.push("/login");
@@ -103,8 +99,6 @@ class CommentIndexItem extends React.Component {
                 showHoverEllipsis = "comment-ellipsis";
             }
         }
-
-        debugger
  
         let repliesButtonToggle;
         let repliesText;

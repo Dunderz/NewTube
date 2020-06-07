@@ -13,7 +13,6 @@ class UserShow extends React.Component {
 
         this.handleSubscribeToggle = this.handleSubscribeToggle.bind(this);
         this.handleSubPopUp = this.handleSubPopUp.bind(this);
-        this.testClick = this.testClick.bind(this);
     }
 
     componentDidMount() {
@@ -33,10 +32,6 @@ class UserShow extends React.Component {
             .then(() => this.props.requestChannelSubscriptions(this.props.user.id))
             .then(() => this.props.requestChannelSubscribers(this.props.user.id));
         }
-    }
-
-    testClick(e) {
-        console.log(e.target)
     }
 
     handleSubPopUp(e) {
