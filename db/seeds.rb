@@ -201,14 +201,14 @@ c80 = Comment.create!(body: "awww so cute", video_id: v18.id, user_id: user2.id,
 c81 = Comment.create!(body: "ahahahaha", video_id: v18.id, user_id: user4.id, username: "Instant123", commentable_id: v18.id, commentable_type: "Video")
 c82 = Comment.create!(body: "why'd you post a vid of me?", video_id: v18.id, user_id: user3.id, username: "PantsOnFire", commentable_id: v18.id, commentable_type: "Video")
 c83 = Comment.create!(body: "why'd you go 0/16", video_id: v18.id, user_id: user5.id, username: "StarWarsFan", commentable_id: c82.id, commentable_type: "Comment")
-c84 = Comment.create!(body: "covid is so scary", video_id: v18, user_id: user7.id, username: "keyboardManiac", commentable_id: v18, commentable_type: "Video")
-.id
+c84 = Comment.create!(body: "covid is so scary", video_id: v18, user_id: user7.id, username: "keyboardManiac", commentable_id: v18.id, commentable_type: "Video")
+
 # Video 19
 c85 = Comment.create!(body: "teenage mutant ninja turtles!", video_id: v19.id, user_id: user1.id, username: "demo", commentable_id: v19.id, commentable_type: "Video")
 c86 = Comment.create!(body: "WHAT AN INCREDIBLE VIDEO", video_id: v19.id, user_id: user2.id, username: "DylanWong97", commentable_id: v19.id, commentable_type: "Video")
 c87 = Comment.create!(body: "so insightful i think this video changed my life", video_id: v19.id, user_id: user7.id, username: "keyboardManiac", commentable_id: v19.id, commentable_type: "Video")
 c88 = Comment.create!(body: "Debugging is so easy. Do you need help?", video_id: v19.id, user_id: user6.id, username: "Anonymous93", commentable_id: v19.id, commentable_type: "Video")
-c89 = Comment.create!(vb.idody: "I love computer science", video_id: v19.id, user_id: user4.id, username: "Instant123", commentable_id: v19.id, commentable_type: "Video")
+c89 = Comment.create!(dody: "I love computer science", video_id: v19.id, user_id: user4.id, username: "Instant123", commentable_id: v19.id, commentable_type: "Video")
 
 s1 = Subscription.create!(subscriber_id: user1.id, channel_id: user2.id)
 s2 = Subscription.create!(subscriber_id: user1.id, channel_id: user3.id)
@@ -315,8 +315,8 @@ l43 = Like.create!(likable_id: v9.id, likable_type: "Video", user_id: user2.id, 
 l44 = Like.create!(likable_id: v9.id, likable_type: "Video", user_id: user3.id, value: "like")
 l45 = Like.create!(likable_id: v9.id, likable_type: "Video", user_id: user4.id, value: "like")
 l46 = Like.create!(likable_id: v9.id, likable_type: "Video", user_id: user5.id, value: "like")
-l47 = Like.create!(likable_id: v9,.id likable_type: "Video", user_id: user6.id, value: "like")
-l48 = Like.create!(likable_id: v9,.id likable_type: "Video", user_id: user7.id, value: "like")
+l47 = Like.create!(likable_id: v9.id, likable_type: "Video", user_id: user6.id, value: "like")
+l48 = Like.create!(likable_id: v9.id, likable_type: "Video", user_id: user7.id, value: "like")
 
 l49 = Like.create!(likable_id: v10.id, likable_type: "Video", user_id: user1.id, value: "like")
 l50 = Like.create!(likable_id: v10.id, likable_type: "Video", user_id: user2.id, value: "dislike")
