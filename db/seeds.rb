@@ -27,7 +27,7 @@ v1 = Video.create!(title: "The Dark Knight Rises Official Movie Trailer (2012)",
 v2 = Video.create!(title: "Mario Kart 8 - Dolphin Shoals - Music", author_id: user3.id, description: "Mario Kart 8 music composed by Shiho Fuiji / Atsuko Asahi / Ryo Nagamatsu / Yasuaki Iwata. Released 2014", views: 9)
 v3 = Video.create!(title: "TENET - Official Trailer", author_id: user5.id, description: "From Director Christopher Nolan. #TENET, coming to theaters 7.17.20. Watch the new trailer now.", views: 3)
 v4 = Video.create!(title: "French Bulldog Temper Tantrum", author_id: user7.id, description: "My dog is so cute!!!", views: 12)
-v5 = Video.create!(title: "when u pass rails 2", author_id: user2.id, description: "that test was mad hard lmao", views: 23)
+v5 = Video.create!(title: "when u pass rails 2", author_id: user2.id, description: "oof", views: 23)
 v6 = Video.create!(title: "Madeon - Dream Dream Dream (Official Audio)", author_id: user4.id, description: "HELLO. This song is called Dream Dream Dream and it’s one of the songs i’ve made i’m happiest with, I’m so thrilled to share it with you! I think it captures what I wanted Good Faith to feel like, it’s gonna be the opening song of the project.", views: 38)
 v7 = Video.create!(title: "TRON Legacy (End Titles)", author_id: user6.id, description: "Provided to YouTube by Universal Music Group. TRON Legacy (End Titles) · Daft Punk", views: 0)
 v8 = Video.create!(title: "Star Wars: The Rise of Skywalker (FULL MOVIE)", author_id: user8.id, description: "Star Wars: The Rise of Skywalker (also known as Star Wars: Episode IX – The Rise of Skywalker) is a 2019 American epic space opera film produced, co-written, and directed by J. J. Abrams. It is the third installment of the Star Wars sequel trilogy.", views: 19)
@@ -93,8 +93,8 @@ c5 = Comment.create!(body: "I AM BATMAN", video_id: v1.id, user_id: user4.id, us
 # Video 2
 c6 = Comment.create!(body: "I used to play saxophone in highschool.", video_id: v2.id, user_id: user6.id, username: "Anonymous93", commentable_id: v2.id, commentable_type: "Video")
 c7 = Comment.create!(body: "mario kart is such a stupid game", video_id: v2.id, user_id: user1.id, username: "demo", commentable_id: v2.id, commentable_type: "Video")
-c8 = Comment.create!(body: "every time i play i always get hit by green shells!!!", video_id: v2.id, user_id: user8.id, username: "ijikman", commentable_id: user7.id, commentable_type: "Comment")
-c9 = Comment.create!(body: "yay nintendo woohoo!!", video_id: v2.id, user_id: user5.id, username: "StarWarsFan", commentable_id: user7.id, commentable_type: "Comment")
+c8 = Comment.create!(body: "every time i play i always get hit by green shells!!!", video_id: v2.id, user_id: user8.id, username: "ijikman", commentable_id: c7.id, commentable_type: "Comment")
+c9 = Comment.create!(body: "yay nintendo woohoo!!", video_id: v2.id, user_id: user5.id, username: "StarWarsFan", commentable_id: c7.id, commentable_type: "Comment")
 c10 = Comment.create!(body: "hello from japan", video_id: v2.id, user_id: user2.id, username: "DylanWong97", commentable_id: v2.id, commentable_type: "Video")
 
 # Video 3
@@ -118,11 +118,11 @@ c23 = Comment.create!(body: "this video isn't funny it's very offensive", video_
 c24 = Comment.create!(body: "explain?", video_id: v5.id, user_id: user8.id, username: "ijikman", commentable_id: c23.id, commentable_type: "Comment")
 
 # Video 6
-c25 = Comment.create!(body: "i love you madeon omgggg", video_id: v6.id, user_id: v1.id, username: "demo", commentable_id: v6.id, commentable_type: "Video")
-c26 = Comment.create!(body: "best song of all time", video_id: v6.id, user_id: v3.id, username: "PantsOnFire", commentable_id: v6.id, commentable_type: "Video")
-c27 = Comment.create!(body: "nice dude wow!!!", video_id: v6.id, user_id: v5.id, username: "StarWarsFan", commentable_id: v6.id, commentable_type: "Video")
-c28 = Comment.create!(body: "waaaaaaa eeeeeeee", video_id: v6.id, user_id: v7.id, username: "keyboardManiac", commentable_id: v6.id, commentable_type: "Video")
-c29 = Comment.create!(body: "wtf", video_id: v6.id, user_id: v8.id, username: "ijikman", commentable_id: c28.id, commentable_type: "Comment")
+c25 = Comment.create!(body: "i love you madeon omgggg", video_id: v6.id, user_id: user1.id, username: "demo", commentable_id: v6.id, commentable_type: "Video")
+c26 = Comment.create!(body: "best song of all time", video_id: v6.id, user_id: user3.id, username: "PantsOnFire", commentable_id: v6.id, commentable_type: "Video")
+c27 = Comment.create!(body: "nice dude wow!!!", video_id: v6.id, user_id: user5.id, username: "StarWarsFan", commentable_id: v6.id, commentable_type: "Video")
+c28 = Comment.create!(body: "waaaaaaa eeeeeeee", video_id: v6.id, user_id: user7.id, username: "keyboardManiac", commentable_id: v6.id, commentable_type: "Video")
+c29 = Comment.create!(body: "wtf", video_id: v6.id, user_id: user8.id, username: "ijikman", commentable_id: c28.id, commentable_type: "Comment")
 
 # Video 7
 c30 = Comment.create!(body: "this song makes me move!!", video_id: v7.id, user_id: user4.id, username: "Instant123", commentable_id: v7.id, commentable_type: "Video")
@@ -201,14 +201,14 @@ c80 = Comment.create!(body: "awww so cute", video_id: v18.id, user_id: user2.id,
 c81 = Comment.create!(body: "ahahahaha", video_id: v18.id, user_id: user4.id, username: "Instant123", commentable_id: v18.id, commentable_type: "Video")
 c82 = Comment.create!(body: "why'd you post a vid of me?", video_id: v18.id, user_id: user3.id, username: "PantsOnFire", commentable_id: v18.id, commentable_type: "Video")
 c83 = Comment.create!(body: "why'd you go 0/16", video_id: v18.id, user_id: user5.id, username: "StarWarsFan", commentable_id: c82.id, commentable_type: "Comment")
-c84 = Comment.create!(body: "covid is so scary", video_id: v18, user_id: user7.id, username: "keyboardManiac", commentable_id: v18.id, commentable_type: "Video")
+c84 = Comment.create!(body: "covid is so scary", video_id: v18.id, user_id: user7.id, username: "keyboardManiac", commentable_id: v18.id, commentable_type: "Video")
 
 # Video 19
 c85 = Comment.create!(body: "teenage mutant ninja turtles!", video_id: v19.id, user_id: user1.id, username: "demo", commentable_id: v19.id, commentable_type: "Video")
 c86 = Comment.create!(body: "WHAT AN INCREDIBLE VIDEO", video_id: v19.id, user_id: user2.id, username: "DylanWong97", commentable_id: v19.id, commentable_type: "Video")
 c87 = Comment.create!(body: "so insightful i think this video changed my life", video_id: v19.id, user_id: user7.id, username: "keyboardManiac", commentable_id: v19.id, commentable_type: "Video")
 c88 = Comment.create!(body: "Debugging is so easy. Do you need help?", video_id: v19.id, user_id: user6.id, username: "Anonymous93", commentable_id: v19.id, commentable_type: "Video")
-c89 = Comment.create!(dody: "I love computer science", video_id: v19.id, user_id: user4.id, username: "Instant123", commentable_id: v19.id, commentable_type: "Video")
+c89 = Comment.create!(body: "I love computer science", video_id: v19.id, user_id: user4.id, username: "Instant123", commentable_id: v19.id, commentable_type: "Video")
 
 s1 = Subscription.create!(subscriber_id: user1.id, channel_id: user2.id)
 s2 = Subscription.create!(subscriber_id: user1.id, channel_id: user3.id)
