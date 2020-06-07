@@ -1,7 +1,5 @@
 .sign-in-container {
     width: 100%;
-    background-color: white;
-    height: 100vh;
 }
 
 
@@ -35,7 +33,7 @@
 
 .form-sign-in {
     position: relative;
-    top: 145px;
+    top: 85px;
     display: flex;
     flex-direction: column;
     align-items: center;

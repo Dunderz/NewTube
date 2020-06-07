@@ -89,7 +89,7 @@ class UserShow extends React.Component {
         let videosContainer;
         if (videos.length > 0) {
             videosContainer = (
-                <>
+                <div className="user-show-uploads-container">
                     <div className="user-show-upload-header">
                         Uploads
                     </div>
@@ -127,7 +127,7 @@ class UserShow extends React.Component {
                             );
                         })}
                     </div>
-                </>
+                </div>
             )
         };
 
@@ -217,9 +217,7 @@ class UserShow extends React.Component {
         if (this.props.currentUser) {
             if (this.props.currentUser.id == user.id) {
                 videoButton = (
-                    <div className="videoshow-delete-video">
-                        <h4 className="videoshow-delete-video-text">EDIT CHANNEL</h4>
-                    </div>
+                    <></>
                 )
             } else {
                 videoButton = (
