@@ -133,20 +133,17 @@
     font-size: 100px;
 }
 
+
+.comment-ellipsis-anchor {
+    display: block !important;
+}
+
 .hide-ellipsis {
     display: none;
 }
 
-.comment-ellipsis-anchor {
+.parent-comment-container:hover .hide-ellipsis {
     display: block;
-}
-
-.parent-comment-container:hover .ellipsis-container {
-    display: block;
-}
-
-.ellipsis-container {
-    display: none;
 }
 
 .comment-username-date-container {
@@ -171,7 +168,6 @@
 }
 
 .comment-ellipsis {
-    display: none;
     position: relative;
     left: 0px;
     color: #606060;

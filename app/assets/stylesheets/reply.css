@@ -17,6 +17,10 @@
     width: 70px;
 }
 
+.reply-index-item:hover .ellipsis-container {
+    display: block;
+}
+
 .reply-container {
     margin: 0px;
 }
@@ -53,4 +57,5 @@
 
 .reply-index-item {
     display: flex;
+    margin-bottom: 16px;
 }
