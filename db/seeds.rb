@@ -14,16 +14,16 @@ Like.destroy_all
 Subscription.destroy_all
 
 # Users
-demo = User.create!(id: 1, color: '#CC0000', first_name: "Demo", last_name: "User", username:"demo", email:"demo@gmail.com", password:"password")
-user1 = User.create!(id: 2, color: '#E69038', first_name: "Dylan", last_name: "Wong", username: "DylanWong97", email:"dylan@gmail.com" , password: "kazumamegumin")
-user2 = User.create!(id: 3, color: '#F1C231', first_name: "Patrick", last_name: "Stewart", username: "PantsOnFire", email: "coolemail@gmail.com", password: "startrek")
-user3 = User.create!(id: 4, color: '#6AA84E', first_name: "Will", last_name: "Smith", username: "Instant123", email: "anotherone@gmail.com", password: "belair")
-user4 = User.create!(id: 5, color: '#44818E', first_name: "Louis", last_name: "Money", username: "StarWarsFan", email: "google@gmail.com", password: "starwars")
-user5 = User.create!(id: 6, color: '#3B77D8', first_name: "Michael", last_name: "Park", username: "Anonymous93", email: "thisone@gmail.com", password: "mystery")
-user6 = User.create!(id: 7, color: '#674EA7', first_name: "Shelly", last_name: "Marsh", username: "keyboardManiac", email: "nicenice@gmail.com", password: "keyboard")
-user7 = User.create!(id: 8, color: '#A64C79', first_name: "Isaac", last_name: "Nam", username: "ijikman", email: "ijikman@yahoo.com", password: "baseball")
+demo = User.create!(color: '#CC0000', first_name: "Demo", last_name: "User", username:"demo", email:"demo@gmail.com", password:"password")
+user1 = User.create!(color: '#E69038', first_name: "Dylan", last_name: "Wong", username: "DylanWong97", email:"dylan@gmail.com" , password: "kazumamegumin")
+user2 = User.create!(color: '#F1C231', first_name: "Patrick", last_name: "Stewart", username: "PantsOnFire", email: "coolemail@gmail.com", password: "startrek")
+user3 = User.create!(color: '#6AA84E', first_name: "Will", last_name: "Smith", username: "Instant123", email: "anotherone@gmail.com", password: "belair")
+user4 = User.create!(color: '#44818E', first_name: "Louis", last_name: "Money", username: "StarWarsFan", email: "google@gmail.com", password: "starwars")
+user5 = User.create!(color: '#3B77D8', first_name: "Michael", last_name: "Park", username: "Anonymous93", email: "thisone@gmail.com", password: "mystery")
+user6 = User.create!(color: '#674EA7', first_name: "Shelly", last_name: "Marsh", username: "keyboardManiac", email: "nicenice@gmail.com", password: "keyboard")
+user7 = User.create!(color: '#A64C79', first_name: "Isaac", last_name: "Nam", username: "ijikman", email: "ijikman@yahoo.com", password: "baseball")
 
-v1 = Video.create!(id: 1, title: "The Dark Knight Rises Official Movie Trailer (2012)", author_id: 1, description: "The Dark Knight Rises is a 2012 superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan Nolan, and the story with David S. Goyer.[5] Based on the DC Comics character Batman, it is the final installment in Nolan's The Dark Knight Trilogy, and the sequel to The Dark Knight (2008).", views: 14)
+v1 = Video.create!(title: "The Dark Knight Rises Official Movie Trailer (2012)", author_id: 1, description: "The Dark Knight Rises is a 2012 superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan Nolan, and the story with David S. Goyer.[5] Based on the DC Comics character Batman, it is the final installment in Nolan's The Dark Knight Trilogy, and the sequel to The Dark Knight (2008).", views: 14)
 # v2 = Video.create!(id: 2, title: "Mario Kart 8 - Dolphin Shoals - Music", author_id: 3, description: "Mario Kart 8 music composed by Shiho Fuiji / Atsuko Asahi / Ryo Nagamatsu / Yasuaki Iwata. Released 2014", views: 9)
 # v3 = Video.create!(id: 3, title: "TENET - Official Trailer", author_id: 5, description: "From Director Christopher Nolan. #TENET, coming to theaters 7.17.20. Watch the new trailer now.", views: 3)
 # v4 = Video.create!(id: 4, title: "French Bulldog Temper Tantrum", author_id: 7, description: "My dog is so cute!!!", views: 12)
@@ -84,11 +84,11 @@ v1.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/darkknighttra
 # v19.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/tmntPractice.png"), filename: "tmntPractice.png")
 
 # Video 1
-c1 = Comment.create!(id: 1, body: "wow this is movie looks amazing", video_id: 1, user_id: 1, username: "demo", commentable_type: "Video", commentable_id: 1)
-c2 = Comment.create!(id: 2, body: "yeah he's my favorite director", video_id: 1, user_id: 2, username: "DylanWong97", commentable_type: "Comment", commentable_id: 1)
-c3 = Comment.create!(id: 3, body: "Honestly I think this movie is overrated.", video_id: 1, user_id: 5, username: "StarWarsFan", commentable_id: 1, commentable_type: "Video")
-c4 = Comment.create!(id: 4, body: "christian bale is so hot!!!", video_id: 1, user_id: 7, username: "keyboardManiac", commentable_id: 1, commentable_type: "Video")
-c5 = Comment.create!(id: 5, body: "I AM BATMAN", video_id: 1, user_id: 4, username: "Instant123", commentable_id: 1, commentable_type: "Video")
+c1 = Comment.create!(body: "wow this is movie looks amazing", video_id: 1, user_id: 1, username: "demo", commentable_type: "Video", commentable_id: 1)
+c2 = Comment.create!(body: "yeah he's my favorite director", video_id: 1, user_id: 2, username: "DylanWong97", commentable_type: "Comment", commentable_id: 1)
+c3 = Comment.create!(body: "Honestly I think this movie is overrated.", video_id: 1, user_id: 5, username: "StarWarsFan", commentable_id: 1, commentable_type: "Video")
+c4 = Comment.create!(body: "christian bale is so hot!!!", video_id: 1, user_id: 7, username: "keyboardManiac", commentable_id: 1, commentable_type: "Video")
+c5 = Comment.create!(body: "I AM BATMAN", video_id: 1, user_id: 4, username: "Instant123", commentable_id: 1, commentable_type: "Video")
 
 # # Video 2
 # c6 = Comment.create!(id: 6, body: "I used to play saxophone in highschool.", video_id: 2, user_id: 6, username: "Anonymous93", commentable_id: 2, commentable_type: "Video")
