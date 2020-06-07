@@ -88,7 +88,7 @@ c1 = Comment.create!(body: "wow this is movie looks amazing", video_id: v1.id, u
 c2 = Comment.create!(body: "yeah he's my favorite director", video_id: v1.id, user_id: user2.id, username: "DylanWong97", commentable_type: "Comment", commentable_id: c1.id)
 c3 = Comment.create!(body: "Honestly I think this movie is overrated.", video_id: v1.id, user_id: user5.id, username: "StarWarsFan", commentable_id: v1.id, commentable_type: "Video")
 c4 = Comment.create!(body: "christian bale is so hot!!!", video_id: v1.id, user_id: user7.id, username: "keyboardManiac", commentable_id: v1.id, commentable_type: "Video")
-c5 = Comment.create!(body: "I AM BATMAN", video_id: v1.id, user_id: user4.id, username: "Instant123", commentable_id: v1.id, commentable_type: "Video"v).id
+c5 = Comment.create!(body: "I AM BATMAN", video_id: v1.id, user_id: user4.id, username: "Instant123", commentable_id: v1.id, commentable_type: "Video")
 
 # Video 2
 c6 = Comment.create!(body: "I used to play saxophone in highschool.", video_id: v2.id, user_id: user6.id, username: "Anonymous93", commentable_id: v2.id, commentable_type: "Video")
