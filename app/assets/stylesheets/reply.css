@@ -17,7 +17,7 @@
     width: 70px;
 }
 
-.reply-index-item:hover .ellipsis-container {
+.reply-index-item:hover .hide-ellipsis {
     display: block;
 }
 
