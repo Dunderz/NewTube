@@ -146,7 +146,7 @@
     position: relative;
 }
 
-.parent-comment-container:hover .hide-ellipsis {
+.parent-comment-container:hover .comment-ellipsis {
     display: block;
 }
 
