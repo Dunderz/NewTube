@@ -3,5 +3,5 @@ bundle.js
 bundle.js.map
 tmp
 
-/config/master.key
+config/master.key
 log
