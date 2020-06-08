@@ -17,7 +17,6 @@ class CommentIndexItem extends React.Component {
             showDeleteForm: false
         }
  
-        this.container = React.createRef();
         this.handleShowReply = this.handleShowReply.bind(this);
         this.handleHideReply = this.handleHideReply.bind(this);
         this.replyCurrentUserCheck = this.replyCurrentUserCheck.bind(this);

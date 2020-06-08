@@ -23,7 +23,7 @@ class ProfileMenu extends React.Component {
             active: false
         }
 
-        this.container = React.createRef();
+        this.dropdownBox = React.createRef();
         this.handleClick = this.handleClick.bind(this);
         this.toggleActive = this.toggleActive.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
@@ -37,8 +37,19 @@ class ProfileMenu extends React.Component {
     }
 
     handleOutsideClick(e) {
-        const current = this.container.current;
-        const outside = current ? current.contains(e.target) ? false : true : false;
+        const current = this.dropdownBox.current;
+
+        let outside;
+        if (current) {
+            if (current.contains(e.target)) {
+                outside = false;
+            } else {
+                outside = true;
+            }
+        } else {
+            outside = false;
+        }
+
         if (outside === true) {
             this.setState({ active: false });
         } 
@@ -68,7 +79,7 @@ class ProfileMenu extends React.Component {
             isActive = 'dropdown-hidden';
         }
         return (
-            <div className="profile-menu" ref={this.container}>
+            <div className="profile-menu" ref={this.dropdownBox}>
                 <div className="profile-menu-icon" style={{backgroundColor: this.props.currentUser.color}} onClick={this.toggleActive}>
                     <p className="profile-letter">{this.props.currentUser.username[0].toUpperCase()}</p>
                 </div>

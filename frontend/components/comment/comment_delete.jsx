@@ -10,7 +10,7 @@ class CommentDelete extends React.Component {
             display: true
         }
  
-        this.container = React.createRef();
+        this.deleteContainer = React.createRef();
         this.handleHideForm = this.handleHideForm.bind(this);
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
@@ -21,10 +21,21 @@ class CommentDelete extends React.Component {
  
  
     handleHideForm(e) {
-        const current = this.container.current;
-        const outside = current ? current.contains(e.target) ? false : true : false;
+        const current = this.deleteContainer.current;
+
+        let outside;
+        if (current) {
+            if (current.contains(e.target)) {
+                outside = false;
+            } else {
+                outside = true;
+            }
+        } else {
+            outside = false;
+        }
+
         if (outside === true) {
-            this.setState({ display: false });
+            this.setState({ active: false });
             this.props.handleHideDeleteForm();
         } 
     }
@@ -42,7 +53,7 @@ class CommentDelete extends React.Component {
         let commentDeleteComponent;
         if (this.state.display) {
             commentDeleteComponent = (
-                <div className="comment-delete-pop-up" onClick={this.handleDeleteComment} ref={this.container}>
+                <div className="comment-delete-pop-up" onClick={this.handleDeleteComment} ref={this.deleteContainer}>
                     <FontAwesomeIcon className="comment-delete-pop-up-icon" icon={faTrash} />
                     <div className="comment-delete-pop-up-text">Delete</div>
                 </div>
