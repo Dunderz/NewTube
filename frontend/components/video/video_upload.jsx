@@ -10,7 +10,8 @@ class VideoUpload extends React.Component {
             description: '',
             videoFile: null,
             thumbnail: null,
-            photoUrl: null
+            photoUrl: null,
+            loading: false
         }
 
         this.handleFile = this.handleFile.bind(this);
@@ -74,6 +75,7 @@ class VideoUpload extends React.Component {
         formData.append('video[author_id]', this.props.currentUser.id);
         formData.append('video[thumbnail]', this.state.thumbnail);
         formData.append('video[description]', this.state.description);
+        this.setState({ loading: true });
         this.props.uploadVideo(formData).then((video) => {
             this.props.history.push(`/videos/${video.video.id}`);
             this.props.closeModal();
@@ -111,6 +113,12 @@ class VideoUpload extends React.Component {
             uploadColor = "not-video-upload-button";
         }
 
+        let loading = '';
+
+        if (this.state.loading) {
+            loading = 'Uploading...'
+        }
+
         return (
             <div onClick={this.showState} className="video-upload-modal">
                 <div className="video-upload-top-row">
@@ -133,7 +141,7 @@ class VideoUpload extends React.Component {
                                 </div>
                                 <div className="video-upload-thumbnail-container" >
                                     <h2>Thumbnail <span style={{...gray, ...enhancedStyle}}>(required)</span></h2>
-                                    <p>Select or upload a picture that shows what's in your video. 
+                                    <p>Upload a picture that shows what's in your video. 
                                         A good thumbnail stands out and draws viewers' attention.
                                     </p>
                                     <div className="thumbnail-upload-and-preview">
@@ -164,6 +172,9 @@ class VideoUpload extends React.Component {
                                     <h2>SELECT VIDEO</h2>
                                     <input type="file" id="file" accept='video/*' onChange={this.handleFile} />
                                 </div>
+                                <h1 className='video-upload-loading'>
+                                    { loading }
+                                </h1>
                                 <button className={uploadColor}>UPLOAD</button>
                             </div>
                         </form>
