@@ -37,7 +37,6 @@ class ProfileMenu extends React.Component {
     }
 
     handleOutsideClick(e) {
-        const click;
         const current = this.dropdownBox.current;
 
         let outside;
