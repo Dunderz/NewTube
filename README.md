@@ -35,6 +35,40 @@ NewTube is a clone of YouTube with functionalities such as signing up, viewing, 
 
 ![alt text](img/comments.gif "Comments section")
 
+- Every comment item possesses their own array of replies, which means it is necessary to have reply and delete forms for each of them. Displaying either form is dependent upon the comment item's state which is triggered by the user clicking certain buttons. This is demonstrated through conditional logic in the code shown below.
+
+*CommentIndexItem*
+```javascript
+let replyForm;
+
+if (this.state.showReplyForm) {
+    replyForm = (
+        <ReplyFormContainer 
+            handleCreateComment={this.props.handleCreateComment} 
+            hideReply={this.handleHideReply}
+            parentCommentId={this.props.commentId}
+            videoId={this.props.videoId}
+        />
+    )
+}
+
+let deletePopUp;
+let ellipsisAnchor;
+
+if (this.state.showDeleteForm) {
+    ellipsisAnchor = "comment-ellipsis-anchor";
+    deletePopUp = (
+        <CommentDeleteContainer
+            handleHideDeleteForm={this.handleHideDeleteForm} 
+            commentId={this.props.commentId}
+            videoId={this.props.videoId}
+        />
+    )
+} else {
+    ellipsisAnchor = "hide-ellipsis";
+}
+```
+
 ### Subscriptions
 - Signed in users can subscribe to multiple NewTube channels, and their subscriptions show up in both their profile page and the modal side navigation bar. 
 
