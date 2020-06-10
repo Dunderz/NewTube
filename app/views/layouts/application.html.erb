@@ -4,6 +4,12 @@
     <title>NewTube</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta property='og:title' content="NewTube"/>
+    <meta name="image" property="og:image" content="<%= image_url('new-tube-app.png') %>">
+    <meta property='og:description' content="NewTube is a fullstack clone of the popular website Youtube built with React, Redux, and Ruby on Rails."/>
+    <meta property='og:url' content="https://new-tube-app.herokuapp.com/#/" />
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
