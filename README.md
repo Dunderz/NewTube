@@ -34,8 +34,8 @@ NewTube is a clone of YouTube with functionalities such as signing up, viewing, 
 
 ### Subscriptions
 - Signed in users can subscribe to multiple NewTube channels, and their subscriptions show up in both their profile page and the modal side navigation bar. 
-![alt text](img/subscriptions.gif "Subscriptions")
 
+![alt text](img/subscriptions.gif "Subscriptions")
 ## Additional Features
 - Search
     - Users can search for videos based on their titles with the search-bar.
