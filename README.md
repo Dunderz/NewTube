@@ -30,6 +30,26 @@ NewTube is a clone of YouTube with functionalities such as signing up, viewing, 
 
 ![alt text](img/video-upload.gif "Video Upload")
 
+- The current user in the process of uploading sends their video information to a FormData object, and upon completion of the video rendering, they are redirected to that video's show page. Submitting the upload form is show in the code below.
+
+*VideoUpload*
+```javascript
+handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('video[title]', this.state.title);
+    formData.append('video[video]', this.state.videoFile);
+    formData.append('video[author_id]', this.props.currentUser.id);
+    formData.append('video[thumbnail]', this.state.thumbnail);
+    formData.append('video[description]', this.state.description);
+    this.setState({ loading: true });
+    this.props.uploadVideo(formData).then((video) => {
+        this.props.history.push(`/videos/${video.video.id}`);
+        this.props.closeModal();
+    });
+}
+```
+
 ### Comments section
 - Videos can be commented on, and comments can also be replied to. This is achieved through polymorphic associations, making comments and videos both commentable types.
 
