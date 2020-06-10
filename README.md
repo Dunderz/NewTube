@@ -2,7 +2,21 @@
 
 Welcome to Newtube! This project is a pixel perfect clone of Youtube. You can see the live version [here.](https://new-tube-app.herokuapp.com/#/)
 
-NewTube is a clone of YouTube with functionalities such as signing up, viewing and uploading videos. The frontend of this website was constructed with React-Redux and is connected with a Ruby on Rails backend with AJAX requests. This production is fully supported with a PostGreSQL database. AWS and ActiveStorage also allows for video hosting.
+NewTube is a clone of YouTube with functionalities such as signing up, viewing, searching and uploading videos. In addition, users of NewTube are able to subscribe to other channels, like and comment on videos as well.
+
+
+## Technologies
+
+- Frontend:
+    - React
+    - Redux
+    - HTML 5
+    - CSS 3
+- Backend:
+    - Ruby on Rails
+    - PostgreSQL
+- Heroku (website hosting)
+- AWS S3 (image and video storage)
 
 ## Features
 
