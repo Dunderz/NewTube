@@ -16,6 +16,7 @@ class UserShow extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         document.addEventListener('click', this.handleSubPopUp);
         this.props.requestUser(this.props.match.params.id)
         .then(() => this.props.requestChannelSubscriptions(this.props.user.id))
@@ -28,6 +29,7 @@ class UserShow extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
+            window.scrollTo(0, 0);
             this.props.requestUser(this.props.match.params.id)
             .then(() => this.props.requestChannelSubscriptions(this.props.user.id))
             .then(() => this.props.requestChannelSubscribers(this.props.user.id));

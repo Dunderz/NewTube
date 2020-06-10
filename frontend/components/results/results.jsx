@@ -14,10 +14,12 @@ class Results extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.fetchSearched(this.state.result);
     }
 
     componentDidUpdate() {
+        window.scrollTo(0, 0);
         this.handleURL();
         if (this.state.searched) {
             this.props.fetchSearched(this.state.result);

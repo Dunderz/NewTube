@@ -35,6 +35,7 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         document.addEventListener('click', this.handleSubPopUp);
         this.props.requestComments(this.props.match.params.id);
         this.props.requestVideo(this.props.match.params.id)
@@ -45,6 +46,7 @@ class VideoShow extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id != this.props.match.params.id) {
+            window.scrollTo(0, 0);
             if (this.state.subscribeToggle) {
                 this.props.requestChannelSubscribers(this.props.video.user.id);
                 if (this.props.currentUser) {
