@@ -13,7 +13,8 @@ Comment.destroy_all
 Like.destroy_all
 Subscription.destroy_all
 
-# Users
+### USERS ###
+
 user1 = User.create!(color: '#CC0000', first_name: "Demo", last_name: "User", username:"demo", email:"demo@gmail.com", password:"password")
 user2 = User.create!(color: '#E69038', first_name: "Dylan", last_name: "Wong", username: "DylanWong97", email:"dylan@gmail.com" , password: "kazumamegumin")
 user3 = User.create!(color: '#F1C231', first_name: "Patrick", last_name: "Stewart", username: "PantsOnFire", email: "coolemail@gmail.com", password: "startrek")
@@ -22,6 +23,9 @@ user5 = User.create!(color: '#44818E', first_name: "Louis", last_name: "Money", 
 user6 = User.create!(color: '#3B77D8', first_name: "Michael", last_name: "Park", username: "Anonymous93", email: "thisone@gmail.com", password: "mystery")
 user7 = User.create!(color: '#674EA7', first_name: "Shelly", last_name: "Marsh", username: "keyboardManiac", email: "nicenice@gmail.com", password: "keyboard")
 user8 = User.create!(color: '#A64C79', first_name: "Isaac", last_name: "Nam", username: "ijikman", email: "ijikman@yahoo.com", password: "baseball")
+
+
+### VIDEOS ###
 
 v1 = Video.create!(title: "The Dark Knight Rises Official Movie Trailer (2012)", author_id: user1.id, description: "The Dark Knight Rises is a 2012 superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan Nolan, and the story with David S. Goyer.[5] Based on the DC Comics character Batman, it is the final installment in Nolan's The Dark Knight Trilogy, and the sequel to The Dark Knight (2008).", views: 14)
 v2 = Video.create!(title: "Mario Kart 8 - Dolphin Shoals - Music", author_id: user3.id, description: "Mario Kart 8 music composed by Shiho Fuiji / Atsuko Asahi / Ryo Nagamatsu / Yasuaki Iwata. Released 2014", views: 9)
@@ -42,6 +46,7 @@ v16 = Video.create!(title: "Interstellar Movie - Official Trailer", author_id: u
 v17 = Video.create!(title: "ta after they tell you to look at the docs", author_id: user4.id, description: "sad noise", views: 11)
 v18 = Video.create!(title: "ur face when app academy became remote", author_id: user1.id, description: "stuck between a rock and a hard place", views: 27)
 v19 = Video.create!(title: "my 4 brain cells trying to debug", author_id: user8.id, description: "Gru is the most powerful being in the universe, and here’s why: according to the height of a Minion (which is 3.5 feet on average) Gru is 4 minions tall, which means he is a godly size of 14 feet tall. Second if any of you remember the original Despicable Me, you Know there is a scene when Vector kidnaps the three girls and shoots a series of heat-seeking misses at Gru, he then dodge them all. ", views: 9)
+v20 = Video.create!(title: "Madeon - All My Friends (Official Audio)", author_id: user1.id, description: "HEY ! I missed you. This is a song I wrote and produced and am singing on, it's the kind of music I was hoping I would be able to make someday, I hope you have fun with it.", views: 17)
 
 v1.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/darkKnightRises.mp4"), filename: "darkKnightRises.mp4")
 v2.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/dolphinShoals.mp4"), filename: "dolphinShoals.mp4")
@@ -62,6 +67,10 @@ v16.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/interstellar.mp4
 v17.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/rengarlaugh.mp4"), filename: "rengarlaugh.mp4")
 v18.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/shitHappens.mp4"), filename: "shitHappens.mp4")
 v19.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/tmntpractice.mp4"), filename: "tmntpractice.mp4")
+v20.video.attach(io: open("https://newtube-dev.s3.amazonaws.com/allMyFriends.mp4"), filename: "allMyFriends.mp4")
+
+
+### VIDEO THUMBNAILS ###
 
 v1.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/darkknighttrailer.jpg"), filename: "darkknighttrailer.jpg")
 v2.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/dolphinShoals.png"), filename: "dolphinShoals.png")
@@ -82,6 +91,10 @@ v16.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/interstellar
 v17.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/lebronMad.JPG"), filename: "lebronMad.JPG")
 v18.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/shitHappens.jpg"), filename: "shitHappens.jpg")
 v19.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/tmntPractice.png"), filename: "tmntPractice.png")
+v20.thumbnail.attach(io: open("https://newtube-dev.s3.amazonaws.com/allMyFriends.png"), filename: "allMyFriends.png")
+
+
+### COMMENTS ###
 
 # Video 1
 c1 = Comment.create!(body: "wow this is movie looks amazing", video_id: v1.id, user_id: user1.id, username: "demo", commentable_type: "Video", commentable_id: v1.id)
@@ -210,6 +223,11 @@ c87 = Comment.create!(body: "so insightful i think this video changed my life", 
 c88 = Comment.create!(body: "Debugging is so easy. Do you need help?", video_id: v19.id, user_id: user6.id, username: "Anonymous93", commentable_id: v19.id, commentable_type: "Video")
 c89 = Comment.create!(body: "I love computer science", video_id: v19.id, user_id: user4.id, username: "Instant123", commentable_id: v19.id, commentable_type: "Video")
 
+# Video 20
+
+
+### SUBSCRIPTIONS ###
+
 s1 = Subscription.create!(subscriber_id: user1.id, channel_id: user2.id)
 s2 = Subscription.create!(subscriber_id: user1.id, channel_id: user3.id)
 s3 = Subscription.create!(subscriber_id: user1.id, channel_id: user4.id)
@@ -260,6 +278,9 @@ s40 = Subscription.create!(subscriber_id: user7.id, channel_id: user4.id)
 s41 = Subscription.create!(subscriber_id: user8.id, channel_id: user1.id)
 s42 = Subscription.create!(subscriber_id: user8.id, channel_id: user5.id)
 s43 = Subscription.create!(subscriber_id: user8.id, channel_id: user2.id)
+
+
+### LIKES / DISLIKES ###
 
 l1 = Like.create!(likable_id: v1.id, likable_type: "Video", user_id: user1.id, value: "like")
 l2 = Like.create!(likable_id: v1.id, likable_type: "Video", user_id: user2.id, value: "like")
